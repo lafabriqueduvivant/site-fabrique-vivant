@@ -46,8 +46,8 @@ function releaseErrors() {
 // Points acceptés temporairement (décision Fabrice 2026-07-17) : signalés sans bloquer.
 function releaseWarnings() {
   const warnings = [];
-  if (!site.formEndpoint) {
-    warnings.push("Formulaire non branché : la page contact n'envoie rien tant que formEndpoint est vide (systeme.io à brancher).");
+  if (!site.formEndpoint || !site.formAccessKey) {
+    warnings.push("Formulaire non branché : la page contact n'envoie rien tant que la clé Web3Forms (formAccessKey) est vide.");
   }
   if (!site.publicPhone || !site.publicPhoneHref) {
     warnings.push("Téléphone public non renseigné (affiché nulle part pour l'instant).");

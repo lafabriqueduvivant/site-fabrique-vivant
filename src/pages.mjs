@@ -1212,12 +1212,14 @@ pages.push({
   ${soilDivider("ivory")}
   <section class="section section--ivory">
     <div class="container contact-layout">
-      <form class="contact-form" action="${site.formEndpoint || "/contact/"}" method="post" data-contact-form data-preview="${site.formEndpoint ? "false" : "true"}">
-        <input type="hidden" name="_subject" value="Nouvelle demande depuis le site">
-        <input type="hidden" name="_next" value="${site.domain}/merci/">
+      <form class="contact-form" action="${site.formEndpoint && site.formAccessKey ? site.formEndpoint : "/contact/"}" method="post" data-contact-form data-preview="${site.formEndpoint && site.formAccessKey ? "false" : "true"}">
+        <input type="hidden" name="access_key" value="${site.formAccessKey}">
+        <input type="hidden" name="subject" value="Nouvelle demande depuis le site">
+        <input type="hidden" name="from_name" value="Site La Fabrique du Vivant">
+        <input type="hidden" name="redirect" value="${site.domain}/merci/">
         <div class="honeypot" aria-hidden="true">
-          <label for="website">Ne pas remplir ce champ</label>
-          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          <label for="botcheck">Ne pas cocher cette case</label>
+          <input type="checkbox" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off">
         </div>
         <div class="form-field">
           <label for="structure">Votre structure <span class="form-help">— nom et commune</span></label>

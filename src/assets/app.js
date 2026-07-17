@@ -70,7 +70,7 @@ if (contactForm) {
     event.preventDefault();
     const status = contactForm.querySelector("[data-form-status]");
     if (status) {
-      status.textContent = "L'envoi est volontairement désactivé dans l'aperçu local. Le service sera choisi avant la publication.";
+      status.textContent = "L'envoi est volontairement désactivé : la clé du service de formulaire n'est pas encore renseignée.";
       status.focus();
     }
   });

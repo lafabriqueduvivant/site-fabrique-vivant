@@ -5,8 +5,10 @@ export const site = {
     "Animations nature et jardin, accompagnement de projets et formations professionnelles à Mâcon, dans le Beaujolais et à Lyon.",
   locale: "fr_FR",
   areaServed: ["Mâcon", "Beaujolais", "Villefranche-sur-Saône", "Lyon"],
-  formEndpoint: "",
-  formProviderName: "systeme.io",
+  formEndpoint: "https://api.web3forms.com/submit",
+  formProviderName: "Web3Forms",
+  // Clé publique Web3Forms (visible dans le HTML par conception) — associée à fab@lafabriqueduvivant.fr.
+  formAccessKey: "b65cefcb-e97c-4c9e-aa43-1c93b679735f",
   publicEmail: "fab@lafabriqueduvivant.fr",
   publicPhone: "",
   publicPhoneHref: "",
