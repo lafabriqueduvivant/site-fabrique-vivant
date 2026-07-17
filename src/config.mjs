@@ -9,6 +9,8 @@ export const site = {
   formProviderName: "Web3Forms",
   // Clé publique Web3Forms (visible dans le HTML par conception) — associée à fab@lafabriqueduvivant.fr.
   formAccessKey: "b65cefcb-e97c-4c9e-aa43-1c93b679735f",
+  // Adresse d'envoi du formulaire Fiche de départ (service d'emailing) — vide tant que non branché.
+  ficheFormAction: "",
   publicEmail: "fab@lafabriqueduvivant.fr",
   publicPhone: "",
   publicPhoneHref: "",

@@ -49,6 +49,9 @@ function releaseWarnings() {
   if (!site.formEndpoint || !site.formAccessKey) {
     warnings.push("Formulaire non branché : la page contact n'envoie rien tant que la clé Web3Forms (formAccessKey) est vide.");
   }
+  if (!site.ficheFormAction) {
+    warnings.push("Fiche de départ non branchée : le formulaire /fiche-depart/ n'envoie rien tant que ficheFormAction est vide.");
+  }
   if (!site.publicPhone || !site.publicPhoneHref) {
     warnings.push("Téléphone public non renseigné (affiché nulle part pour l'instant).");
   }
@@ -85,6 +88,7 @@ export async function buildSite({ production = false } = {}) {
   await cp(join(sourceAssets, "styles.css"), join(output, "assets", "styles.css"));
   await cp(join(sourceAssets, "app.js"), join(output, "assets", "app.js"));
   await cp(join(sourceAssets, "favicon.svg"), join(output, "favicon.svg"));
+  await cp(join(sourceAssets, "fiche-depart.pdf"), join(output, "assets", "fiche-depart.pdf"));
 
   for (const page of pages) {
     const target = outputFileFor(page.path);

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Fiche de départ — La Fabrique du Vivant</title>
+<style>
+  @font-face {
+    font-family: "Albert Sans";
+    src: url("assets/fonts/albert-sans-latin.woff2") format("woff2");
+    font-weight: 100 900;
+  }
+  @font-face {
+    font-family: "Caveat";
+    src: url("assets/fonts/caveat-latin.woff2") format("woff2");
+    font-weight: 400 700;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --ink: #3A342C;
+    --ink-muted: #635C4F;
+    --sage: #6E7F55;
+    --sage-dark: #55633F;
+    --clay: #B06A3F;
+    --clay-dark: #96562F;
+    --ivory: #FAF6EF;
+    --line: #C9C1B2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { background: #fff; }
+
+  body {
+    font-family: "Albert Sans", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.6pt;
+    line-height: 1.42;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 13mm 15mm 11mm;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .handwritten {
+    font-family: "Caveat", cursive;
+    color: var(--sage-dark);
+    font-size: 13pt;
+  }
+
+  header.masthead { text-align: center; margin-bottom: 5mm; }
+  .masthead h1 {
+    font-size: 21pt;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .masthead .subtitle {
+    font-size: 11.5pt;
+    color: var(--clay-dark);
+    font-weight: 600;
+    margin-top: 1mm;
+  }
+  .masthead .intro {
+    max-width: 150mm;
+    margin: 2.5mm auto 0;
+    color: var(--ink-muted);
+    font-size: 9.2pt;
+  }
+
+  h2.rubrique {
+    font-size: 11pt;
+    font-weight: 700;
+    margin: 4.5mm 0 2mm;
+    padding-bottom: 1mm;
+    border-bottom: 1.5pt solid var(--sage);
+  }
+  h2.rubrique .num {
+    display: inline-block;
+    color: var(--clay);
+    font-weight: 800;
+    margin-right: 1.5mm;
+  }
+  .hint { color: var(--ink-muted); font-size: 8.6pt; margin-bottom: 1.5mm; }
+
+  /* Portes */
+  .portes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5mm;
+    margin-top: 2mm;
+  }
+  .porte {
+    border: 1pt solid var(--line);
+    border-radius: 3mm;
+    padding: 2.5mm 3mm;
+    background: var(--ivory);
+  }
+  .porte h3 { font-size: 9.8pt; font-weight: 700; }
+  .porte p { color: var(--ink-muted); font-size: 8.6pt; margin-top: 0.8mm; }
+  .porte .format { color: var(--sage-dark); font-weight: 700; font-size: 8.8pt; margin-top: 1.2mm; }
+  .portes-note {
+    margin-top: 2mm;
+    padding-left: 3mm;
+    border-left: 2pt solid var(--clay);
+    color: var(--ink-muted);
+    font-size: 8.6pt;
+    font-style: italic;
+  }
+
+  /* Cases à cocher */
+  .checks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2mm 4mm; margin: 1mm 0; }
+  .checks--2 { grid-template-columns: 1fr 1fr; }
+  .check { display: flex; align-items: baseline; gap: 2mm; font-size: 9.2pt; }
+  .box {
+    flex: none;
+    width: 3.4mm; height: 3.4mm;
+    border: 1pt solid var(--ink-muted);
+    border-radius: 0.8mm;
+    position: relative; top: 0.5mm;
+  }
+
+  /* Lignes d'écriture */
+  .write { border-bottom: 0.8pt dotted var(--ink-muted); height: 6.5mm; }
+  .write + .write { margin-top: 0; }
+  .inline-write {
+    display: inline-block;
+    border-bottom: 0.8pt dotted var(--ink-muted);
+    min-width: 60mm;
+    height: 5mm;
+    vertical-align: baseline;
+  }
+
+  /* Synthèse */
+  .synthese {
+    border: 1.2pt solid var(--sage);
+    border-radius: 3mm;
+    background: var(--ivory);
+    padding: 3.5mm 4mm;
+    margin-top: 2mm;
+  }
+  .synthese p.phrase { font-size: 9.6pt; line-height: 2; }
+  .synthese .inline-write { min-width: 38mm; }
+
+  footer.colophon {
+    margin-top: auto;
+    padding-top: 2.5mm;
+    border-top: 0.8pt solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--ink-muted);
+    font-size: 8.4pt;
+  }
+  footer.colophon .site { color: var(--clay-dark); font-weight: 700; }
+
+  .closing { margin-top: 4mm; }
+  .closing h2 {
+    font-size: 11pt;
+    margin-bottom: 1.5mm;
+  }
+  .closing p { color: var(--ink-muted); font-size: 9.2pt; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ PAGE 1 ══════════ -->
+<section class="page">
+  <header class="masthead">
+    <p class="handwritten">~ votre projet est encore flou ? c'est le bon moment ~</p>
+    <h1>Fiche de départ</h1>
+    <p class="subtitle">Clarifiez votre projet nature en 15 minutes</p>
+    <p class="intro">Vous avez une envie, un public ou un lieu, mais le projet reste difficile à formuler. Cette fiche vous aide à identifier le format adapté et à préparer une première discussion avec votre équipe. Vous n'avez pas besoin d'avoir toutes les réponses.</p>
+  </header>
+
+  <h2 class="rubrique">Quelle porte correspond à votre besoin ?</h2>
+  <div class="portes">
+    <div class="porte">
+      <h3>Faire vivre un moment marquant</h3>
+      <p>Vous préparez une journée, un événement ou une première découverte.</p>
+      <p class="format">Format probable : une animation ponctuelle</p>
+    </div>
+    <div class="porte">
+      <h3>Créer un rendez-vous dans la durée</h3>
+      <p>Vous souhaitez permettre à un public de découvrir, pratiquer et progresser au fil des saisons.</p>
+      <p class="format">Format probable : un cycle d'animations</p>
+    </div>
+    <div class="porte">
+      <h3>Faire naître ou transformer un lieu</h3>
+      <p>Vous avez un jardin, une cour, un espace vert ou un terrain à faire vivre.</p>
+      <p class="format">Format probable : un accompagnement de projet</p>
+    </div>
+    <div class="porte">
+      <h3>Faire évoluer les pratiques d'une équipe</h3>
+      <p>Vous souhaitez transmettre des repères et rendre vos agents ou collaborateurs plus autonomes.</p>
+      <p class="format">Format probable : une formation professionnelle</p>
+    </div>
+  </div>
+  <p class="portes-note">Plusieurs portes peuvent se compléter. Un jardin pédagogique peut, par exemple, associer un accompagnement du lieu et un cycle d'animations.</p>
+
+  <h2 class="rubrique"><span class="num">1.</span>Avec quel public souhaitez-vous travailler ?</h2>
+  <div class="checks">
+    <span class="check"><span class="box"></span>Petite enfance</span>
+    <span class="check"><span class="box"></span>Enfants ou adolescents</span>
+    <span class="check"><span class="box"></span>Seniors</span>
+    <span class="check"><span class="box"></span>Habitants ou familles</span>
+    <span class="check"><span class="box"></span>Agents ou professionnels</span>
+    <span class="check"><span class="box"></span>Salariés</span>
+  </div>
+  <p style="margin-top:1.5mm">Autre : <span class="inline-write"></span>&nbsp;&nbsp;Nombre approximatif de participants : <span class="inline-write" style="min-width:30mm"></span></p>
+
+  <h2 class="rubrique"><span class="num">2.</span>Qu'aimeriez-vous voir changer ?</h2>
+  <p class="hint">Après ce projet, qu'aimeriez-vous que les participants aient vécu, compris ou soient capables de faire ?</p>
+  <div class="write"></div>
+  <div class="write"></div>
+
+  <h2 class="rubrique"><span class="num">3.</span>De quoi disposez-vous déjà ?</h2>
+  <div class="checks">
+    <span class="check"><span class="box"></span>Une idée</span>
+    <span class="check"><span class="box"></span>Une date ou une période</span>
+    <span class="check"><span class="box"></span>Un lieu intérieur</span>
+    <span class="check"><span class="box"></span>Un espace extérieur</span>
+    <span class="check"><span class="box"></span>Une équipe mobilisée</span>
+    <span class="check"><span class="box"></span>Un budget identifié</span>
+    <span class="check"><span class="box"></span>Rien de précis pour l'instant</span>
+  </div>
+  <p class="hint" style="margin-top:1.5mm">Quelques mots sur votre point de départ :</p>
+  <div class="write"></div>
+  <div class="write"></div>
+
+  <footer class="colophon">
+    <span><span class="site">La Fabrique du Vivant</span> — animations nature &amp; jardin, accompagnement, formations</span>
+    <span>page 1 / 2</span>
+  </footer>
+</section>
+
+<!-- ══════════ PAGE 2 ══════════ -->
+<section class="page">
+  <h2 class="rubrique" style="margin-top:0"><span class="num">4.</span>Quel rythme conviendrait à votre projet ?</h2>
+  <div class="checks">
+    <span class="check"><span class="box"></span>Une intervention ponctuelle</span>
+    <span class="check"><span class="box"></span>Plusieurs rendez-vous</span>
+    <span class="check"><span class="box"></span>Un projet sur une saison</span>
+    <span class="check"><span class="box"></span>Un accompagnement dans la durée</span>
+    <span class="check"><span class="box"></span>Je ne sais pas encore</span>
+  </div>
+  <p style="margin-top:1.5mm">Période envisagée : <span class="inline-write" style="min-width:100mm"></span></p>
+
+  <h2 class="rubrique"><span class="num">5.</span>Quelles contraintes faut-il respecter ?</h2>
+  <p class="hint">Pensez notamment à l'âge, la mobilité, la taille du groupe, la météo, les horaires, l'accès au lieu ou au matériel déjà disponible.</p>
+  <div class="write"></div>
+  <div class="write"></div>
+
+  <h2 class="rubrique"><span class="num">6.</span>Qui fera vivre le projet dans votre structure ?</h2>
+  <p class="hint">Une personne peut-elle servir de relais ? D'autres membres de l'équipe doivent-ils participer à sa conception ?</p>
+  <div class="write"></div>
+  <div class="write"></div>
+
+  <h2 class="rubrique"><span class="num">7.</span>À quoi reconnaîtrez-vous que le projet est réussi ?</h2>
+  <p class="hint">Que souhaitez-vous observer, entendre ou retrouver quelques jours ou quelques mois après l'intervention ?</p>
+  <div class="write"></div>
+  <div class="write"></div>
+
+  <div class="synthese">
+    <p class="handwritten" style="margin-bottom:1mm">~ votre projet en une phrase ~</p>
+    <p class="phrase">Nous souhaitons permettre à <span class="inline-write"></span> de vivre, découvrir ou apprendre <span class="inline-write"></span>, vers <span class="inline-write" style="min-width:45mm"></span>, dans ou autour de <span class="inline-write" style="min-width:45mm"></span>.</p>
+    <p style="margin-top:2mm">Le format qui semble le plus adapté :</p>
+    <div class="checks" style="margin-top:1mm">
+      <span class="check"><span class="box"></span>Animation ponctuelle</span>
+      <span class="check"><span class="box"></span>Cycle d'animations</span>
+      <span class="check"><span class="box"></span>Accompagnement de projet</span>
+      <span class="check"><span class="box"></span>Formation professionnelle</span>
+      <span class="check"><span class="box"></span>À déterminer ensemble</span>
+    </div>
+    <p style="margin-top:2mm">Notre prochaine étape avant le <span class="inline-write" style="min-width:30mm"></span> : <span class="inline-write" style="min-width:70mm"></span></p>
+  </div>
+
+  <div class="closing">
+    <h2>Votre projet n'a pas besoin d'être parfaitement défini</h2>
+    <p>Vous pouvez répondre au message qui accompagnait cette fiche avec cette synthèse recopiée, une photographie de la fiche remplie ou simplement les éléments que vous connaissez déjà.</p>
+    <p style="margin-top:1.5mm">Je vous aiderai à identifier la suite la plus adaptée, sans engagement.</p>
+    <p class="handwritten" style="margin-top:2.5mm;font-size:17pt">~ Fabrice ~</p>
+  </div>
+
+  <footer class="colophon">
+    <span><span class="site">lafabriqueduvivant.fr</span> — Mâcon · Beaujolais · Lyon</span>
+    <span>page 2 / 2</span>
+  </footer>
+</section>
+
+</body>
+</html>

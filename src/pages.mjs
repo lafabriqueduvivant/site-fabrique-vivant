@@ -3,6 +3,7 @@ import {
   audiencePills,
   cardGrid,
   featureGrid,
+  ficheDepartTeaser,
   finalCta,
   pageHero,
   photoPlaceholder,
@@ -109,6 +110,7 @@ pages.push({
       </div>
     </div>
   </section>
+  ${ficheDepartTeaser("ivory")}
   ${finalCta({
     title: "Parlons de votre projet",
     text: "Une animation ponctuelle, un cycle, un jardin à faire naître ou une équipe à former : racontez-moi votre envie, je vous propose un format adapté."
@@ -228,6 +230,7 @@ pages.push({
       ${audiencePills(audiences)}
     </div>
   </section>
+  ${ficheDepartTeaser("sand")}
   ${finalCta({
     title: "Une animation pour votre structure ?",
     text: "Dites-moi pour quel public et à quelle période. Je vous réponds sous 48 h, avec un format et un devis adaptés."
@@ -247,6 +250,7 @@ pages.push({
   approved: true,
   review: ["Texte validé. Le portrait terrain reste à fournir."],
   body: renderOfferPage({
+    fiche: "link",
     hero: {
       eyebrow: "~ fabriquer la fertilité, de ses mains ~",
       title: "L'atelier terre vivante : le sol vivant entre les mains",
@@ -354,6 +358,7 @@ pages.push({
   approved: true,
   review: draftReview,
   body: renderOfferPage({
+    fiche: "link",
     hero: {
       eyebrow: "~ dehors, dès les premiers pas ~",
       title: "L'éveil à la nature pour les tout-petits",
@@ -452,6 +457,7 @@ pages.push({
     "Les exemples saisonniers et l'organisation d'une classe entière doivent être confirmés."
   ],
   body: renderOfferPage({
+    fiche: "teaser",
     hero: {
       eyebrow: "~ un fil rouge sur l'année ~",
       title: "Découvrir le vivant à l'école, séance après séance",
@@ -535,6 +541,7 @@ pages.push({
   approved: true,
   review: draftReview,
   body: renderOfferPage({
+    fiche: "link",
     hero: {
       eyebrow: "~ apprendre à lire dehors ~",
       title: "La balade qui apprend à lire un paysage vivant",
@@ -624,6 +631,7 @@ pages.push({
   approved: true,
   review: draftReview,
   body: renderOfferPage({
+    fiche: "link",
     hero: {
       eyebrow: "~ la mémoire remonte par les mains ~",
       title: "Les mains dans la terre, la mémoire au jardin",
@@ -758,6 +766,7 @@ pages.push({
     ],
     tags: ["16 ans de terrain public", "réseau GRAINE"]
   })}
+  ${ficheDepartTeaser("sand")}
   ${finalCta({
     title: "Un lieu, une envie ? Parlons-en.",
     text: "Décrivez-moi votre lieu et votre idée, même floue. Je vous réponds sous 48 h, et s'il le faut je viens voir le terrain."
@@ -821,7 +830,8 @@ pages.push({
   </section>
   ${finalCta({
     title: "Une équipe à former ?",
-    text: "Dites-moi votre service, votre effectif et le sujet qui vous occupe. Je vous réponds sous 48 h, avec une proposition de format et un devis."
+    text: "Dites-moi votre service, votre effectif et le sujet qui vous occupe. Je vous réponds sous 48 h, avec une proposition de format et un devis.",
+    ficheLink: true
   })}`
 });
 
@@ -1005,6 +1015,7 @@ pages.push({
       ])}
     </div>
   </section>
+  ${ficheDepartTeaser("sand")}
   ${finalCta({
     title: "Un projet nature sur votre territoire ?",
     text: "Dites-moi votre commune ou votre communauté de communes, et ce qui vous occupe. Je vous réponds sous 48 h, avec une proposition et un devis."
@@ -1282,7 +1293,8 @@ pages.push({
         </div>
       </div>
     </div>
-  </section>`
+  </section>
+  ${ficheDepartTeaser("sand")}`
 });
 
 pages.push({
@@ -1371,6 +1383,67 @@ pages.push({
       <div class="button-row">
         <a class="button" href="/">Retour à l'accueil</a>
         <a class="button button--secondary" href="/animations-nature-jardin/atelier-terre-vivante/">Découvrir l'atelier terre vivante</a>
+      </div>
+    </div>
+  </section>`
+});
+
+pages.push({
+  path: "/fiche-depart/",
+  kind: "fiche",
+  title: "Clarifiez votre projet nature en 15 minutes — La Fabrique du Vivant",
+  description: "Une fiche imprimable pour clarifier votre projet nature, choisir le format adapté et préparer un premier échange.",
+  noindex: true,
+  approved: true,
+  review: ["Page hors menu et hors cocon SEO : porte de maturation vers la Fiche de départ (envoi via le service d'emailing)."],
+  breadcrumbs: [["Fiche de départ", "/fiche-depart/"]],
+  body: `${pageHero({
+    eyebrow: "~ votre projet est encore flou ? ~",
+    title: "Clarifiez votre projet nature en 15 minutes",
+    lead: "Vous avez une envie, un public ou un lieu. Cette fiche imprimable vous aide à choisir le bon format, préparer une discussion avec votre équipe et poser votre prochaine étape.",
+    primary: false,
+    compact: true
+  })}
+  ${soilDivider("ivory")}
+  <section class="section section--ivory">
+    <div class="container contact-layout">
+      <form class="contact-form" action="${site.ficheFormAction || "/fiche-depart/"}" method="post" data-contact-form data-preview="${site.ficheFormAction ? "false" : "true"}">
+        <div class="form-field">
+          <label for="email">Votre email professionnel <span class="form-help">— pour recevoir la fiche</span></label>
+          <input type="email" id="email" name="email" placeholder="prenom@votre-structure.fr" required autocomplete="email">
+        </div>
+        <button class="button button--secondary" type="submit">Recevoir la Fiche de départ</button>
+        <p class="form-note">Votre adresse sert uniquement à vous envoyer la fiche demandée. Vous ne serez pas inscrit à une newsletter.</p>
+        <p class="form-status" data-form-status tabindex="-1" role="status" aria-live="polite"></p>
+      </form>
+      <div>
+        ${sectionHeading("Ce que la fiche vous apporte", "~ quinze minutes, seul ou en équipe ~", "start")}
+        ${processSteps([
+          { title: "Choisir le bon format", text: "Une animation ponctuelle, un cycle, un accompagnement de projet ou une formation : la fiche vous aide à trouver votre porte d'entrée." },
+          { title: "Mettre à plat votre projet", text: "Le public, le lieu, l'objectif et les contraintes, posés noir sur blanc." },
+          { title: "Produire une phrase de synthèse", text: "Utilisable avec votre équipe ou pour un premier échange, sans engagement." }
+        ])}
+      </div>
+    </div>
+  </section>`
+});
+
+pages.push({
+  path: "/fiche-depart/merci/",
+  kind: "thanks",
+  title: "Votre Fiche de départ est en route — La Fabrique du Vivant",
+  description: "Confirmation d'envoi de la Fiche de départ.",
+  noindex: true,
+  approved: true,
+  review: ["Page de confirmation propre au parcours Fiche de départ, séparée de la confirmation des demandes de devis."],
+  body: `<section class="not-found">
+    <div class="container">
+      <p class="handwritten">~ c'est en route ~</p>
+      <h1>Votre Fiche de départ est en route</h1>
+      <p class="not-found__lead">Regardez votre boîte mail : vous y trouverez le lien de téléchargement. Vous pouvez la remplir seul ou avec votre équipe, puis répondre au message avec une photo de la fiche ou vos premières réponses.</p>
+      <div class="button-row">
+        <a class="button" href="/">Retour à l'accueil</a>
+        <a class="button button--secondary" href="/animations-nature-jardin/">Découvrir les animations</a>
       </div>
     </div>
   </section>`

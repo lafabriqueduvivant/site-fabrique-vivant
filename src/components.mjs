@@ -249,7 +249,7 @@ export function practitionerCard(extraSentence = "") {
   </section>`;
 }
 
-export function finalCta({ title = "Parlons de votre projet", text, question = "ou posez-moi simplement votre question, sans devis, sans engagement" }) {
+export function finalCta({ title = "Parlons de votre projet", text, question = "ou posez-moi simplement votre question, sans devis, sans engagement", ficheLink = false }) {
   return `<section class="final-cta wood-texture">
     <div class="container final-cta__inner">
       <p class="handwritten">~ échange sans engagement, réponse sous 48 h ~</p>
@@ -257,6 +257,18 @@ export function finalCta({ title = "Parlons de votre projet", text, question = "
       <p>${text}</p>
       <a class="button" href="/contact/">Demander un devis</a>
       <a class="final-cta__soft-link" href="/contact/?intention=question">${question}</a>
+      ${ficheLink ? `<a class="final-cta__soft-link" href="/fiche-depart/">Votre projet est encore flou ? Clarifiez-le en 15 minutes avec la Fiche de départ.</a>` : ""}
+    </div>
+  </section>`;
+}
+
+export function ficheDepartTeaser(background = "sage") {
+  return `<section class="section section--${background}">
+    <div class="container fiche-teaser">
+      <p class="handwritten">~ votre projet est encore flou ? ~</p>
+      <h2>Clarifiez votre projet nature en 15 minutes</h2>
+      <p>La Fiche de départ vous aide à poser votre public, votre lieu, votre objectif et vos principales contraintes avant de demander un devis.</p>
+      <a class="button button--secondary" href="/fiche-depart/">Découvrir la Fiche de départ</a>
     </div>
   </section>`;
 }

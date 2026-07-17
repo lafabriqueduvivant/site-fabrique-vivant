@@ -1725,3 +1725,18 @@ h3 {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Encart Fiche de départ — porte de maturation, toujours secondaire face au devis */
+.fiche-teaser {
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.fiche-teaser > p:not(.handwritten) {
+  margin: 14px auto 0;
+}
+
+.fiche-teaser .button {
+  margin-top: 26px;
+}

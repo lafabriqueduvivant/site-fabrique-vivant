@@ -2,6 +2,7 @@ import {
   cardGrid,
   faq,
   featureGrid,
+  ficheDepartTeaser,
   finalCta,
   pageHero,
   practitionerCard,
@@ -45,7 +46,8 @@ export function renderOfferPage(data) {
         ${faq(data.faq)}
       </div>
     </section>
-    ${finalCta(data.cta)}`;
+    ${data.fiche === "teaser" ? ficheDepartTeaser("sand") : ""}
+    ${finalCta({ ...data.cta, ficheLink: data.fiche === "link" })}`;
 }
 
 export function renderAudiencePage(data) {
@@ -71,5 +73,6 @@ export function renderAudiencePage(data) {
       </div>
     </section>
     ${data.extraSections?.join("") || ""}
+    ${ficheDepartTeaser("sand")}
     ${finalCta(data.cta)}`;
 }
