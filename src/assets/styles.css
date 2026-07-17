@@ -1194,12 +1194,15 @@ h3 {
   position: relative;
   z-index: 1;
   display: grid;
+  width: 100%;
+  justify-items: center;
   gap: 60px;
 }
 
 .zone-map__place {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   font-weight: 600;
 }
@@ -1212,10 +1215,6 @@ h3 {
   background: var(--clay);
   box-shadow: 0 0 0 2px var(--clay);
   content: "";
-}
-
-.zone-map__place:nth-child(2) {
-  transform: translateX(70px);
 }
 
 .contact-layout {
