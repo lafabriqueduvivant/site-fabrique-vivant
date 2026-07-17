@@ -75,3 +75,60 @@ if (contactForm) {
     }
   });
 }
+
+const ficheForm = document.querySelector("[data-fiche-form]");
+
+if (ficheForm) {
+  const status = ficheForm.querySelector("[data-form-status]");
+  const submitButton = ficheForm.querySelector("button[type='submit']");
+
+  const showStatus = (message) => {
+    if (status) {
+      status.textContent = message;
+      status.focus();
+    }
+  };
+
+  ficheForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const endpoint = ficheForm.dataset.endpoint;
+
+    if (!endpoint) {
+      showStatus("L'envoi est volontairement désactivé : le service d'envoi n'est pas encore branché.");
+      return;
+    }
+
+    const email = ficheForm.querySelector("[name='email']").value.trim();
+    if (submitButton) submitButton.disabled = true;
+    showStatus("Envoi en cours…");
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          optin: {
+            fields: { email },
+            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            isDesktop: true,
+            checkBoxIds: [],
+            surveysResults: []
+          }
+        })
+      });
+
+      if (response.ok) {
+        window.location.assign("/fiche-depart/merci/");
+        return;
+      }
+
+      const data = await response.json().catch(() => null);
+      const fieldError = data && data.errors && data.errors.fields && data.errors.fields.email && data.errors.fields.email[0];
+      showStatus(fieldError || "L'envoi n'a pas abouti. Vérifiez votre adresse email et réessayez dans un instant.");
+    } catch {
+      showStatus("L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez.");
+    }
+
+    if (submitButton) submitButton.disabled = false;
+  });
+}

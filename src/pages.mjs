@@ -1407,7 +1407,7 @@ pages.push({
   ${soilDivider("ivory")}
   <section class="section section--ivory">
     <div class="container contact-layout">
-      <form class="contact-form" action="${site.ficheFormAction || "/fiche-depart/"}" method="post" data-contact-form data-preview="${site.ficheFormAction ? "false" : "true"}">
+      <form class="contact-form" action="/fiche-depart/" method="post" data-fiche-form data-endpoint="${site.ficheFormAction}">
         <div class="form-field">
           <label for="email">Votre email professionnel <span class="form-help">— pour recevoir la fiche</span></label>
           <input type="email" id="email" name="email" placeholder="prenom@votre-structure.fr" required autocomplete="email">
