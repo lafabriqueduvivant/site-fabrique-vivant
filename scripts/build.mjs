@@ -35,14 +35,24 @@ function releaseErrors() {
   if (placeholders.length) {
     errors.push(`${placeholders.length} page(s) contiennent encore au moins une photo provisoire.`);
   }
-  if (!site.formEndpoint) errors.push("Le service de formulaire n'est pas branché.");
   if (!site.formProviderName) errors.push("Le nom du service de formulaire n'est pas renseigné dans la politique de confidentialité.");
   if (!site.publicEmail) errors.push("L'email public n'est pas renseigné.");
-  if (!site.publicPhone || !site.publicPhoneHref) errors.push("Le téléphone public n'est pas renseigné.");
   for (const [key, value] of Object.entries(site.legal)) {
     if (!value) errors.push(`La donnée légale « ${key} » manque.`);
   }
   return errors;
+}
+
+// Points acceptés temporairement (décision Fabrice 2026-07-17) : signalés sans bloquer.
+function releaseWarnings() {
+  const warnings = [];
+  if (!site.formEndpoint) {
+    warnings.push("Formulaire non branché : la page contact n'envoie rien tant que formEndpoint est vide (systeme.io à brancher).");
+  }
+  if (!site.publicPhone || !site.publicPhoneHref) {
+    warnings.push("Téléphone public non renseigné (affiché nulle part pour l'instant).");
+  }
+  return warnings;
 }
 
 function sitemapXml() {
@@ -62,12 +72,16 @@ export async function buildSite({ production = false } = {}) {
       const details = [...errors, "", "Garde-barrières prévues :", ...publicationBlockers.map((item) => `- ${item}`)].join("\n");
       throw new Error(`Publication bloquée volontairement.\n${details}`);
     }
+    for (const warning of releaseWarnings()) {
+      console.warn(`⚠️  ${warning}`);
+    }
   }
 
   await rm(output, { recursive: true, force: true });
   await mkdir(join(output, "assets"), { recursive: true });
   await cp(join(sourceAssets, "images"), join(output, "assets", "images"), { recursive: true });
   await cp(join(sourceAssets, "fonts"), join(output, "assets", "fonts"), { recursive: true });
+  await cp(join(sourceAssets, "design-tokens.css"), join(output, "assets", "design-tokens.css"));
   await cp(join(sourceAssets, "styles.css"), join(output, "assets", "styles.css"));
   await cp(join(sourceAssets, "app.js"), join(output, "assets", "app.js"));
   await cp(join(sourceAssets, "favicon.svg"), join(output, "favicon.svg"));
