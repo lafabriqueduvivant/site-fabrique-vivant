@@ -35,7 +35,7 @@ pages.push({
   title: "Animations nature & jardin, accompagnement de projets — La Fabrique du Vivant",
   description:
     "Animations nature et jardin pour petits et grands, accompagnement de projets, formations. Mâcon, Beaujolais, Lyon. Par un jardinier avec 16 ans de terrain en collectivité.",
-  approved: false,
+  approved: true,
   review: draftReview,
   body: `${pageHero({
     eyebrow: "~ animations nature & jardin, depuis le terrain ~",
@@ -51,8 +51,9 @@ pages.push({
       ${cardGrid(
         [
           {
-            image: "jardiniere",
-            alt: "Jardinière plantée lors d'un atelier avec des résidents",
+            image: "eveil-nature",
+            alt: "Un temps d'éveil à la nature avec des enfants, matières naturelles",
+            position: "center 30%",
             eyebrow: "~ le vivant entre les mains ~",
             title: "Animations nature & jardin",
             text: "Ateliers terre vivante, éveil nature des tout-petits, balades « lecture du vivant », jardin avec les aînés.",
@@ -60,8 +61,8 @@ pages.push({
             linkLabel: "Voir les animations"
           },
           {
-            placeholder: true,
-            icon: "map",
+            image: "jardin-pedagogique",
+            alt: "Jardin vivant avec serre et pergola, massifs fleuris",
             eyebrow: "~ de l'idée au lieu vivant ~",
             title: "Accompagnement de projets",
             text: "Jardin pédagogique, jardin partagé, espaces verts vivants : votre projet porté de la conception à l'autonomie.",
@@ -69,8 +70,8 @@ pages.push({
             linkLabel: "Voir l'accompagnement"
           },
           {
-            placeholder: true,
-            icon: "tools",
+            image: "gestion-differenciee",
+            alt: "Chemin enherbé dans un espace vert en gestion différenciée",
             eyebrow: "~ par quelqu'un qui a fait le métier ~",
             title: "Formations professionnelles",
             text: "Gestion différenciée, compostage, biodiversité : former vos équipes depuis 16 ans d'expérience de terrain.",
@@ -121,7 +122,7 @@ pages.push({
   description:
     "Ateliers et balades nature pour crèches, écoles, seniors, collectivités et entreprises. Interventions à Mâcon, dans le Beaujolais et à Lyon.",
   breadcrumbs: [["Animations nature & jardin", "/animations-nature-jardin/"]],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: `${pageHero({
     eyebrow: "~ le vivant entre les mains ~",
@@ -160,8 +161,8 @@ pages.push({
         [
           {
             featured: true,
-            placeholder: true,
-            icon: "sprout",
+            image: "atelier-terre",
+            alt: "Un pot rempli couche après couche de terre vivante",
             badge: "l'atelier phare",
             eyebrow: "~ fabriquer la fertilité ~",
             title: "L'atelier terre vivante en pots",
@@ -170,8 +171,8 @@ pages.push({
             linkLabel: "Découvrir l'atelier"
           },
           {
-            placeholder: true,
-            icon: "sprout",
+            image: "eveil-nature",
+            alt: "Un temps d'éveil à la nature en crèche, matières naturelles à portée de mains",
             eyebrow: "~ 0-3 ans ~",
             title: "Éveil à la nature en crèche",
             text: "Des sorties sensorielles pour les tout-petits : toucher, sentir, observer, dans le calme et en sécurité.",
@@ -179,8 +180,8 @@ pages.push({
             linkLabel: "Voir l'animation"
           },
           {
-            placeholder: true,
-            icon: "book",
+            image: "scolaire",
+            alt: "Découverte du vivant à l'école, observation et matières naturelles",
             eyebrow: "~ sur l'année ~",
             title: "Programme scolaire « découverte du vivant »",
             text: "Un fil rouge multi-séances pour la classe : sol, plantes, petites bêtes, saisons. Co-construit avec l'enseignant.",
@@ -244,22 +245,26 @@ pages.push({
     ["Atelier terre vivante", "/animations-nature-jardin/atelier-terre-vivante/"]
   ],
   approved: true,
-  review: ["Texte validé. La photo de l'atelier et le portrait terrain restent à fournir."],
+  review: ["Texte validé. Le portrait terrain reste à fournir."],
   body: renderOfferPage({
     hero: {
       eyebrow: "~ fabriquer la fertilité, de ses mains ~",
       title: "L'atelier terre vivante : le sol vivant entre les mains",
       lead:
-        "Un atelier où chacun fabrique, couche après couche, un sol vivant dans un pot de fleurs. Et repart avec, sa graine semée dedans. De la crèche à l'entreprise, on touche, on assemble, on comprend ce qui fait vivre la terre.",
+        "Un atelier où chacun fabrique son propre terreau à partir de matière organique — épluchures, feuilles mortes, compost — assemblés couche après couche dans un pot de fleurs. Et repart avec, sa graine semée dedans. De la crèche à l'entreprise, on touche, on assemble, on comprend ce qui fait vivre la terre.",
       tags: ["environ 2 h, adaptable", "en salle ou dehors", "tout le matériel est fourni"]
     },
     principle: {
       eyebrow: "~ la terre est un monde habité ~",
       title: "Le principe",
-      media: photoPlaceholder("Atelier terre vivante : mains, terre et pots"),
+      media: picture({
+        name: "atelierTerre",
+        alt: "Un pot rempli couche après couche de terre vivante, prêt à recevoir sa graine",
+        caption: "L'atelier terre vivante, en cours de fabrication"
+      }),
       paragraphs: [
-        "Sous nos pieds, la terre grouille de vie. Des vers, des champignons, des milliards d'êtres minuscules qui travaillent sans relâche. C'est ce monde-là qui nourrit les plantes. Pas le sac de terreau du commerce.",
-        "Pendant l'atelier, chacun assemble dans son pot les étages d'un sol vivant : les matières qui nourrissent, les habitants qui transforment, la graine qui couronne le tout. On touche, on sent, on comprend du bout des doigts.",
+        "Sous nos pieds, la terre grouille de vie. Des vers, des champignons, des milliards d'êtres minuscules qui travaillent sans relâche. C'est ce monde-là qui nourrit les plantes. Pas le sac de terreau du commerce : on fabrique le sien.",
+        "Pendant l'atelier, chacun assemble dans son pot les étages d'un sol vivant, entièrement à partir de matière organique : épluchures et déchets de cuisine, feuilles mortes, compost, vers de terre. Les matières qui nourrissent, les habitants qui transforment, la graine qui couronne le tout. On touche, on sent, on comprend du bout des doigts.",
         "Et on repart avec son pot. La plante pousse, la vie continue, le regard sur la terre a changé."
       ]
     },
@@ -284,7 +289,7 @@ pages.push({
     ],
     reassurance:
       "Vous m'écrivez, on échange sur votre public et votre lieu, je vous propose un format et un devis. Le jour J, j'arrive avec tout le matériel.",
-    variantsTitle: "Pour chaque public, l'atelier devient…",
+    variantsTitle: "Cet atelier devient…",
     variantsEyebrow: "~ même terre, mille façons de la toucher ~",
     variants: [
       {
@@ -297,7 +302,7 @@ pages.push({
       },
       {
         icon: "book",
-        eyebrow: "~ du CP au collège ~",
+        eyebrow: "~ de la maternelle au collège ~",
         title: "À l'école",
         text: "Une vraie séance de sciences vivantes : le sol comme écosystème, chaque élève repart avec son expérience en pot.",
         href: "/pour-qui/ecoles/",
@@ -320,12 +325,13 @@ pages.push({
         linkLabel: "Voir la page entreprises"
       }
     ],
-    practitionerSentence: "L'atelier terre vivante, c'est mon métier condensé en un pot de fleurs.",
+    practitionerSentence: "L'atelier terre vivante, c'est mon métier condensé en un pot de fleurs. J'ai testé cette technique neuf ans durant sur ma propre terrasse, avant de la partager avec vos publics.",
     faq: [
+      { question: "Comment se déroule la séance ?", answer: "Selon le public, une courte présentation pour comprendre pourquoi et comment la terre vit, appuyée sur mon expérience de terrain — puis les mains dans la terre pour fabriquer son pot, et un temps de questions à la fin. En crèche, la présentation s'efface : on passe directement aux mains dans la terre." },
       { question: "Et s'il pleut ?", answer: "L'atelier se vit aussi bien en salle que dehors : des tables suffisent. La météo n'annule jamais la séance." },
       { question: "À partir de quel âge ?", answer: "Dès la crèche. Les gestes, la durée et les matières s'adaptent à chaque public, des tout-petits aux aînés." },
       { question: "Pour combien de participants ?", answer: "L'idéal : une dizaine de personnes à la fois, pour que chacun ait vraiment les mains dans la terre. Groupe plus grand ? Parlons-en, il existe des formats pour ça." },
-      { question: "Faut-il préparer quelque chose ?", answer: "Rien. Des tables, un coin pour se laver les mains, et c'est tout : le reste arrive avec moi." },
+      { question: "Faut-il préparer quelque chose ?", answer: "Rien. Des tables, un coin pour se laver les mains, et c'est tout : le reste arrive avec moi. Et si certains participants veulent apporter leur propre pot ou leurs déchets de cuisine pour se les approprier, l'atelier s'adapte très bien à ça aussi." },
       { question: "Combien de temps à l'avance réserver ?", answer: "Quelques semaines d'avance donnent le choix des dates. Mais écrivez-moi même si votre échéance est proche, on trouve souvent une solution." }
     ],
     cta: {
@@ -345,20 +351,24 @@ pages.push({
     ["Animations nature & jardin", "/animations-nature-jardin/"],
     ["Éveil nature 0-3 ans", "/animations-nature-jardin/eveil-nature-petite-enfance/"]
   ],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: renderOfferPage({
     hero: {
       eyebrow: "~ dehors, dès les premiers pas ~",
       title: "L'éveil à la nature pour les tout-petits",
       lead:
-        "Des sorties sensorielles pensées pour les 0-3 ans : toucher, sentir, observer le vivant, chacun à son rythme. Dans votre jardin, dans un parc voisin, ou en salle les jours de pluie.",
+        "Des sorties sensorielles pensées pour les 0-3 ans : toucher, sentir, observer le vivant, chacun à son rythme. Dans votre jardin ou dans un parc voisin.",
       tags: ["des séquences courtes, à leur rythme", "chez vous ou en sortie", "matériel fourni"]
     },
     principle: {
       eyebrow: "~ le vivant se découvre par le corps ~",
       title: "Une rencontre à hauteur d'enfant",
-      media: photoPlaceholder("Éveil nature : petites mains et matières naturelles"),
+      media: picture({
+        name: "eveilNature",
+        alt: "Un temps d'éveil à la nature en crèche, matières naturelles à portée de mains",
+        caption: "L'éveil à la nature, à hauteur d'enfant"
+      }),
       paragraphs: [
         "Au printemps 2026, dans un parc de Mâcon, j'ai ouvert une boîte devant six enfants d'une crèche. Dedans, des escargots de mon jardin. Ils ont regardé, fascinés. Puis chacun s'est approché à son rythme. À la fin de la matinée, tous l'avaient caressé, et nous sommes allés ensemble libérer les escargots au fond du parc.",
         "C'est ça, une sortie d'éveil à la nature : une rencontre avec le vivant, à hauteur d'enfant. On marche dans l'herbe, on cueille des feuilles et des fleurs, on garde une trace de ce qu'on a trouvé. Des séquences courtes, du temps libre, et des matières qu'on a le droit de toucher."
@@ -413,7 +423,7 @@ pages.push({
     variantColumns: 3,
     practitionerSentence: "Une pédagogie du vivant ancrée dans la pratique : je facilite des expériences, les enfants font les leurs.",
     faq: [
-      { question: "Et s'il pleut ?", answer: "La séance se replie en salle : je ramène les matières et le vivant à l'intérieur. La météo n'annule jamais la séance." },
+      { question: "Et s'il pleut ?", answer: "On reporte. Sortir dehors fait partie de l'expérience, surtout en crèche, et l'intérieur ne remplace pas ça." },
       { question: "Faut-il sortir de la structure ?", answer: "Non. Un bout de jardin ou une cour avec un coin d'herbe suffisent. Si un parc est accessible, la sortie devient une aventure." },
       { question: "À partir de quel âge ?", answer: "Dès que l'enfant explore, même avant la marche : les matières se découvrent aussi assis sur une couverture." },
       { question: "Pour combien d'enfants ?", answer: "Par petits groupes, avec un encadrement dimensionné pour l'extérieur. On cale les effectifs ensemble, selon votre organisation." },
@@ -436,7 +446,7 @@ pages.push({
     ["Animations nature & jardin", "/animations-nature-jardin/"],
     ["Programme scolaire", "/animations-nature-jardin/programme-scolaire-decouverte-vivant/"]
   ],
-  approved: false,
+  approved: true,
   review: [
     "Page de projection : aucun programme scolaire n'a encore été livré.",
     "Les exemples saisonniers et l'organisation d'une classe entière doivent être confirmés."
@@ -447,12 +457,16 @@ pages.push({
       title: "Découvrir le vivant à l'école, séance après séance",
       lead:
         "Pas une animation isolée qu'on oublie aux vacances : un programme multi-séances où la classe suit le vivant au fil des saisons. Le sol, les plantes, les petites bêtes, et ce qui les relie.",
-      tags: ["du CP au collège", "sur l'année ou le trimestre", "co-construit avec l'enseignant"]
+      tags: ["de la maternelle au collège", "sur l'année ou le trimestre", "co-construit avec l'enseignant"]
     },
     principle: {
       eyebrow: "~ le vivant ne tient pas en une heure ~",
       title: "Le principe",
-      media: photoPlaceholder("Programme scolaire : carnet, semis et observations"),
+      media: picture({
+        name: "scolaire",
+        alt: "Découverte du vivant à l'école : observation et matières naturelles",
+        caption: "Le vivant, découvert séance après séance"
+      }),
       paragraphs: [
         "Une animation nature isolée, c'est un bon souvenir. Un programme, c'est autre chose : les élèves plantent en automne, observent en hiver, voient germer au printemps. Le vivant devient un feuilleton dont la classe connaît les personnages.",
         "Chaque séance alterne le dehors et le faire : on touche le sol, on cherche les petites bêtes, on garde une trace de ce qu'on a trouvé. D'une séance à l'autre, les élèves retrouvent ce qu'ils ont semé, au sens propre."
@@ -496,7 +510,7 @@ pages.push({
     practitionerSentence: "Une pédagogie du vivant ancrée dans la pratique : les élèves font de vraies expériences, pas des exercices.",
     faq: [
       { question: "Combien de séances ?", answer: "À composer ensemble : du trimestre, avec 3 ou 4 séances, à l'année complète. C'est la régularité qui fait la valeur du programme." },
-      { question: "Pour quels niveaux ?", answer: "Du CP au collège, et le périscolaire. Le contenu s'adapte au niveau, le principe reste le même : faire d'abord, comprendre ensuite." },
+      { question: "Pour quels niveaux ?", answer: "De la maternelle au collège, et le périscolaire. Le contenu s'adapte au niveau, le principe reste le même : faire d'abord, comprendre ensuite." },
       { question: "Il faut un jardin dans l'école ?", answer: "Non. Une cour avec un coin de terre, des bacs, ou même un parc proche suffisent pour démarrer." },
       { question: "Une classe entière, c'est possible ?", answer: "Oui, en s'organisant : demi-classe en alternance ou co-animation avec vous. On cale le format ensemble. Cette organisation reste à confirmer dans l'aperçu." },
       { question: "Comment ça se finance ?", answer: "Projet d'école, coopérative, mairie, parfois des aides dédiées aux projets nature. On en parle au devis, et je peux appuyer votre dossier." }
@@ -518,7 +532,7 @@ pages.push({
     ["Animations nature & jardin", "/animations-nature-jardin/"],
     ["Balade lecture du vivant", "/animations-nature-jardin/balade-nature-lecture-du-vivant/"]
   ],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: renderOfferPage({
     hero: {
@@ -537,7 +551,7 @@ pages.push({
         caption: "~ lever les yeux, chercher les liens, laisser le paysage parler ~"
       }),
       paragraphs: [
-        "Au printemps 2026, sur un site touristique de Saône-et-Loire, j'ai ouvert une balade en disant : « On ne vivait pas dans la grotte. La grotte, c'était l'abri. Le vrai supermarché, c'est ce qu'on va traverser. » Deux heures plus tard, le groupe s'arrêtait tout seul devant un arbre mort en se demandant pourquoi personne ne le coupe.",
+        "Au printemps 2026, sur un site touristique de Saône-et-Loire, j'ai ouvert une balade en disant : « On ne vivait pas dans la grotte. La grotte, c'était l'abri. Le vrai supermarché, c'est ce qu'on va traverser. »",
         "Pendant la balade, on ne se contente pas d'écouter : on cherche, on touche, on sent. Chaque arrêt commence par un geste, l'explication vient après. Et à la fin, le paysage n'est plus le même : il raconte quelque chose."
       ]
     },
@@ -607,7 +621,7 @@ pages.push({
     ["Animations nature & jardin", "/animations-nature-jardin/"],
     ["Ateliers jardin seniors", "/animations-nature-jardin/atelier-jardinage-seniors/"]
   ],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: renderOfferPage({
     hero: {
@@ -671,7 +685,7 @@ pages.push({
   description:
     "Conception et accompagnement de projets nature et jardin : jardin pédagogique, jardin partagé, espace vert vivant. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [["Accompagnement de projets", "/accompagnement-projets-nature/"]],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: `${pageHero({
     eyebrow: "~ de l'idée au lieu vivant ~",
@@ -706,22 +720,22 @@ pages.push({
       ${sectionHeading("Trois types de projets", "~ trois portes, une même démarche ~")}
       ${cardGrid([
         {
-          placeholder: true,
-          icon: "book",
+          image: "jardin-pedagogique",
+          alt: "Jardin vivant avec serre et pergola, massifs fleuris",
           eyebrow: "~ école, crèche ~",
           title: "Jardin pédagogique",
           text: "Un jardin qui vit plus d'un printemps : conçu pour durer, relié aux animations, porté par l'équipe."
         },
         {
-          placeholder: true,
-          icon: "group",
+          image: "jardin-partage",
+          alt: "Panneau d'un jardin partagé, tableau d'organisation collective",
           eyebrow: "~ commune, quartier, résidence ~",
           title: "Jardin partagé",
           text: "Un jardin qui tient dans la durée, parce que le collectif se construit avant les plates-bandes."
         },
         {
-          placeholder: true,
-          icon: "map",
+          image: "conception-espaces",
+          alt: "Panneau pédagogique de conception d'espaces comestibles en ville",
           eyebrow: "~ communes, entreprises ~",
           title: "Conseil & conception d'espaces",
           text: "Lire votre lieu, révéler ce qu'il peut devenir : diagnostic, scénarios et plan d'action."
@@ -733,7 +747,10 @@ pages.push({
   ${splitSection({
     heading: "Seize ans de l'autre côté",
     eyebrow: "~ je sais ce qu'un espace coûte à entretenir ~",
-    media: photoPlaceholder("Lecture de site et accompagnement de projet"),
+    media: picture({
+      name: "gestionDifferenciee",
+      alt: "Chemin enherbé dans un espace vert en gestion différenciée"
+    }),
     background: "sage",
     paragraphs: [
       "Seize ans agent territorial dans un service espaces verts : je sais ce qu'un aménagement coûte en heures d'entretien, ce qui tient dans le temps et ce qui meurt au premier été. Un projet que je conçois est un projet que vos équipes peuvent suivre.",
@@ -754,7 +771,7 @@ pages.push({
   description:
     "Formations professionnelles pour agents de collectivités, bailleurs et associations : gestion différenciée, compostage, biodiversité. Formateur indépendant, 16 ans de terrain.",
   breadcrumbs: [["Formations professionnelles", "/formations-professionnelles/"]],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: `${pageHero({
     eyebrow: "~ par quelqu'un qui a fait le métier ~",
@@ -767,7 +784,10 @@ pages.push({
   ${splitSection({
     heading: "Une légitimité de terrain",
     eyebrow: "~ pas un théoricien ~",
-    media: photoPlaceholder("Formation professionnelle sur le terrain"),
+    media: picture({
+      name: "formationTerrain",
+      alt: "Fabrice devant un panneau pédagogique d'un espace naturel"
+    }),
     background: "sand",
     paragraphs: [
       "Seize ans agent territorial dans un service espaces verts. J'ai vécu la bascule du zéro phyto, les plannings de tonte, les remarques des riverains, les étés de sécheresse. Quand je forme vos agents, je parle leur langue : celle du terrain, des contraintes réelles et du temps qui manque.",
@@ -779,11 +799,11 @@ pages.push({
     <div class="container">
       ${sectionHeading("Le catalogue", "~ cinq formations, un fil : le vivant ~")}
       ${cardGrid([
-        { icon: "tools", eyebrow: "~ la demande n°1 des communes ~", title: "Gestion différenciée des espaces verts", text: "Classer les espaces, adapter l'entretien, gagner du temps et de la biodiversité. Expliquée par un ancien agent." },
-        { icon: "sprout", eyebrow: "~ du geste au site qui tourne ~", title: "Compostage et lombricompostage", text: "Pour les équipes et relais de terrain : comprendre le vivant du compost et piloter un site qui fonctionne." },
-        { icon: "leaves", eyebrow: "~ faire de la place au vivant ~", title: "Biodiversité et nature en ville", text: "Comprendre, accueillir et faire accepter le vivant en milieu urbain, riverains compris." },
-        { icon: "watering", eyebrow: "~ le climat qui vient ~", title: "Adaptation au changement climatique", text: "Sols vivants, eau, choix végétaux et micro-climats : des espaces verts qui tiennent les étés qui viennent." },
-        { icon: "group", eyebrow: "~ sans s'épuiser ~", title: "Créer et animer un jardin partagé", text: "Pour centres sociaux, MJC, associations et bailleurs : le collectif, le lieu et les saisons." }
+        { image: "gestion-differenciee", alt: "Espace vert en gestion différenciée, entretien adapté", eyebrow: "~ la demande n°1 des communes ~", title: "Gestion différenciée des espaces verts", text: "Classer les espaces, adapter l'entretien, gagner du temps et de la biodiversité. Expliquée par un ancien agent.", href: "/contact/?besoin=formation&objet=la formation gestion différenciée des espaces verts", linkLabel: "Demander un devis" },
+        { image: "compostage", alt: "Atelier de formation au compostage et au lombricompostage", eyebrow: "~ du geste au site qui tourne ~", title: "Compostage et lombricompostage", text: "Pour les équipes et relais de terrain : comprendre le vivant du compost et piloter un site qui fonctionne.", href: "/contact/?besoin=formation&objet=la formation compostage et lombricompostage", linkLabel: "Demander un devis" },
+        { image: "biodiversite-ville", alt: "Espace de biodiversité et nature en ville", position: "center 10%", eyebrow: "~ faire de la place au vivant ~", title: "Biodiversité et nature en ville", text: "Comprendre, accueillir et faire accepter le vivant en milieu urbain, riverains compris.", href: "/contact/?besoin=formation&objet=la formation biodiversité et nature en ville", linkLabel: "Demander un devis" },
+        { image: "adaptation-climat", alt: "Pergola en polyculture, ombrage et diversité végétale", eyebrow: "~ le climat qui vient ~", title: "Adaptation au changement climatique", text: "Sols vivants, eau, choix végétaux et micro-climats : des espaces verts qui tiennent les étés qui viennent.", href: "/contact/?besoin=formation&objet=la formation adaptation au changement climatique", linkLabel: "Demander un devis" },
+        { image: "jardin-partage-forma", alt: "Courge récoltée dans un jardin partagé", eyebrow: "~ sans s'épuiser ~", title: "Créer et animer un jardin partagé", text: "Pour centres sociaux, MJC, associations et bailleurs : le collectif, le lieu et les saisons.", href: "/contact/?besoin=formation&objet=la formation créer et animer un jardin partagé", linkLabel: "Demander un devis" }
       ], { columns: 3 })}
       <div class="button-row"><a class="button button--secondary" href="/contact/?besoin=formation">Parler de la formation de votre équipe</a></div>
     </div>
@@ -812,7 +832,7 @@ pages.push({
   description:
     "Intervenant nature pour crèches et RPE : éveil sensoriel, sorties nature, ateliers terre. Mâcon, Beaujolais, Lyon. Devis rapide.",
   breadcrumbs: [["Crèches & petite enfance", "/pour-qui/creches-petite-enfance/"]],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: renderAudiencePage({
     hero: {
@@ -830,16 +850,16 @@ pages.push({
       { eyebrow: "~ un projet qui parle aux familles ~", title: "Un plus pour votre projet pédagogique", text: "L'éveil à la nature s'inscrit dans votre projet d'établissement et donne aux familles quelque chose de concret à raconter." }
     ],
     offers: [
-      { placeholder: true, icon: "sprout", badge: "pour commencer", eyebrow: "~ la porte d'entrée ~", title: "Éveil à la nature 0-3 ans", text: "Des sorties sensorielles régulières, adaptées aux rythmes des tout-petits : matières, saisons, petites découvertes dans le calme.", href: "/animations-nature-jardin/eveil-nature-petite-enfance/", linkLabel: "Voir l'animation" },
-      { placeholder: true, icon: "hand", eyebrow: "~ version tout-petits ~", title: "L'atelier terre vivante, décliné 0-3 ans", text: "L'atelier phare adapté aux plus jeunes : toucher la terre, planter, observer. Une exploration à leur hauteur.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
-      { placeholder: true, icon: "watering", eyebrow: "~ pour durer ~", title: "Un coin jardin dans votre crèche", text: "Un accompagnement pour créer un espace nature durable chez vous : bacs, plantations et parcours sensoriel que l'équipe fait vivre ensuite.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" }
+      { image: "eveil-nature", alt: "Un temps d'éveil à la nature en crèche", badge: "pour commencer", eyebrow: "~ la porte d'entrée ~", title: "Éveil à la nature 0-3 ans", text: "Des sorties sensorielles régulières, adaptées aux rythmes des tout-petits : matières, saisons, petites découvertes dans le calme.", href: "/animations-nature-jardin/eveil-nature-petite-enfance/", linkLabel: "Voir l'animation" },
+      { image: "atelier-terre", alt: "Un pot rempli de terre vivante", eyebrow: "~ version tout-petits ~", title: "L'atelier terre vivante, décliné 0-3 ans", text: "L'atelier phare adapté aux plus jeunes : toucher la terre, planter, observer. Une exploration à leur hauteur.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
+      { image: "jardin-pedagogique", alt: "Jardin vivant avec serre et pergola, massifs fleuris", eyebrow: "~ pour durer ~", title: "Un coin jardin dans votre crèche", text: "Un accompagnement pour créer un espace nature durable chez vous : bacs, plantations et parcours sensoriel que l'équipe fait vivre ensuite.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" }
     ],
     teamTitle: "Comment ça se passe avec votre équipe",
     teamEyebrow: "~ vos pros restent au centre ~",
     teamPoints: [
       { icon: "group", title: "Co-animation, pas remplacement", text: "Vos professionnelles connaissent les enfants et restent leur repère affectif. Moi, j'apporte le vivant et je mène le fil." },
       { icon: "compass", title: "Sécurité et rythmes respectés", text: "La zone est inspectée, les matières adaptées et l'encadrement dimensionné pour l'extérieur. Sieste et repas ne sont jamais bousculés." },
-      { icon: "watering", title: "Zéro préparation pour vous", text: "J'arrive avec tout le matériel et je repars avec. Il ne vous faut qu'un bout de dehors, ou une salle les jours de pluie." }
+      { icon: "watering", title: "Zéro préparation pour vous", text: "J'arrive avec tout le matériel et je repars avec. Il ne vous faut qu'un bout de dehors, ou une salle les jours de pluie. Pas de coin extérieur chez vous ? On en trouve un ensemble : je vous fais des propositions de lieux à proximité." }
     ],
     cta: {
       title: "Et si la nature entrait dans votre crèche ?",
@@ -855,15 +875,15 @@ pages.push({
   description:
     "Animations nature à l'école, programme découverte du vivant et création de jardin pédagogique. Intervenant à Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [["Écoles", "/pour-qui/ecoles/"]],
-  approved: false,
+  approved: true,
   review: ["Texte à valider. Cette page présente des formats scolaires encore non livrés."],
   body: renderAudiencePage({
     hero: {
       eyebrow: "~ apprendre dehors, pour de vrai ~",
       title: "Le vivant comme salle de classe",
       lead:
-        "Des animations et des projets nature pour l'école et le périscolaire : le sol, les plantes, les petites bêtes deviennent le support des apprentissages. Dans la cour, au parc, ou en classe.",
-      tags: ["du CP au collège", "co-construit avec l'enseignant", "matériel fourni"]
+        "Des animations et des projets nature pour l'école et le périscolaire, de la maternelle au collège : le sol, les plantes, les petites bêtes deviennent le support des apprentissages. Dans la cour, au parc, ou en classe.",
+      tags: ["de la maternelle au collège", "co-construit avec l'enseignant", "matériel fourni"]
     },
     benefitsTitle: "Ce que vos élèves y gagnent",
     benefitsEyebrow: "~ et vous aussi ~",
@@ -873,9 +893,9 @@ pages.push({
       { eyebrow: "~ du ponctuel au projet d'école ~", title: "Une porte vers plus grand", text: "Une animation peut devenir un programme, puis un coin nature ou un jardin pédagogique. Chaque étape prépare la suivante." }
     ],
     offers: [
-      { placeholder: true, icon: "hand", eyebrow: "~ pour goûter ~", title: "Une animation ponctuelle", text: "L'atelier terre vivante en classe ou une balade lecture du vivant : une séance pour rencontrer le vivant et me rencontrer.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
-      { placeholder: true, icon: "book", badge: "le format riche", eyebrow: "~ sur l'année ~", title: "Le programme « découverte du vivant »", text: "Un fil rouge multi-séances où la classe suit le vivant au fil des saisons.", href: "/animations-nature-jardin/programme-scolaire-decouverte-vivant/", linkLabel: "Voir le programme" },
-      { placeholder: true, icon: "watering", eyebrow: "~ pour durer ~", title: "Un jardin pédagogique", text: "L'accompagnement pour créer un jardin d'école qui survit aux grandes vacances.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" }
+      { image: "atelier-terre", alt: "Un pot rempli de terre vivante", eyebrow: "~ pour goûter ~", title: "Une animation ponctuelle", text: "L'atelier terre vivante en classe ou une balade lecture du vivant : une séance pour rencontrer le vivant et me rencontrer.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
+      { image: "scolaire", alt: "Découverte du vivant à l'école", badge: "le format riche", eyebrow: "~ sur l'année ~", title: "Le programme « découverte du vivant »", text: "Un fil rouge multi-séances où la classe suit le vivant au fil des saisons.", href: "/animations-nature-jardin/programme-scolaire-decouverte-vivant/", linkLabel: "Voir le programme" },
+      { image: "jardin-pedagogique", alt: "Jardin vivant avec serre et pergola, massifs fleuris", eyebrow: "~ pour durer ~", title: "Un jardin pédagogique", text: "L'accompagnement pour créer un jardin d'école qui survit aux grandes vacances.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" }
     ],
     teamTitle: "Comment ça se passe avec vous",
     teamEyebrow: "~ l'enseignant au centre ~",
@@ -898,7 +918,7 @@ pages.push({
   description:
     "Ateliers jardin et nature pour EHPAD et résidences seniors : sensorialité, mémoire, lien social. Intervenant à Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [["Maisons seniors & EHPAD", "/pour-qui/maisons-seniors-ehpad/"]],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: renderAudiencePage({
     hero: {
@@ -917,7 +937,7 @@ pages.push({
     ],
     offers: [
       { image: "jardiniere", alt: "Jardinière plantée avec des résidents", badge: "le format riche", eyebrow: "~ un cycle au fil des saisons ~", title: "Ateliers jardin multi-séances", text: "On plante, on retrouve les plantes, on les soigne, on récolte. Le format le plus riche pour vos résidents.", href: "/animations-nature-jardin/atelier-jardinage-seniors/", linkLabel: "Voir les ateliers" },
-      { placeholder: true, icon: "sprout", eyebrow: "~ pour commencer ~", title: "L'atelier terre vivante, version seniors", text: "Fabriquer un sol vivant en pot, à hauteur de table : une séance ponctuelle qui marque.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
+      { image: "atelier-terre", alt: "Un pot rempli de terre vivante", eyebrow: "~ pour commencer ~", title: "L'atelier terre vivante, version seniors", text: "Fabriquer un sol vivant en pot, à hauteur de table : une séance ponctuelle qui marque.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
       { image: "cedres", alt: "Paysage boisé pour une balade douce", eyebrow: "~ si vous avez un parc ~", title: "La balade douce", text: "Une lecture du vivant au rythme des résidents, dans votre parc ou aux abords.", href: "/animations-nature-jardin/balade-nature-lecture-du-vivant/", linkLabel: "Voir la balade" }
     ],
     teamTitle: "Comment ça se passe avec votre équipe",
@@ -941,7 +961,7 @@ pages.push({
   description:
     "Animations nature pour habitants, formations d'agents, accompagnement de projets : un prestataire qui a passé 16 ans en collectivité. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [["Collectivités", "/pour-qui/collectivites-communautes-communes/"]],
-  approved: false,
+  approved: true,
   review: draftReview,
   body: `${pageHero({
     eyebrow: "~ seize ans dans vos services ~",
@@ -954,7 +974,10 @@ pages.push({
   ${splitSection({
     heading: "L'atout maître",
     eyebrow: "~ pas un prestataire hors-sol ~",
-    media: photoPlaceholder("Intervention auprès d'une collectivité"),
+    media: picture({
+      name: "formationTerrain",
+      alt: "Fabrice devant un panneau pédagogique d'un espace naturel"
+    }),
     background: "sand",
     paragraphs: [
       "J'ai été agent territorial pendant seize ans. Je connais vos plannings, vos budgets, vos riverains qui appellent quand l'herbe dépasse, vos étés à arroser ce qui grille. Quand je travaille pour une collectivité, je ne découvre pas votre monde : j'en viens.",
@@ -995,7 +1018,7 @@ pages.push({
   description:
     "Ateliers nature et jardin pour entreprises : team building végétal, pauses vertes, projets RSE. Lyon, Mâcon, Beaujolais. Sur votre site ou en extérieur.",
   breadcrumbs: [["Entreprises", "/pour-qui/entreprises/"]],
-  approved: false,
+  approved: true,
   review: ["Texte à valider. Aucune prestation entreprise n'a encore été livrée ; aucun témoignage n'est affiché."],
   body: renderAudiencePage({
     hero: {
@@ -1015,9 +1038,9 @@ pages.push({
     offersTitle: "Les formats pensés pour vous",
     offersEyebrow: "~ de la pause verte au projet de site ~",
     offers: [
-      { placeholder: true, icon: "sprout", badge: "pour commencer", eyebrow: "~ 2 h sur votre site ~", title: "L'atelier terre vivante, version équipe", text: "Chacun fabrique un sol vivant dans son pot et repart avec. Dans une salle de réunion ou dehors.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
+      { image: "atelier-terre", alt: "Un pot rempli de terre vivante", badge: "pour commencer", eyebrow: "~ 2 h sur votre site ~", title: "L'atelier terre vivante, version équipe", text: "Chacun fabrique un sol vivant dans son pot et repart avec. Dans une salle de réunion ou dehors.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
       { image: "cedres", alt: "Paysage boisé pour une balade d'équipe", eyebrow: "~ marcher et comprendre ~", title: "La balade lecture du vivant", text: "Une sortie où l'équipe apprend à lire un paysage. Marcher ensemble dehors change les conversations.", href: "/animations-nature-jardin/balade-nature-lecture-du-vivant/", linkLabel: "Voir la balade" },
-      { placeholder: true, icon: "map", eyebrow: "~ au-delà de l'événement ~", title: "Le projet de site", text: "Végétaliser vos abords, créer un potager d'entreprise, former des référents : une démarche RSE visible depuis les bureaux.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" }
+      { image: "conception-espaces", alt: "Panneau pédagogique de conception d'espaces comestibles en ville", position: "center 45%", eyebrow: "~ au-delà de l'événement ~", title: "Le projet de site", text: "Végétaliser vos abords, créer un potager d'entreprise, former des référents : une démarche RSE visible depuis les bureaux.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" }
     ],
     teamTitle: "Pourquoi pas un simple team building ?",
     teamEyebrow: "~ le mot anti-gadget ~",
@@ -1040,8 +1063,8 @@ pages.push({
   description:
     "16 ans agent territorial des espaces verts, jardinier-praticien du vivant, membre du réseau GRAINE. L'histoire et l'approche de La Fabrique du Vivant.",
   breadcrumbs: [["À propos", "/a-propos/"]],
-  approved: false,
-  review: ["Page identitaire à valider en priorité. Le portrait terrain reste à réaliser."],
+  approved: true,
+  review: ["Page identitaire à valider en priorité."],
   body: `${pageHero({
     eyebrow: "~ enchanté, moi c'est Fabrice ~",
     title: "Un jardinier passé de l'autre côté du guidon",
@@ -1053,7 +1076,11 @@ pages.push({
   ${splitSection({
     heading: "Le parcours",
     eyebrow: "~ 2004-2020 : les mains dans la terre publique ~",
-    media: photoPlaceholder("Portrait de Fabrice sur le terrain"),
+    media: picture({
+      name: "fabricePortrait",
+      alt: "Portrait de Fabrice en extérieur",
+      position: "center 25%"
+    }),
     background: "sand",
     paragraphs: [
       "Pendant seize ans, j'ai été agent territorial dans un service espaces verts : production florale, plantations, entretien des espaces publics. Le métier appris par le terrain, saison après saison.",
@@ -1100,7 +1127,7 @@ pages.push({
   description:
     "Animations nature, accompagnements et formations à Mâcon, dans le Nord Beaujolais, à Villefranche-sur-Saône et Lyon. Déplacement dans votre structure.",
   breadcrumbs: [["Zone d'intervention", "/zone-intervention/"]],
-  approved: false,
+  approved: true,
   review: [
     "La liste des villes citées doit confirmer le rayon de déplacement réel.",
     "La promesse « déplacement compris » doit être validée."
@@ -1171,7 +1198,7 @@ pages.push({
   description:
     "Demandez un devis pour une animation, un accompagnement ou une formation nature et jardin. Réponse rapide, échange sans engagement.",
   breadcrumbs: [["Contact & devis", "/contact/"]],
-  approved: false,
+  approved: true,
   review: ["Le formulaire est complet mais son envoi reste neutralisé jusqu'au choix du service."],
   body: `${pageHero({
     eyebrow: "~ échange sans engagement ~",
@@ -1232,7 +1259,7 @@ pages.push({
           <input type="email" id="email" name="email" placeholder="prenom@votre-structure.fr" required autocomplete="email">
         </div>
         <button class="button" type="submit">Envoyer ma demande</button>
-        <p class="form-note"><span class="handwritten" style="display:block">~ pas encore prêt ? ~</span>Une simple question fait très bien l'affaire, le devis attendra que vous soyez prêt. Vos données servent uniquement à vous répondre. <a href="/confidentialite/">En savoir plus</a>.</p>
+        <p class="form-note"><span class="handwritten" style="display:block">~ pas encore prêt ? ~</span>Une simple question fait très bien l'affaire, le devis attendra que vous soyez prêt.</p>
         <p class="form-status" data-form-status tabindex="-1" role="status" aria-live="polite"></p>
       </form>
       <div class="contact-next">
@@ -1244,8 +1271,12 @@ pages.push({
           { title: "Vous recevez une proposition et un devis", text: "Un format pensé pour vous, un devis clair, et tout le temps qu'il faut pour décider." }
         ])}
         <div class="contact-details">
-          <p class="handwritten">~ vous préférez le téléphone ? ~</p>
-          ${site.publicPhone ? `<a href="tel:${site.publicPhoneHref}">${site.publicPhone}</a>` : '<span class="missing-value">Coordonnées à ajouter avant publication</span>'}
+          <p class="handwritten">~ vous préférez l'email ? ~</p>
+          ${
+            site.publicEmail
+              ? `<span class="email-obfuscated" data-user="${site.publicEmail.split("@")[0]}" data-domain="${site.publicEmail.split("@")[1]}">${site.publicEmail.split("@")[0]} (at) ${site.publicEmail.split("@")[1].replace(".", " (point) ")}</span>`
+              : '<span class="missing-value">Coordonnées à ajouter avant publication</span>'
+          }
         </div>
       </div>
     </div>
@@ -1258,8 +1289,8 @@ pages.push({
   title: "Mentions légales — La Fabrique du Vivant",
   description: "Mentions légales du site lafabriqueduvivant.fr.",
   breadcrumbs: [["Mentions légales", "/mentions-legales/"]],
-  approved: false,
-  review: ["Page non publiable tant que l'identité juridique, le SIRET, l'adresse et l'email public ne sont pas complétés."],
+  approved: true,
+  review: ["Statut et SIRET complétés le 2026-07-17. Pas d'adresse professionnelle ni d'email public affichés (décision Fabrice) — le contact passe uniquement par la page contact."],
   body: `${pageHero({
     eyebrow: "~ informations obligatoires ~",
     title: "Mentions légales",
@@ -1275,9 +1306,7 @@ pages.push({
         <li><strong>Nom :</strong> ${site.legal.fullName || missing("Nom complet")}</li>
         <li><strong>Statut :</strong> ${site.legal.status || missing("Statut juridique")}</li>
         <li><strong>SIRET :</strong> ${site.legal.siret || missing("SIRET")}</li>
-        <li><strong>Adresse :</strong> ${site.legal.address || missing("Adresse professionnelle")}</li>
-        <li><strong>Email :</strong> ${site.publicEmail || missing("Email public")}</li>
-        <li><strong>Directeur de la publication :</strong> ${site.legal.fullName || missing("Nom complet")}</li>
+        <li><strong>Contact :</strong> <a href="/contact/">Page contact</a></li>
       </ul>
       <h2>Hébergement</h2>
       <p>Le site est hébergé par <strong>${site.legal.hostName}</strong>, ${site.legal.hostAddress}.</p>
@@ -1297,7 +1326,7 @@ pages.push({
   title: "Politique de confidentialité — La Fabrique du Vivant",
   description: "Comment lafabriqueduvivant.fr traite les données transmises via le formulaire de contact.",
   breadcrumbs: [["Confidentialité", "/confidentialite/"]],
-  approved: false,
+  approved: true,
   review: ["Le service de formulaire et la durée précise de conservation devront être ajoutés avant publication."],
   body: `${pageHero({
     eyebrow: "~ vos informations restent les vôtres ~",
@@ -1317,7 +1346,7 @@ pages.push({
       <h2>Qui a accès à ces données</h2>
       <p>Moi seul, ainsi que le prestataire technique chargé de transmettre le formulaire : ${site.formProviderName || missing("Service de formulaire")}.</p>
       <h2>Vos droits</h2>
-      <p>Vous pouvez demander d'accéder à vos données, de les corriger ou de les supprimer. Il suffit d'écrire à ${site.publicEmail || missing("Email public")}.</p>
+      <p>Vous pouvez demander d'accéder à vos données, de les corriger ou de les supprimer. Il suffit de m'écrire depuis la <a href="/contact/">page contact</a>.</p>
       <h2>Cookies</h2>
       <p>Ce site n'utilise pas de cookies de suivi ou de publicité et n'embarque aucun outil de mesure d'audience au lancement.</p>
     </div>
@@ -1330,7 +1359,7 @@ pages.push({
   title: "Votre message est bien parti — La Fabrique du Vivant",
   description: "Confirmation d'envoi du formulaire de contact.",
   noindex: true,
-  approved: false,
+  approved: true,
   review: ["Page de confirmation à valider et à tester lorsque le service de formulaire sera branché."],
   body: `<section class="not-found">
     <div class="container">

@@ -16,6 +16,42 @@ const imageSets = {
     smallWidth: 450,
     large: "/assets/images/photo-saule-1200.webp",
     largeWidth: 675
+  },
+  atelierTerre: {
+    small: "/assets/images/photo-atelier-terre-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-atelier-terre-1400.webp",
+    largeWidth: 1400
+  },
+  eveilNature: {
+    small: "/assets/images/photo-eveil-nature-700.webp",
+    smallWidth: 700,
+    large: "/assets/images/photo-eveil-nature-1080.webp",
+    largeWidth: 1080
+  },
+  scolaire: {
+    small: "/assets/images/photo-scolaire-300.webp",
+    smallWidth: 300,
+    large: "/assets/images/photo-scolaire-423.webp",
+    largeWidth: 423
+  },
+  fabricePortrait: {
+    small: "/assets/images/photo-fabrice-portrait-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-fabrice-portrait-1400.webp",
+    largeWidth: 1400
+  },
+  formationTerrain: {
+    small: "/assets/images/photo-formation-terrain-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-formation-terrain-1000.webp",
+    largeWidth: 1000
+  },
+  gestionDifferenciee: {
+    small: "/assets/images/photo-gestion-differenciee-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-gestion-differenciee-1400.webp",
+    largeWidth: 1400
   }
 };
 
@@ -118,7 +154,7 @@ export function cardGrid(items, options = {}) {
 
 function renderCard(item) {
   const media = item.image
-    ? `<div class="card__media"><img src="/assets/images/photo-${item.image}-800.webp" alt="${item.alt || ""}" loading="lazy" decoding="async"></div>`
+    ? `<div class="card__media"><img src="/assets/images/photo-${item.image}-800.webp" alt="${item.alt || ""}" style="object-position:${item.position || "center"}" loading="lazy" decoding="async"></div>`
     : item.placeholder
       ? `<div class="card__media card__media--placeholder" data-placeholder-photo="true">${icon(item.icon || "sprout")}<span>Photo à prévoir</span></div>`
       : `<div class="card__media card__media--illustration">${icon(item.icon || "sprout")}</div>`;
@@ -198,8 +234,8 @@ export function practitionerCard(extraSentence = "") {
   return `<section class="section section--ivory practitioner-section">
     <div class="container">
       <article class="practitioner-card">
-        <div class="practitioner-card__portrait" data-placeholder-photo="true">
-          ${icon("sprout")}<span>Portrait terrain à prévoir</span>
+        <div class="practitioner-card__portrait">
+          <img src="/assets/images/photo-fabrice-portrait-avatar.webp" alt="Portrait de Fabrice" width="150" height="150" loading="lazy" decoding="async">
         </div>
         <div>
           <p class="handwritten">~ qui anime ? ~</p>

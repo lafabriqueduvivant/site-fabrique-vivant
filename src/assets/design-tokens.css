@@ -1,0 +1,22 @@
+/* Generated from tokens.json. Do not edit directly. */
+:root {
+  --color-ivory: #FAF6EF;
+  --color-sand: #F0D9BE;
+  --color-sand-light: #F7EBDA;
+  --color-ink: #3A342C;
+  --color-ink-muted: #635C4F;
+  --color-sage: #6E7F55;
+  --color-sage-light: #9BA97C;
+  --color-sage-dark: #55633F;
+  --color-clay: #B06A3F;
+  --color-clay-dark: #96562F;
+  --color-earth: #4A3F32;
+  --font-body: "Albert Sans", Arial, sans-serif;
+  --font-handwritten: "Caveat", "Segoe Print", cursive;
+  --radius-card: 16px;
+  --radius-panel: 12px;
+  --radius-field: 10px;
+  --radius-pill: 999px;
+  --width-content: 1080px;
+  --width-reading: 640px;
+}

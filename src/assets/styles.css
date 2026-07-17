@@ -881,6 +881,10 @@ h3 {
   min-height: 290px;
 }
 
+.card--featured .card__media img {
+  height: 100%;
+}
+
 .card--featured .card__body {
   justify-content: center;
   padding: 38px;
@@ -1028,6 +1032,7 @@ h3 {
 
 .practitioner-card__portrait {
   display: grid;
+  overflow: hidden;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -1035,6 +1040,13 @@ h3 {
   color: var(--ivory);
   place-content: center;
   text-align: center;
+  flex-shrink: 0;
+}
+
+.practitioner-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .practitioner-card__portrait .icon {

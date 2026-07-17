@@ -39,6 +39,13 @@ document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   });
 });
 
+document.querySelectorAll(".email-obfuscated").forEach((span) => {
+  const user = span.dataset.user;
+  const domain = span.dataset.domain;
+  if (!user || !domain) return;
+  span.textContent = `${user} (at) ${domain.replace(".", " (point) ")}`;
+});
+
 const contactForm = document.querySelector("[data-contact-form]");
 
 if (contactForm) {
