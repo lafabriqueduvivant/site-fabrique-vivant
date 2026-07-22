@@ -87,6 +87,11 @@ function footer() {
         <span>Membre du réseau GRAINE</span>
       </div>
       <div>
+        <h2>Suivre l'actualité</h2>
+        <a href="${site.social.instagram}">Instagram</a>
+        <a href="${site.social.facebook}">Facebook</a>
+      </div>
+      <div>
         <h2>Informations</h2>
         <a href="/mentions-legales/">Mentions légales</a>
         <a href="/confidentialite/">Confidentialité</a>
@@ -133,6 +138,7 @@ function businessSchema() {
     image: `${site.domain}/assets/images/photo-jardiniere-1400.webp`,
     description: site.description,
     founder: { "@type": "Person", name: "Fabrice" },
+    sameAs: Object.values(site.social),
     areaServed: site.areaServed.map((name) => ({ "@type": "Place", name })),
     knowsAbout: [
       "Animation nature",

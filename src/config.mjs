@@ -15,6 +15,10 @@ export const site = {
   publicEmail: "fab@lafabriqueduvivant.fr",
   publicPhone: "",
   publicPhoneHref: "",
+  social: {
+    instagram: "https://www.instagram.com/la_fabrique_du_vivant/",
+    facebook: "https://www.facebook.com/people/La-Fabrique-du-Vivant/61591931744533/"
+  },
   legal: {
     fullName: "Fabrice Maira",
     status: "Micro-entreprise",
