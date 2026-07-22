@@ -95,7 +95,7 @@ function footer() {
         <h2>Informations</h2>
         <a href="/mentions-legales/">Mentions légales</a>
         <a href="/confidentialite/">Confidentialité</a>
-        <span>© ${new Date().getFullYear()} La Fabrique du Vivant</span>
+        <span>© ${new Date().getFullYear()} ${site.legal.fullName} · La Fabrique du Vivant</span>
       </div>
     </div>
   </footer>`;
@@ -137,7 +137,7 @@ function businessSchema() {
     url: site.domain,
     image: `${site.domain}/assets/images/photo-jardiniere-1400.webp`,
     description: site.description,
-    founder: { "@type": "Person", name: "Fabrice" },
+    founder: { "@type": "Person", name: site.legal.fullName },
     sameAs: Object.values(site.social),
     areaServed: site.areaServed.map((name) => ({ "@type": "Place", name })),
     knowsAbout: [
@@ -187,6 +187,7 @@ export function renderLayout(page, body, { production = false } = {}) {
   <meta name="robots" content="${robots}">
   <title>${page.title}</title>
   <meta name="description" content="${page.description}">
+  <meta name="author" content="${site.legal.fullName}">
   <link rel="canonical" href="${canonical}">
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">

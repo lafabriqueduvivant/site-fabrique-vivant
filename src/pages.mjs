@@ -1071,14 +1071,14 @@ pages.push({
 pages.push({
   path: "/a-propos/",
   kind: "about",
-  title: "Qui est derrière La Fabrique du Vivant ? — parcours et approche",
+  title: "Fabrice Maira — parcours et approche de La Fabrique du Vivant",
   description:
-    "16 ans agent territorial des espaces verts, jardinier-praticien du vivant, membre du réseau GRAINE. L'histoire et l'approche de La Fabrique du Vivant.",
+    "Découvrez Fabrice Maira : 16 ans agent territorial des espaces verts, jardinier-praticien du vivant et fondateur de La Fabrique du Vivant.",
   breadcrumbs: [["À propos", "/a-propos/"]],
   approved: true,
   review: ["Page identitaire à valider en priorité."],
   body: `${pageHero({
-    eyebrow: "~ enchanté, moi c'est Fabrice ~",
+    eyebrow: "~ enchanté, moi c'est Fabrice Maira ~",
     title: "Un jardinier passé de l'autre côté du guidon",
     lead:
       "Seize ans à entretenir les espaces verts d'une collectivité. Puis un jour, l'envie de transmettre a pris le dessus sur l'envie de tondre. La Fabrique du Vivant, c'est la suite logique.",
@@ -1329,7 +1329,7 @@ pages.push({
       <h2>Propriété intellectuelle</h2>
       <p>L'ensemble des contenus de ce site, notamment les textes, photographies, illustrations et éléments graphiques, est la propriété de l'éditeur sauf mention contraire. Toute reproduction, même partielle, est soumise à autorisation préalable.</p>
       <h2>Crédits photographiques</h2>
-      <p>Les photographies présentes sur ce site sont prises par Fabrice, sauf mention contraire à proximité de l'image.</p>
+      <p>Les photographies présentes sur ce site sont prises par Fabrice Maira, sauf mention contraire à proximité de l'image.</p>
       <h2>Litiges</h2>
       <p>En cas de litige, une solution amiable sera recherchée avant toute action judiciaire. À défaut d'accord, les tribunaux français seront seuls compétents.</p>
     </div>

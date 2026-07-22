@@ -239,7 +239,7 @@ export function practitionerCard(extraSentence = "") {
         </div>
         <div>
           <p class="handwritten">~ qui anime ? ~</p>
-          <h2>Fabrice, jardinier passé de l'autre côté du guidon</h2>
+          <h2>Fabrice Maira, jardinier passé de l'autre côté du guidon</h2>
           <p>Seize ans agent territorial dans un service espaces verts : je connais de l'intérieur le quotidien des équipes, les contraintes d'une structure et le langage du terrain. ${extraSentence}</p>
           ${woodTags(["16 ans de terrain public", "membre du réseau GRAINE"], "start")}
           <a class="text-link" href="/a-propos/">Découvrir le parcours <span aria-hidden="true">→</span></a>
