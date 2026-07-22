@@ -103,7 +103,7 @@ pages.push({
       <div class="proof-strip__copy">
         <p class="handwritten">~ seize ans les mains dans la terre ~</p>
         <h2>Un intervenant qui vient du terrain</h2>
-        <p>Seize ans agent territorial dans un service espaces verts, puis le choix de transmettre. Je ne récite pas des noms d'espèces : j'apprends à lire le vivant. Le sol, l'eau, les liens invisibles qui font qu'un lieu est vivant.</p>
+        <p>Seize ans agent territorial dans un service espaces verts, puis le choix de transmettre. Je ne récite pas des noms d'espèces : j'apprends à lire le vivant et les lieux. Le sol, l'eau, les arbres, les usages et les histoires qui relient un paysage à celles et ceux qui l'habitent.</p>
         <p>Membre du réseau GRAINE, j'interviens dans votre structure, avec vos équipes, à votre rythme.</p>
         ${woodTags(["16 ans de terrain en collectivité", "Réseau GRAINE", "Mâcon · Beaujolais · Lyon"], "start")}
         <a class="text-link" href="/zone-intervention/">Voir la zone d'intervention <span aria-hidden="true">→</span></a>
@@ -546,7 +546,7 @@ pages.push({
       eyebrow: "~ apprendre à lire dehors ~",
       title: "La balade qui apprend à lire un paysage vivant",
       lead:
-        "Une balade animée de 2 heures où le groupe ne récite pas des noms d'espèces : il apprend à lire un lieu. L'eau, le sol, les plantes, et tous les liens invisibles entre eux.",
+        "Une balade animée où le groupe ne récite pas des noms d'espèces : il apprend à lire un lieu. L'eau, le sol, les plantes, les animaux, mais aussi les traces laissées par les usages et les histoires qui s'y rattachent.",
       tags: ["2 h à 2 h 30 de marche douce", "jusqu'à 15 personnes", "sur votre site ou un sentier"]
     },
     principle: {
@@ -559,7 +559,8 @@ pages.push({
       }),
       paragraphs: [
         "Au printemps 2026, sur un site touristique de Saône-et-Loire, j'ai ouvert une balade en disant : « On ne vivait pas dans la grotte. La grotte, c'était l'abri. Le vrai supermarché, c'est ce qu'on va traverser. »",
-        "Pendant la balade, on ne se contente pas d'écouter : on cherche, on touche, on sent. Chaque arrêt commence par un geste, l'explication vient après. Et à la fin, le paysage n'est plus le même : il raconte quelque chose."
+        "Pendant la balade, on ne se contente pas d'écouter : on cherche, on touche, on sent. Chaque arrêt commence par un geste, l'explication vient après. Et à la fin, le paysage n'est plus le même : il raconte quelque chose.",
+        "Chaque balade est construite après un repérage. Un vieil arbre, une ancienne photographie, un bâtiment ou une rivière peuvent devenir le point de départ d'une enquête : que s'est-il passé ici ? Quels indices en reste-t-il ? Et si cet arbre pouvait parler, que raconterait-il ? Les faits donnent des points d'appui, l'observation et l'imagination mettent le groupe en mouvement."
       ]
     },
     benefitsTitle: "Ce que la balade apporte à votre structure",
@@ -578,7 +579,7 @@ pages.push({
       {
         eyebrow: "~ votre lieu prend de la valeur ~",
         title: "Un atout pour votre site",
-        text: "Pour un office de tourisme, une commune ou un site d'accueil, la balade révèle ce que le lieu a d'unique."
+        text: "La balade révèle ce que votre lieu a d'unique en reliant son vivant, ses usages et ses histoires. Vos publics redécouvrent un endroit qu'ils pensaient connaître."
       }
     ],
     reassurance:
@@ -603,7 +604,7 @@ pages.push({
         </div>
       </section>`
     ],
-    practitionerSentence: "Je ne fais pas de l'identification d'espèces. J'apprends aux gens à lire un écosystème : ce qui s'y passe et ce qui s'y joue.",
+    practitionerSentence: "Je ne plaque pas une balade toute faite sur un paysage. Je pars de ce qui est là, de ce qui s'y est vécu et des questions que le lieu fait naître.",
     faq: [
       { question: "Et s'il pleut ?", answer: "Une pluie fine ne gêne pas la balade, elle la rend même plus vivante. En cas de vraie météo défavorable, on décale ou on adapte, décision prise ensemble quelques jours avant." },
       { question: "Quel niveau de marche ?", answer: "Une marche douce, avec des arrêts fréquents : c'est une balade d'observation, pas une randonnée. Le parcours s'adapte au groupe." },
@@ -612,7 +613,7 @@ pages.push({
       { question: "Faut-il préparer quelque chose ?", answer: "De bonnes chaussures pour le groupe, c'est tout. Le repérage, le contenu et le matériel, c'est mon affaire." }
     ],
     cta: {
-      title: "Envie de faire lire votre paysage à vos publics ?",
+      title: "Envie de révéler votre lieu à vos publics ?",
       text: "Dites-moi quel lieu et quel public. Je vous réponds sous 48 h, avec un format et un devis adaptés."
     }
   })
@@ -716,7 +717,7 @@ pages.push({
     <div class="container">
       ${sectionHeading("La démarche", "~ quatre temps, un objectif : votre autonomie ~")}
       ${processSteps([
-        { title: "Lire le lieu", text: "Le sol, l'eau, les usages et le vivant déjà présent, avant de dessiner." },
+        { title: "Lire le lieu", text: "Le sol, l'eau, les usages, l'histoire et le vivant déjà présent. Comprendre ce qui fait déjà le lieu avant d'imaginer ce qu'il peut devenir." },
         { title: "Concevoir avec vous", text: "Des scénarios discutés avec ceux qui feront vivre le lieu, jamais un plan imposé." },
         { title: "Lancer ensemble", text: "Les premières plantations, les premiers ateliers et les premières habitudes." },
         { title: "Vous rendre autonomes", text: "Une équipe formée, des gestes transmis et un lieu qui tient sans moi." }
@@ -1000,7 +1001,7 @@ pages.push({
       ${cardGrid([
         { icon: "group", eyebrow: "~ animer le territoire ~", title: "Pour vos habitants", text: "Balades lecture du vivant, ateliers terre vivante, animations pour vos événements : du lien social autour du vivant, sur vos sites.", href: "/animations-nature-jardin/", linkLabel: "Voir les animations" },
         { icon: "tools", eyebrow: "~ former les équipes ~", title: "Pour vos agents", text: "Gestion différenciée, compostage, biodiversité, adaptation au climat : des formations sur vos espaces, par un ancien collègue.", href: "/formations-professionnelles/", linkLabel: "Voir les formations" },
-        { icon: "map", eyebrow: "~ de l'idée au lieu ~", title: "Pour vos projets", text: "Jardin partagé, végétalisation, espaces verts plus sobres : lecture de site, conception et accompagnement jusqu'à l'autonomie.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" },
+        { icon: "map", eyebrow: "~ de l'idée au lieu ~", title: "Pour vos projets", text: "Jardin partagé, végétalisation, espaces verts plus sobres : lecture du site, de ses usages, de son histoire et du vivant déjà présent.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" },
         { icon: "book", eyebrow: "~ le service enfance aussi ~", title: "Pour vos écoles et crèches", text: "Les animations petite enfance et scolaires se programment aussi à l'échelle de la commune ou de la communauté de communes.", href: "/pour-qui/creches-petite-enfance/", linkLabel: "Voir les publics enfance" }
       ], { columns: 2 })}
     </div>
@@ -1103,7 +1104,8 @@ pages.push({
     <div class="container">
       ${sectionHeading("L'approche : la lecture du vivant", "~ comprendre, pas réciter ~")}
       <div class="reading-width">
-        <p>Je ne suis pas un catalogue de noms d'espèces. Ce que je pratique et ce que je transmets, c'est la lecture du vivant : comprendre ce qui se passe dans un sol, une haie, une mare. Qui habite là, qui mange qui, pourquoi cette plante pousse ici et pas là.</p>
+        <p>Je ne suis pas un catalogue de noms d'espèces. Ce que je pratique et ce que je transmets, c'est la lecture du vivant : comprendre ce qui se passe dans un sol, une haie, une mare, mais aussi dans un lieu tout entier. Ce qui y vit aujourd'hui, ce qui s'y est vécu et ce qui relie les deux.</p>
+        <p>Un vieil arbre, une ancienne photographie, une rivière ou un mur peuvent ouvrir une enquête. On observe les indices, on raconte ce que l'on sait et on imagine ce que le lieu pourrait nous dire. Les participants ne restent pas spectateurs : ils ajoutent leurs questions, leurs souvenirs et leur regard.</p>
         <p>Et je transmets par le geste : on touche, on cherche, on fabrique. Dans mes ateliers comme dans mes formations, on comprend avec les mains d'abord. C'est comme ça que j'ai appris, c'est comme ça que ça reste.</p>
       </div>
     </div>
