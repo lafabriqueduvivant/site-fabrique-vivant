@@ -183,6 +183,19 @@ export function renderLayout(page, body, { production = false } = {}) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Politique de sécurité de contenu (audit 2026-07-25). Le site est hébergé
+       sur des pages statiques : on ne peut pas envoyer d'en-tête HTTP, d'où la
+       balise. Chaque origine listée correspond à un usage réel et vérifié :
+       tout (styles, polices, images, script du site) vient du site lui-même ;
+       seuls le guichet du formulaire de contact et celui de l'inscription à la
+       fiche de départ sortent vers l'extérieur. Conséquence utile : si une page
+       était un jour altérée, elle ne pourrait ni charger un script venu
+       d'ailleurs, ni renvoyer un formulaire vers un autre domaine.
+       'unsafe-inline' reste nécessaire : le gabarit porte un petit script en
+       ligne et les pages 22 attributs de style. Les contenus étant écrits en
+       dur dans les sources (aucune saisie de visiteur), il n'y a pas de porte
+       d'injection à refermer de ce côté. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' ${site.ficheFormAction ? new URL(site.ficheFormAction).origin : ""}; form-action 'self' ${site.formEndpoint ? new URL(site.formEndpoint).origin : ""}; base-uri 'self'; object-src 'none'; frame-src 'none'">
   <meta name="theme-color" content="#FAF6EF">
   <meta name="robots" content="${robots}">
   <title>${page.title}</title>
