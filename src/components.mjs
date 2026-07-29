@@ -168,7 +168,6 @@ export function featureGrid(items, options = {}) {
     ${items
       .map(
         (item) => `<article class="feature">
-          ${item.icon ? `<div class="sketch-icon">${icon(item.icon)}</div>` : ""}
           ${item.eyebrow ? `<p class="handwritten feature__eyebrow">${item.eyebrow}</p>` : ""}
           <h3>${item.title}</h3>
           <p>${item.text}</p>
@@ -195,8 +194,6 @@ function renderCard(item) {
       ? `<div class="card__media card__media--placeholder" data-placeholder-photo="true">${icon(item.icon || "sprout")}<span>Photo à prévoir</span></div>`
       : "";
 
-  const badge = hasMedia ? "" : `<span class="card__icon">${icon(item.icon || "sprout")}</span>`;
-
   const link = item.href
     ? `<a class="text-link" href="${item.href}">${item.linkLabel || "Découvrir"}<span aria-hidden="true"> →</span></a>`
     : "";
@@ -204,7 +201,6 @@ function renderCard(item) {
   return `<article class="card${item.featured ? " card--featured" : ""}${item.href ? "" : " card--static"}${hasMedia ? "" : " card--icon"}">
     ${media}
     <div class="card__body">
-      ${badge}
       ${item.badge ? `<span class="wood-label">${item.badge}</span>` : ""}
       ${item.eyebrow ? `<p class="handwritten card__eyebrow">${item.eyebrow}</p>` : ""}
       <h3>${item.title}</h3>
@@ -265,7 +261,7 @@ export function faq(items) {
 
 export function audiencePills(items) {
   return `<div class="audience-pills">
-    ${items.map((item) => `<a class="audience-pill" href="${item.href}">${icon(item.icon)}<span>${item.label}</span></a>`).join("")}
+    ${items.map((item) => `<a class="audience-pill" href="${item.href}"><span>${item.label}</span></a>`).join("")}
   </div>`;
 }
 
@@ -305,7 +301,6 @@ export function spotlight({ badge, eyebrow, title, text, href, linkLabel, tags =
   return `<section class="section section--ivory">
     <div class="container">
       <article class="spotlight">
-        <div class="spotlight__mark" aria-hidden="true">${icon("sprout", "spotlight__icon")}</div>
         <div class="spotlight__body">
           ${badge ? `<span class="wood-label">${badge}</span>` : ""}
           ${eyebrow ? `<p class="handwritten">${eyebrow}</p>` : ""}
@@ -344,7 +339,7 @@ export function testimonial({ quote, author, role = "", context = "", background
 }
 
 export function zoneReminder() {
-  return `<p class="zone-reminder">${icon("map", "zone-reminder__icon")}<span>J'interviens sur place, à Mâcon, dans le Beaujolais et à Lyon. <a href="/zone-intervention/">Voir la zone d'intervention</a></span></p>`;
+  return `<p class="zone-reminder"><span>J'interviens sur place, à Mâcon, dans le Beaujolais et à Lyon. <a href="/zone-intervention/">Voir la zone d'intervention</a></span></p>`;
 }
 
 export function ficheDepartTeaser(background = "sage") {

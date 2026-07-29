@@ -791,30 +791,6 @@ h3 {
   font-size: 0.95rem;
 }
 
-.sketch-icon {
-  position: relative;
-  display: grid;
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 17px;
-  place-items: center;
-  color: var(--sage-dark);
-}
-
-.sketch-icon::before {
-  position: absolute;
-  inset: 1px;
-  border: 1.4px solid var(--sage-light);
-  border-radius: 48% 52% 45% 55%;
-  content: "";
-  transform: rotate(-4deg);
-}
-
-.sketch-icon .icon {
-  width: 42px;
-  height: 42px;
-}
-
 .card-grid {
   display: grid;
   gap: 25px;
@@ -889,22 +865,6 @@ h3 {
 /* Carte sans photo : pastille discrète plutôt qu'un grand aplat de couleur. */
 .card--icon .card__body {
   padding-top: 28px;
-}
-
-.card__icon {
-  display: grid;
-  width: 52px;
-  height: 52px;
-  margin-bottom: 16px;
-  border-radius: 50%;
-  background: var(--sage-wash);
-  color: var(--sage-dark);
-  place-items: center;
-}
-
-.card__icon .icon {
-  width: 30px;
-  height: 30px;
 }
 
 .card__media--placeholder {
@@ -1034,12 +994,6 @@ h3 {
   box-shadow: var(--shadow-raised);
   color: var(--sage-dark);
   transform: translateY(-3px);
-}
-
-.audience-pill .icon {
-  width: 38px;
-  height: 38px;
-  color: var(--sage-dark);
 }
 
 .faq {
@@ -1213,27 +1167,13 @@ h3 {
 
 /* Encart d'un contenu qu'on veut voir avant les autres (l'atelier phare). */
 .spotlight {
-  display: grid;
   overflow: hidden;
-  grid-template-columns: 132px 1fr;
-  align-items: stretch;
   border: 1px solid #e7dfd0;
+  border-left: 6px solid var(--sage);
   border-bottom: 4px solid var(--clay);
   border-radius: var(--radius-card);
   background: var(--white);
   box-shadow: var(--shadow-raised);
-}
-
-.spotlight__mark {
-  display: grid;
-  place-items: center;
-  background: linear-gradient(150deg, var(--sage), var(--sage-light));
-  color: var(--ivory);
-}
-
-.spotlight__icon {
-  width: 58px;
-  height: 58px;
 }
 
 .spotlight__body {
@@ -1502,13 +1442,6 @@ h3 {
   gap: 12px;
 }
 
-.zone-reminder__icon {
-  width: 26px;
-  height: 26px;
-  flex: none;
-  color: var(--sage-dark);
-}
-
 .copy-status:not(:empty) {
   display: block;
   margin-top: 10px;
@@ -1731,7 +1664,8 @@ h3 {
 
   .page-hero__split {
     grid-template-columns: 1fr;
-    gap: 40px;
+    /* Empilé, il faut plus d'air : sinon le dernier bouton touche la photo. */
+    gap: 58px;
   }
 
   .page-hero--media {
@@ -1747,18 +1681,6 @@ h3 {
     justify-content: center;
   }
 
-  .spotlight {
-    grid-template-columns: 1fr;
-  }
-
-  .spotlight__mark {
-    padding: 18px;
-  }
-
-  .spotlight__icon {
-    width: 42px;
-    height: 42px;
-  }
 }
 
 @media (max-width: 960px) {
