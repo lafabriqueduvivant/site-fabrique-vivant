@@ -4,6 +4,7 @@ const mainNavigation = [
   { label: "Animations", href: "/animations-nature-jardin/", group: "animations" },
   { label: "Accompagnement", href: "/accompagnement-projets-nature/", group: "accompagnement" },
   { label: "Formations pro", href: "/formations-professionnelles/", group: "formations" },
+  { label: "Où j'interviens", href: "/zone-intervention/", group: "zone" },
   { label: "À propos", href: "/a-propos/", group: "a-propos" }
 ];
 
@@ -17,6 +18,7 @@ const animationLinks = [
 ];
 
 const audienceLinks = [
+  ["Tous les publics", "/pour-qui/"],
   ["Crèches & petite enfance", "/pour-qui/creches-petite-enfance/"],
   ["Écoles", "/pour-qui/ecoles/"],
   ["Maisons seniors & EHPAD", "/pour-qui/maisons-seniors-ehpad/"],
@@ -28,6 +30,7 @@ function isActive(page, group) {
   if (group === "animations") return page.path.startsWith("/animations-nature-jardin/");
   if (group === "accompagnement") return page.path.startsWith("/accompagnement-projets-nature/");
   if (group === "formations") return page.path.startsWith("/formations-professionnelles/");
+  if (group === "zone") return page.path === "/zone-intervention/";
   if (group === "a-propos") return page.path === "/a-propos/";
   if (group === "audiences") return page.path.startsWith("/pour-qui/");
   return false;
@@ -135,7 +138,7 @@ function businessSchema() {
     "@type": "ProfessionalService",
     name: site.name,
     url: site.domain,
-    image: `${site.domain}/assets/images/photo-jardiniere-1400.webp`,
+    image: `${site.domain}/assets/images/image-partage.jpg`,
     description: site.description,
     founder: { "@type": "Person", name: site.legal.fullName },
     sameAs: Object.values(site.social),
@@ -209,9 +212,19 @@ export function renderLayout(page, body, { production = false } = {}) {
   <meta property="og:title" content="${page.title}">
   <meta property="og:description" content="${page.description}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${site.domain}/assets/images/photo-jardiniere-1400.webp">
+  <!-- Vignette des partages (messageries, réseaux sociaux). En JPEG 1200x630 et
+       non en WebP comme le reste du site : plusieurs plateformes ne savent pas
+       lire le WebP et afficheraient le lien sans image. -->
+  <meta property="og:image" content="${site.domain}/assets/images/image-partage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Jardinière plantée avec des résidents, La Fabrique du Vivant">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!-- La police du corps est réclamée dès la première ligne du HTML : sans ça,
+       le titre s'affiche d'abord dans la police de secours puis change sous les
+       yeux du visiteur. -->
+  <link rel="preload" href="/assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/styles.css">
   <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
   ${schemas.filter(Boolean).map((schema) => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`).join("\n  ")}

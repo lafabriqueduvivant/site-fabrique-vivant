@@ -12,8 +12,22 @@ import {
   sectionHeading,
   soilDivider,
   splitSection,
-  woodTags
+  spotlight,
+  testimonial,
+  trackStrip,
+  woodTags,
+  zoneReminder
 } from "./components.mjs";
+
+// Retour écrit reçu le 2026-04-24 après la sortie nature du 2026-04-20. La
+// structure a donné son accord, mais l'attribution reste anonyme (décision
+// Fabrice, 2026-07-29) : ni le nom de la personne, ni celui de la crèche, ni
+// sa localisation. La coquille du message d'origine (« ne changer ») est
+// rétablie en « ne changez » ; rien d'autre n'est modifié.
+const temoignageCreche = {
+  author: "Une directrice de crèche",
+  context: "après une sortie nature avec les tout-petits, avril 2026"
+};
 import { renderAudiencePage, renderOfferPage } from "./page-templates.mjs";
 
 const draftReview = ["Texte intégré pour relecture dans le site. Validation éditoriale encore requise avant publication."];
@@ -43,8 +57,18 @@ pages.push({
     title: "Faire vivre la nature et le jardin dans votre structure",
     lead:
       "Ateliers, balades, projets de jardin et formations autour du vivant. Pour les crèches, les écoles, les maisons seniors, les collectivités et les entreprises, à Mâcon, dans le Beaujolais et à Lyon.",
-    secondary: { href: "/animations-nature-jardin/", label: "Découvrir les animations" }
+    secondary: { href: "/animations-nature-jardin/", label: "Découvrir les animations" },
+    media: picture({
+      name: "jardiniere",
+      alt: "Jardinière plantée avec les résidents d'une maison seniors",
+      caption: "~ jardinière plantée avec les résidents d'une maison seniors, mai 2026 ~",
+      grass: "top-left",
+      eager: true
+    })
   })}
+  ${trackStrip(
+    "Depuis avril 2026, j'ai animé pour des tout-petits en crèche, des résidents en maison seniors, des habitants sur un site naturel et une communauté de communes."
+  )}
   ${soilDivider("ivory")}
   <section class="section section--sand">
     <div class="container">
@@ -82,22 +106,31 @@ pages.push({
         ],
         { columns: 3 }
       )}
-      <p class="home-highlight">~ l'atelier qui fait parler : <a href="/animations-nature-jardin/atelier-terre-vivante/">la terre vivante en pots</a>, de la crèche à l'entreprise ~</p>
     </div>
   </section>
-  <section class="section section--ivory">
+  ${spotlight({
+    badge: "l'atelier phare",
+    eyebrow: "~ l'atelier qui fait parler ~",
+    title: "L'atelier terre vivante en pots",
+    text: "Chacun assemble dans son pot les étages d'un sol vivant, à partir d'épluchures, de feuilles mortes et de compost, puis repart avec, sa graine semée dedans. De la crèche à l'entreprise, c'est l'atelier qui fait toucher du doigt ce qui se passe sous nos pieds.",
+    tags: ["environ 2 h, adaptable", "en salle ou dehors", "tout le matériel est fourni"],
+    href: "/animations-nature-jardin/atelier-terre-vivante/",
+    linkLabel: "Découvrir l'atelier phare"
+  })}
+  <section class="section section--sand">
     <div class="container">
       ${sectionHeading("Pour qui ?", "~ chaque public a sa porte d'entrée ~")}
       ${audiencePills(audiences)}
     </div>
   </section>
-  ${soilDivider("ivory")}
+  ${soilDivider("sand")}
   <section class="section section--sage">
     <div class="container proof-strip">
       ${picture({
-        name: "jardiniere",
-        alt: "Jardinière plantée avec les résidents d'une maison seniors",
-        caption: "~ jardinière plantée avec les résidents d'une maison seniors, mai 2026 ~",
+        name: "fabricePortrait",
+        alt: "Portrait de Fabrice Maira en extérieur",
+        caption: "~ seize ans agent territorial, puis le choix de transmettre ~",
+        position: "center 25%",
         grass: "top-left"
       })}
       <div class="proof-strip__copy">
@@ -110,6 +143,11 @@ pages.push({
       </div>
     </div>
   </section>
+  ${testimonial({
+    ...temoignageCreche,
+    quote: "Cette sortie a été une bulle d'oxygène pour l'équipe et les enfants.",
+    background: "sand"
+  })}
   ${ficheDepartTeaser("ivory")}
   ${finalCta({
     title: "Parlons de votre projet",
@@ -375,7 +413,7 @@ pages.push({
         caption: "L'éveil à la nature, à hauteur d'enfant"
       }),
       paragraphs: [
-        "Au printemps 2026, dans un parc de Mâcon, j'ai ouvert une boîte devant six enfants d'une crèche. Dedans, des escargots de mon jardin. Ils ont regardé, fascinés. Puis chacun s'est approché à son rythme. À la fin de la matinée, tous l'avaient caressé, et nous sommes allés ensemble libérer les escargots au fond du parc.",
+        "Au printemps 2026, dans un parc, j'ai ouvert une boîte devant un petit groupe d'enfants de crèche. Dedans, des escargots de mon jardin. Ils ont regardé, fascinés. Puis chacun s'est approché à son rythme. À la fin de la matinée, tous l'avaient caressé, et nous sommes allés ensemble libérer les escargots au fond du parc.",
         "C'est ça, une sortie d'éveil à la nature : une rencontre avec le vivant, à hauteur d'enfant. On marche dans l'herbe, on cueille des feuilles et des fleurs, on garde une trace de ce qu'on a trouvé. Des séquences courtes, du temps libre, et des matières qu'on a le droit de toucher."
       ]
     },
@@ -426,6 +464,14 @@ pages.push({
       }
     ],
     variantColumns: 3,
+    extraSections: [
+      testimonial({
+        ...temoignageCreche,
+        quote:
+          "Cette sortie a été une bulle d'oxygène pour l'équipe et les enfants. Les professionnelles ont vraiment apprécié. Votre attitude avec les enfants a été parfaite ! […] Pour le reste, ne changez surtout rien !",
+        background: "sand"
+      })
+    ],
     practitionerSentence: "Une pédagogie du vivant ancrée dans la pratique : je facilite des expériences, les enfants font les leurs.",
     faq: [
       { question: "Et s'il pleut ?", answer: "On reporte. Sortir dehors fait partie de l'expérience, surtout en crèche, et l'intérieur ne remplace pas ça." },
@@ -650,7 +696,7 @@ pages.push({
         grass: "top-left"
       }),
       paragraphs: [
-        "En mai 2026, sur la terrasse d'un établissement du Val de Saône, des résidents ont planté leurs jardinières. Chacun a adopté son plant, senti son feuillage, écrit ou dicté son étiquette. À la fin, tout le monde s'est retrouvé pour le premier arrosage, le bruit de l'eau et l'odeur de terre mouillée.",
+        "En mai 2026, sur la terrasse d'un établissement pour personnes âgées, des résidents ont planté leurs jardinières. Chacun a adopté son plant, senti son feuillage, écrit ou dicté son étiquette. À la fin, tout le monde s'est retrouvé pour le premier arrosage, le bruit de l'eau et l'odeur de terre mouillée.",
         "Beaucoup de résidents ont jardiné toute leur vie. Ces gestes-là ne s'oublient pas : ils attendent. L'atelier les fait remonter, sans posture de soin, simplement en remettant du vivant entre les mains.",
         "Quand je repars, les plantes restent. Les résidents passent devant, lisent les étiquettes, arrosent. L'atelier continue sans moi."
       ]
@@ -837,12 +883,90 @@ pages.push({
 });
 
 pages.push({
+  path: "/pour-qui/",
+  kind: "pillar",
+  title: "Pour qui j'interviens — crèches, écoles, seniors, collectivités, entreprises",
+  description:
+    "Animations nature, accompagnement et formations pour crèches, écoles, maisons seniors, collectivités et entreprises. Mâcon, Beaujolais, Lyon.",
+  breadcrumbs: [["Pour qui ?", "/pour-qui/"]],
+  approved: true,
+  review: ["Page carrefour créée le 2026-07-29 (l'adresse /pour-qui/ renvoyait une page introuvable). Textes à valider."],
+  body: `${pageHero({
+    eyebrow: "~ chaque public a sa porte d'entrée ~",
+    title: "Pour qui j'interviens",
+    lead:
+      "Une crèche, une école, un EHPAD, une commune ou une entreprise : chacun a ses rythmes, ses contraintes et ses envies. Voici comment le vivant entre chez vous, public par public.",
+    primary: false
+  })}
+  ${soilDivider("ivory")}
+  <section class="section section--sand">
+    <div class="container">
+      ${sectionHeading("Cinq portes d'entrée", "~ trouvez la vôtre ~")}
+      ${cardGrid(
+        [
+          {
+            icon: "sprout",
+            eyebrow: "~ 0-3 ans ~",
+            title: "Crèches & petite enfance",
+            text: "Éveil sensoriel et sorties nature calés sur les rythmes de la journée, en co-animation avec vos professionnelles.",
+            href: "/pour-qui/creches-petite-enfance/",
+            linkLabel: "Voir la page crèches"
+          },
+          {
+            icon: "book",
+            eyebrow: "~ de la maternelle au collège ~",
+            title: "Écoles & périscolaire",
+            text: "De l'animation ponctuelle au programme sur l'année, jusqu'au jardin pédagogique qui survit aux vacances.",
+            href: "/pour-qui/ecoles/",
+            linkLabel: "Voir la page écoles"
+          },
+          {
+            icon: "watering",
+            eyebrow: "~ rythme doux ~",
+            title: "Maisons seniors & EHPAD",
+            text: "Des ateliers jardin à hauteur de table, fauteuils compris, où la mémoire du jardin remonte par les mains.",
+            href: "/pour-qui/maisons-seniors-ehpad/",
+            linkLabel: "Voir la page seniors"
+          },
+          {
+            icon: "town",
+            eyebrow: "~ par un ancien agent ~",
+            title: "Collectivités",
+            text: "Animations pour vos habitants, formations pour vos agents, accompagnement de vos projets nature.",
+            href: "/pour-qui/collectivites-communautes-communes/",
+            linkLabel: "Voir la page collectivités"
+          },
+          {
+            icon: "leaves",
+            eyebrow: "~ équipe & QVCT ~",
+            title: "Entreprises",
+            text: "Ateliers et balades pour vos équipes, jusqu'à la végétalisation de votre site. Sur place ou dehors.",
+            href: "/pour-qui/entreprises/",
+            linkLabel: "Voir la page entreprises"
+          }
+        ],
+        { columns: 3 }
+      )}
+      <p class="section-intro" style="margin-top:46px">Votre structure n'est dans aucune de ces cases ? Association, bailleur, site touristique, médiathèque : <a href="/contact/?intention=question">écrivez-moi</a>, on regarde ensemble.</p>
+    </div>
+  </section>
+  ${ficheDepartTeaser("ivory")}
+  ${finalCta({
+    title: "Un public, une envie, une date ?",
+    text: "Dites-moi qui sont vos publics et ce qui vous ferait plaisir. Je vous réponds sous 48 h, avec un format et un devis adaptés."
+  })}`
+});
+
+pages.push({
   path: "/pour-qui/creches-petite-enfance/",
   kind: "audience",
   title: "Intervenant nature en crèche — éveil au vivant pour les 0-3 ans",
   description:
     "Intervenant nature pour crèches et RPE : éveil sensoriel, sorties nature, ateliers terre. Mâcon, Beaujolais, Lyon. Devis rapide.",
-  breadcrumbs: [["Crèches & petite enfance", "/pour-qui/creches-petite-enfance/"]],
+  breadcrumbs: [
+    ["Pour qui ?", "/pour-qui/"],
+    ["Crèches & petite enfance", "/pour-qui/creches-petite-enfance/"]
+  ],
   approved: true,
   review: draftReview,
   body: renderAudiencePage({
@@ -872,6 +996,14 @@ pages.push({
       { icon: "compass", title: "Sécurité et rythmes respectés", text: "La zone est inspectée, les matières adaptées et l'encadrement dimensionné pour l'extérieur. Sieste et repas ne sont jamais bousculés." },
       { icon: "watering", title: "Zéro préparation pour vous", text: "J'arrive avec tout le matériel et je repars avec. Il ne vous faut qu'un bout de dehors, ou une salle les jours de pluie. Pas de coin extérieur chez vous ? On en trouve un ensemble : je vous fais des propositions de lieux à proximité." }
     ],
+    extraSections: [
+      testimonial({
+        ...temoignageCreche,
+        quote:
+          "Cette sortie a été une bulle d'oxygène pour l'équipe et les enfants. Les professionnelles ont vraiment apprécié. Votre attitude avec les enfants a été parfaite ! […] Pour le reste, ne changez surtout rien !",
+        background: "ivory"
+      })
+    ],
     cta: {
       title: "Et si la nature entrait dans votre crèche ?",
       text: "Dites-moi combien d'enfants, quel lieu, quelle période. Je vous réponds sous 48 h, avec un format et un devis adaptés."
@@ -885,7 +1017,10 @@ pages.push({
   title: "Intervenant nature à l'école — animations et jardin pédagogique",
   description:
     "Animations nature à l'école, programme découverte du vivant et création de jardin pédagogique. Intervenant à Mâcon, Beaujolais, Lyon.",
-  breadcrumbs: [["Écoles", "/pour-qui/ecoles/"]],
+  breadcrumbs: [
+    ["Pour qui ?", "/pour-qui/"],
+    ["Écoles", "/pour-qui/ecoles/"]
+  ],
   approved: true,
   review: ["Texte à valider. Cette page présente des formats scolaires encore non livrés."],
   body: renderAudiencePage({
@@ -928,7 +1063,10 @@ pages.push({
   title: "Animations jardin en EHPAD et résidence seniors — le vivant qui relie",
   description:
     "Ateliers jardin et nature pour EHPAD et résidences seniors : sensorialité, mémoire, lien social. Intervenant à Mâcon, Beaujolais, Lyon.",
-  breadcrumbs: [["Maisons seniors & EHPAD", "/pour-qui/maisons-seniors-ehpad/"]],
+  breadcrumbs: [
+    ["Pour qui ?", "/pour-qui/"],
+    ["Maisons seniors & EHPAD", "/pour-qui/maisons-seniors-ehpad/"]
+  ],
   approved: true,
   review: draftReview,
   body: renderAudiencePage({
@@ -971,7 +1109,10 @@ pages.push({
   title: "Animations nature et formations pour collectivités — par un ancien agent territorial",
   description:
     "Animations nature pour habitants, formations d'agents, accompagnement de projets : un prestataire qui a passé 16 ans en collectivité. Mâcon, Beaujolais, Lyon.",
-  breadcrumbs: [["Collectivités", "/pour-qui/collectivites-communautes-communes/"]],
+  breadcrumbs: [
+    ["Pour qui ?", "/pour-qui/"],
+    ["Collectivités", "/pour-qui/collectivites-communautes-communes/"]
+  ],
   approved: true,
   review: draftReview,
   body: `${pageHero({
@@ -1029,7 +1170,10 @@ pages.push({
   title: "Ateliers nature en entreprise — team building végétal et QVCT",
   description:
     "Ateliers nature et jardin pour entreprises : team building végétal, pauses vertes, projets RSE. Lyon, Mâcon, Beaujolais. Sur votre site ou en extérieur.",
-  breadcrumbs: [["Entreprises", "/pour-qui/entreprises/"]],
+  breadcrumbs: [
+    ["Pour qui ?", "/pour-qui/"],
+    ["Entreprises", "/pour-qui/entreprises/"]
+  ],
   approved: true,
   review: ["Texte à valider. Aucune prestation entreprise n'a encore été livrée ; aucun témoignage n'est affiché."],
   body: renderAudiencePage({
@@ -1234,9 +1378,14 @@ pages.push({
           <label for="botcheck">Ne pas cocher cette case</label>
           <input type="checkbox" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off">
         </div>
+        <p class="form-intro">Tous les champs sont nécessaires, sauf ceux notés « facultatif ».</p>
+        <div class="form-field">
+          <label for="nom">Vos nom et prénom</label>
+          <input type="text" id="nom" name="nom" placeholder="Ex. : Camille Dupont" required autocomplete="name">
+        </div>
         <div class="form-field">
           <label for="structure">Votre structure <span class="form-help">— nom et commune</span></label>
-          <input type="text" id="structure" name="structure" placeholder="Ex. : Crèche Les Lucioles, Mâcon" required autocomplete="organization">
+          <input type="text" id="structure" name="structure" placeholder="Ex. : crèche municipale, Mâcon" required autocomplete="organization">
         </div>
         <div class="form-field">
           <label for="type-structure">Vous êtes…</label>
@@ -1262,7 +1411,7 @@ pages.push({
           </select>
         </div>
         <div class="form-field">
-          <label for="periode">Période envisagée <span class="form-help">— même approximative</span></label>
+          <label for="periode">Période envisagée <span class="form-help">— facultatif, même approximative</span></label>
           <input type="text" id="periode" name="periode" placeholder="Ex. : au printemps, pas encore fixé…">
         </div>
         <div class="form-field">
@@ -1273,7 +1422,12 @@ pages.push({
           <label for="email">Votre email <span class="form-help">— pour vous répondre</span></label>
           <input type="email" id="email" name="email" placeholder="prenom@votre-structure.fr" required autocomplete="email">
         </div>
+        <div class="form-field">
+          <label for="telephone">Votre téléphone <span class="form-help">— facultatif, si vous préférez qu'on se parle</span></label>
+          <input type="tel" id="telephone" name="telephone" placeholder="Ex. : 06 12 34 56 78" autocomplete="tel">
+        </div>
         <button class="button" type="submit">Envoyer ma demande</button>
+        <p class="form-legal">Vos informations me servent uniquement à vous répondre. Elles ne sont ni revendues ni utilisées pour une newsletter. <a href="/confidentialite/">Politique de confidentialité</a>.</p>
         <p class="form-note"><span class="handwritten" style="display:block">~ pas encore prêt ? ~</span>Une simple question fait très bien l'affaire, le devis attendra que vous soyez prêt.</p>
         <p class="form-status" data-form-status tabindex="-1" role="status" aria-live="polite"></p>
       </form>
@@ -1285,11 +1439,14 @@ pages.push({
           { title: "On échange sur votre contexte", text: "Par téléphone ou par écrit : vos publics, votre lieu, vos contraintes et vos envies." },
           { title: "Vous recevez une proposition et un devis", text: "Un format pensé pour vous, un devis clair, et tout le temps qu'il faut pour décider." }
         ])}
+        ${zoneReminder()}
         <div class="contact-details">
           <p class="handwritten">~ vous préférez l'email ? ~</p>
           ${
             site.publicEmail
-              ? `<span class="email-obfuscated" data-user="${site.publicEmail.split("@")[0]}" data-domain="${site.publicEmail.split("@")[1]}">${site.publicEmail.split("@")[0]} (at) ${site.publicEmail.split("@")[1].replace(".", " (point) ")}</span>`
+              ? `<span class="email-obfuscated" data-user="${site.publicEmail.split("@")[0]}" data-domain="${site.publicEmail.split("@")[1]}">${site.publicEmail.split("@")[0]} (at) ${site.publicEmail.split("@")[1].replace(".", " (point) ")}</span>
+          <button class="button button--ghost" type="button" data-copy-email data-user="${site.publicEmail.split("@")[0]}" data-domain="${site.publicEmail.split("@")[1]}" hidden>Copier l'adresse</button>
+          <span class="copy-status" data-copy-status role="status" aria-live="polite"></span>`
               : '<span class="missing-value">Coordonnées à ajouter avant publication</span>'
           }
         </div>

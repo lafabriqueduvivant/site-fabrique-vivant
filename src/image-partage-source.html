@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Vignette de partage — source</title>
+<!--
+  Source de `assets/images/image-partage.jpg`, la vignette affichée quand
+  quelqu'un colle un lien du site dans une messagerie ou un réseau social.
+  Elle ne s'affiche nulle part sur le site lui-même.
+
+  Pour la refabriquer (changement de photo, de baseline) :
+  1. Modifier cette page (la photo de fond est un fichier de /assets/images/).
+  2. La copier dans dist/ : cp src/image-partage-source.html dist/_og.html
+  3. Lancer l'aperçu (npm run preview) puis, dans un terminal :
+     chrome --headless=new --window-size=1200,630 --screenshot=og.png http://127.0.0.1:4173/_og.html
+  4. Convertir og.png en JPEG (qualité ~85) sous le nom assets/images/image-partage.jpg.
+  5. Supprimer dist/_og.html.
+
+  Dimensions imposées par les plateformes : 1200 x 630 pixels, format JPEG ou
+  PNG (le WebP du reste du site n'est pas lu par tous ces services).
+-->
+<link rel="stylesheet" href="/assets/styles.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .og {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #FAF6EF;
+  }
+  .og__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+  }
+  .og__veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(58,52,44,0.12) 0%, rgba(58,52,44,0.05) 30%, rgba(58,52,44,0.55) 62%, rgba(58,52,44,0.93) 100%);
+  }
+  .og__bar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 0 58px 46px;
+  }
+  .og__logo {
+    width: 62px;
+    height: 62px;
+    flex: none;
+    color: #E8A87C;
+  }
+  .og__name {
+    margin: 0;
+    color: #FAF6EF;
+    font-family: "Albert Sans", sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+  }
+  .og__sub {
+    margin: 8px 0 0;
+    color: #F0E5D4;
+    font-family: "Albert Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+  }
+  .og__hand {
+    position: absolute;
+    top: 44px;
+    left: 58px;
+    margin: 0;
+    color: #FAF6EF;
+    font-family: "Caveat", cursive;
+    font-size: 40px;
+    text-shadow: 0 2px 14px rgba(58,52,44,0.55);
+  }
+</style>
+</head>
+<body>
+<div class="og">
+  <img class="og__photo" src="/assets/images/photo-jardiniere-1400.webp" alt="">
+  <div class="og__veil"></div>
+  <p class="og__hand">~ le vivant, entre les mains ~</p>
+  <div class="og__bar">
+    <svg class="og__logo" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 27V16"></path>
+      <path d="M16 19c-7 0-11-4-12-10 7 0 11 4 12 10Z"></path>
+      <path d="M16 15c7 0 11-4 12-10-7 0-11 4-12 10Z"></path>
+    </svg>
+    <div>
+      <p class="og__name">La Fabrique du Vivant</p>
+      <p class="og__sub">Animations nature &amp; jardin · Mâcon · Beaujolais · Lyon</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

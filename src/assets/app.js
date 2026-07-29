@@ -1,3 +1,7 @@
+// Largeur à partir de laquelle le menu redevient une barre horizontale.
+// Doit rester alignée sur la media query du même seuil dans styles.css.
+const NAV_BREAKPOINT = 960;
+
 const navToggle = document.querySelector(".nav-toggle");
 const siteMenu = document.querySelector("#site-menu");
 
@@ -26,13 +30,13 @@ if (navToggle && siteMenu) {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 860) closeMenu();
+    if (window.innerWidth > NAV_BREAKPOINT) closeMenu();
   });
 }
 
 document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   dropdown.addEventListener("toggle", () => {
-    if (!dropdown.open || window.innerWidth <= 860) return;
+    if (!dropdown.open || window.innerWidth <= NAV_BREAKPOINT) return;
     document.querySelectorAll(".nav-dropdown[open]").forEach((other) => {
       if (other !== dropdown) other.removeAttribute("open");
     });
@@ -44,6 +48,27 @@ document.querySelectorAll(".email-obfuscated").forEach((span) => {
   const domain = span.dataset.domain;
   if (!user || !domain) return;
   span.textContent = `${user} (at) ${domain.replace(".", " (point) ")}`;
+});
+
+// L'adresse n'existe jamais en clair dans le HTML (protection contre les
+// robots) : le bouton la reconstitue au moment du clic pour éviter au visiteur
+// de retaper « (at) » et « (point) » à la main.
+document.querySelectorAll("[data-copy-email]").forEach((button) => {
+  const { user, domain } = button.dataset;
+  if (!user || !domain || !navigator.clipboard) return;
+
+  button.hidden = false;
+  const status = button.parentElement?.querySelector("[data-copy-status]");
+
+  button.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(`${user}@${domain}`);
+      button.textContent = "Adresse copiée";
+      if (status) status.textContent = "L'adresse est copiée dans votre presse-papier.";
+    } catch {
+      if (status) status.textContent = "La copie n'a pas fonctionné : recopiez l'adresse affichée ci-dessus.";
+    }
+  });
 });
 
 const contactForm = document.querySelector("[data-contact-form]");

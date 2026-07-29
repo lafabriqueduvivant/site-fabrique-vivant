@@ -1,57 +1,70 @@
+// Les dimensions déclarées ici sont celles des fichiers réels (vérifiées le
+// 2026-07-29). Elles servent à réserver la bonne place avant le chargement :
+// sans elles, ou avec un format inventé, la page sursaute sous les yeux du
+// visiteur quand la photo arrive.
 const imageSets = {
   jardiniere: {
     small: "/assets/images/photo-jardiniere-800.webp",
     smallWidth: 800,
     large: "/assets/images/photo-jardiniere-1400.webp",
-    largeWidth: 1400
+    largeWidth: 1400,
+    largeHeight: 788
   },
   cedres: {
     small: "/assets/images/photo-cedres-800.webp",
     smallWidth: 800,
     large: "/assets/images/photo-cedres-1600.webp",
-    largeWidth: 1600
+    largeWidth: 1600,
+    largeHeight: 900
   },
   saule: {
     small: "/assets/images/photo-saule-800.webp",
     smallWidth: 450,
     large: "/assets/images/photo-saule-1200.webp",
-    largeWidth: 675
+    largeWidth: 675,
+    largeHeight: 1200
   },
   atelierTerre: {
     small: "/assets/images/photo-atelier-terre-800.webp",
     smallWidth: 800,
     large: "/assets/images/photo-atelier-terre-1400.webp",
-    largeWidth: 1400
+    largeWidth: 1400,
+    largeHeight: 1047
   },
   eveilNature: {
     small: "/assets/images/photo-eveil-nature-700.webp",
     smallWidth: 700,
     large: "/assets/images/photo-eveil-nature-1080.webp",
-    largeWidth: 1080
+    largeWidth: 1080,
+    largeHeight: 1080
   },
   scolaire: {
-    small: "/assets/images/photo-scolaire-300.webp",
-    smallWidth: 300,
-    large: "/assets/images/photo-scolaire-423.webp",
-    largeWidth: 423
+    small: "/assets/images/photo-scolaire-423.webp",
+    smallWidth: 423,
+    large: "/assets/images/photo-scolaire-800.webp",
+    largeWidth: 800,
+    largeHeight: 1067
   },
   fabricePortrait: {
     small: "/assets/images/photo-fabrice-portrait-800.webp",
     smallWidth: 800,
     large: "/assets/images/photo-fabrice-portrait-1400.webp",
-    largeWidth: 1400
+    largeWidth: 1400,
+    largeHeight: 2136
   },
   formationTerrain: {
     small: "/assets/images/photo-formation-terrain-800.webp",
     smallWidth: 800,
     large: "/assets/images/photo-formation-terrain-1000.webp",
-    largeWidth: 1000
+    largeWidth: 1000,
+    largeHeight: 500
   },
   gestionDifferenciee: {
     small: "/assets/images/photo-gestion-differenciee-800.webp",
     smallWidth: 800,
     large: "/assets/images/photo-gestion-differenciee-1400.webp",
-    largeWidth: 1400
+    largeWidth: 1400,
+    largeHeight: 788
   }
 };
 
@@ -85,15 +98,35 @@ export function pageHero({
   tags = [],
   primary = true,
   secondary = null,
-  compact = false
+  compact = false,
+  media = "",
+  note = ""
 }) {
-  return `<section class="page-hero${compact ? " page-hero--compact" : ""}">
-    <div class="container page-hero__inner">
-      ${eyebrow ? `<p class="handwritten page-hero__eyebrow">${eyebrow}</p>` : ""}
+  // Avec une photo, le premier écran passe en deux colonnes sur grand écran
+  // (texte à gauche, terrain à droite) et s'empile en dessous. Sans photo, le
+  // hero reste centré comme sur le reste du site.
+  const split = Boolean(media);
+  const copy = `${eyebrow ? `<p class="handwritten page-hero__eyebrow">${eyebrow}</p>` : ""}
       <h1>${title}</h1>
       <p class="page-hero__lead">${lead}</p>
       ${primary ? `<div class="button-row"><a class="button" href="/contact/">Demander un devis</a>${secondary ? `<a class="button button--secondary" href="${secondary.href}">${secondary.label}</a>` : ""}</div>` : ""}
-      ${tags.length ? woodTags(tags) : ""}
+      ${note ? `<p class="page-hero__note">${note}</p>` : ""}
+      ${tags.length ? woodTags(tags, split ? "start" : "center") : ""}`;
+
+  if (!split) {
+    return `<section class="page-hero${compact ? " page-hero--compact" : ""}">
+    <div class="container page-hero__inner">
+      ${copy}
+    </div>
+  </section>`;
+  }
+
+  return `<section class="page-hero page-hero--media${compact ? " page-hero--compact" : ""}">
+    <div class="container page-hero__split">
+      <div class="page-hero__copy">
+        ${copy}
+      </div>
+      <div class="page-hero__media">${media}</div>
     </div>
   </section>`;
 }
@@ -114,7 +147,7 @@ export function picture({
   const set = imageSets[name];
   return `<figure class="field-photo ${className}">
     <div class="sketch-frame sketch-frame--${grass}">
-      <img src="${set.large}" srcset="${set.small} ${set.smallWidth}w, ${set.large} ${set.largeWidth}w" sizes="(max-width: 760px) 92vw, 50vw" alt="${alt}" style="object-position:${position}" width="1600" height="900" ${eager ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'}>
+      <img src="${set.large}" srcset="${set.small} ${set.smallWidth}w, ${set.large} ${set.largeWidth}w" sizes="(max-width: 760px) 92vw, 50vw" alt="${alt}" style="object-position:${position}" width="${set.largeWidth}" height="${set.largeHeight}" ${eager ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'}>
     </div>
     ${caption ? `<figcaption class="handwritten">${caption}</figcaption>` : ""}
   </figure>`;
@@ -153,19 +186,25 @@ export function cardGrid(items, options = {}) {
 }
 
 function renderCard(item) {
+  // Sans photo, la carte ne porte plus un grand aplat vert (effet « gabarit
+  // pas fini ») : l'icône devient une pastille discrète en tête du texte.
+  const hasMedia = Boolean(item.image || item.placeholder);
   const media = item.image
     ? `<div class="card__media"><img src="/assets/images/photo-${item.image}-800.webp" alt="${item.alt || ""}" style="object-position:${item.position || "center"}" loading="lazy" decoding="async"></div>`
     : item.placeholder
       ? `<div class="card__media card__media--placeholder" data-placeholder-photo="true">${icon(item.icon || "sprout")}<span>Photo à prévoir</span></div>`
-      : `<div class="card__media card__media--illustration">${icon(item.icon || "sprout")}</div>`;
+      : "";
+
+  const badge = hasMedia ? "" : `<span class="card__icon">${icon(item.icon || "sprout")}</span>`;
 
   const link = item.href
     ? `<a class="text-link" href="${item.href}">${item.linkLabel || "Découvrir"}<span aria-hidden="true"> →</span></a>`
     : "";
 
-  return `<article class="card${item.featured ? " card--featured" : ""}${item.href ? "" : " card--static"}">
+  return `<article class="card${item.featured ? " card--featured" : ""}${item.href ? "" : " card--static"}${hasMedia ? "" : " card--icon"}">
     ${media}
     <div class="card__body">
+      ${badge}
       ${item.badge ? `<span class="wood-label">${item.badge}</span>` : ""}
       ${item.eyebrow ? `<p class="handwritten card__eyebrow">${item.eyebrow}</p>` : ""}
       <h3>${item.title}</h3>
@@ -260,6 +299,52 @@ export function finalCta({ title = "Parlons de votre projet", text, question = "
       ${ficheLink ? `<a class="final-cta__soft-link" href="/fiche-depart/">Votre projet est encore flou ? Clarifiez-le en 15 minutes avec la Fiche de départ.</a>` : ""}
     </div>
   </section>`;
+}
+
+export function spotlight({ badge, eyebrow, title, text, href, linkLabel, tags = [] }) {
+  return `<section class="section section--ivory">
+    <div class="container">
+      <article class="spotlight">
+        <div class="spotlight__mark" aria-hidden="true">${icon("sprout", "spotlight__icon")}</div>
+        <div class="spotlight__body">
+          ${badge ? `<span class="wood-label">${badge}</span>` : ""}
+          ${eyebrow ? `<p class="handwritten">${eyebrow}</p>` : ""}
+          <h2>${title}</h2>
+          <p>${text}</p>
+          ${tags.length ? woodTags(tags, "start") : ""}
+          <a class="button button--secondary" href="${href}">${linkLabel}</a>
+        </div>
+      </article>
+    </div>
+  </section>`;
+}
+
+// Bande d'expérience : dit où le travail a déjà eu lieu, sans compteur de
+// prestations (qui vieillit) et sans jamais nommer une structure cliente.
+export function trackStrip(text) {
+  return `<div class="track-strip">
+    <p class="container">${text}</p>
+  </div>`;
+}
+
+export function testimonial({ quote, author, role = "", context = "", background = "sand" }) {
+  return `<section class="section section--${background}">
+    <div class="container">
+      <figure class="testimonial">
+        <span class="testimonial__mark" aria-hidden="true">&laquo;</span>
+        <blockquote class="testimonial__quote"><p>${quote}</p></blockquote>
+        <figcaption class="testimonial__author">
+          <strong>${author}</strong>
+          ${role ? `<span>${role}</span>` : ""}
+          ${context ? `<span class="testimonial__context">${context}</span>` : ""}
+        </figcaption>
+      </figure>
+    </div>
+  </section>`;
+}
+
+export function zoneReminder() {
+  return `<p class="zone-reminder">${icon("map", "zone-reminder__icon")}<span>J'interviens sur place, à Mâcon, dans le Beaujolais et à Lyon. <a href="/zone-intervention/">Voir la zone d'intervention</a></span></p>`;
 }
 
 export function ficheDepartTeaser(background = "sage") {
