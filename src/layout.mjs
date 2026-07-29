@@ -152,19 +152,38 @@ function businessSchema() {
   };
 }
 
+// Les pictogrammes décoratifs ont été retirés du site le 2026-07-29 : seuls
+// restent le logo de marque, la pousse des blocs d'aperçu interne (jamais
+// publiés) et le trait de terre entre les sections.
 function svgSprite() {
   return `<svg class="svg-sprite" aria-hidden="true" width="0" height="0">
     <defs>
       <g id="icon-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 27V16"></path><path d="M16 19c-7 0-11-4-12-10 7 0 11 4 12 10Z"></path><path d="M16 15c7 0 11-4 12-10-7 0-11 4-12 10Z"></path></g>
-      <!-- Les pictogrammes décoratifs ont été retirés du site le 2026-07-29
-           (décision Fabrice : rendu jugé peu soigné). Seuls restent le logo de
-           marque, la pousse des blocs d'aperçu interne et le trait de terre. -->
       <g id="icon-sprout" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 31h20l-2 11H16z"></path><path d="M24 31V18"></path><path d="M24 21c-7 0-11-4-12-10 7 0 11 4 12 10Z"></path><path d="M24 17c7 0 11-4 12-10-7 0-11 4-12 10Z"></path></g>
       <g id="line-soil" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M0 39q150-5 300-1t300 0 300 1 300-2"></path><path d="M120 38c-1-8 0-13 4-18m3 18c0-6 2-10 6-13m-13 13c-1-4-4-7-8-9"></path><path d="M425 38c-2-7-2-12 0-17m7 17c1-6 4-10 8-12m-18 12c-2-4-5-6-9-7"></path><path d="M765 39c-1-9 1-14 5-19m4 19c0-6 3-10 7-13m-20 13c-2-5-5-8-9-10"></path><path d="M1055 37c-1-7 0-11 3-15m5 15c1-5 3-8 7-10"></path></g>
     </defs>
   </svg>`;
 }
 
+// Trois choix du gabarit, expliqués ici plutôt qu'en commentaires HTML : ce qui
+// est écrit dans le gabarit part sur chaque page publiée, où la cuisine interne
+// n'a rien à faire (et pèse inutilement).
+//
+// 1. Politique de sécurité de contenu (audit du 2026-07-25). Le site est servi
+//    en pages statiques : impossible d'envoyer un en-tête HTTP, d'où la balise.
+//    Chaque origine autorisée correspond à un usage réel et vérifié : tout
+//    (styles, polices, images, script) vient du site lui-même ; seuls le guichet
+//    du formulaire de contact et celui de la fiche de départ sortent. Si une
+//    page était un jour altérée, elle ne pourrait ni charger un script venu
+//    d'ailleurs, ni renvoyer un formulaire vers un autre domaine.
+//    'unsafe-inline' reste nécessaire (petit script en ligne et attributs de
+//    style) ; aucune saisie de visiteur n'étant réinjectée dans les pages, il
+//    n'y a pas de porte d'injection à refermer de ce côté.
+// 2. La police du corps est réclamée dès la première ligne : sans cela, le titre
+//    s'affiche dans la police de secours puis change sous les yeux du visiteur.
+// 3. La vignette de partage est en JPEG 1200x630 et non en WebP comme le reste
+//    du site : plusieurs plateformes ne lisent pas le WebP et afficheraient le
+//    lien sans image.
 export function renderLayout(page, body, { production = false } = {}) {
   const canonical = `${site.domain}${page.path}`;
   const schemas = [breadcrumbSchema(page)];
@@ -179,18 +198,6 @@ export function renderLayout(page, body, { production = false } = {}) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Politique de sécurité de contenu (audit 2026-07-25). Le site est hébergé
-       sur des pages statiques : on ne peut pas envoyer d'en-tête HTTP, d'où la
-       balise. Chaque origine listée correspond à un usage réel et vérifié :
-       tout (styles, polices, images, script du site) vient du site lui-même ;
-       seuls le guichet du formulaire de contact et celui de l'inscription à la
-       fiche de départ sortent vers l'extérieur. Conséquence utile : si une page
-       était un jour altérée, elle ne pourrait ni charger un script venu
-       d'ailleurs, ni renvoyer un formulaire vers un autre domaine.
-       'unsafe-inline' reste nécessaire : le gabarit porte un petit script en
-       ligne et les pages 22 attributs de style. Les contenus étant écrits en
-       dur dans les sources (aucune saisie de visiteur), il n'y a pas de porte
-       d'injection à refermer de ce côté. -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' ${site.ficheFormAction ? new URL(site.ficheFormAction).origin : ""}; form-action 'self' ${site.formEndpoint ? new URL(site.formEndpoint).origin : ""}; base-uri 'self'; object-src 'none'; frame-src 'none'">
   <meta name="theme-color" content="#FAF6EF">
   <meta name="robots" content="${robots}">
@@ -205,18 +212,12 @@ export function renderLayout(page, body, { production = false } = {}) {
   <meta property="og:title" content="${page.title}">
   <meta property="og:description" content="${page.description}">
   <meta property="og:url" content="${canonical}">
-  <!-- Vignette des partages (messageries, réseaux sociaux). En JPEG 1200x630 et
-       non en WebP comme le reste du site : plusieurs plateformes ne savent pas
-       lire le WebP et afficheraient le lien sans image. -->
   <meta property="og:image" content="${site.domain}/assets/images/image-partage.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Jardinière plantée avec des résidents, La Fabrique du Vivant">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <!-- La police du corps est réclamée dès la première ligne du HTML : sans ça,
-       le titre s'affiche d'abord dans la police de secours puis change sous les
-       yeux du visiteur. -->
   <link rel="preload" href="/assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/styles.css">
   <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>

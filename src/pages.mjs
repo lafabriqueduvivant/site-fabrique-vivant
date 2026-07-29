@@ -1424,7 +1424,7 @@ pages.push({
         </div>
         <div class="form-field">
           <label for="telephone">Votre téléphone <span class="form-help">— facultatif, si vous préférez qu'on se parle</span></label>
-          <input type="tel" id="telephone" name="telephone" placeholder="Ex. : 06 12 34 56 78" autocomplete="tel">
+          <input type="tel" id="telephone" name="telephone" placeholder="Ex. : 06 39 98 12 34" autocomplete="tel">
         </div>
         <button class="button" type="submit">Envoyer ma demande</button>
         <p class="form-legal">Vos informations me servent uniquement à vous répondre. Elles ne sont ni revendues ni utilisées pour une newsletter. <a href="/confidentialite/">Politique de confidentialité</a>.</p>
