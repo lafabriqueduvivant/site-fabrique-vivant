@@ -374,7 +374,8 @@ pages.push({
       { question: "À partir de quel âge ?", answer: "Dès la crèche. Les gestes, la durée et les matières s'adaptent à chaque public, des tout-petits aux aînés." },
       { question: "Pour combien de participants ?", answer: "L'idéal : une dizaine de personnes à la fois, pour que chacun ait vraiment les mains dans la terre. Groupe plus grand ? Parlons-en, il existe des formats pour ça." },
       { question: "Faut-il préparer quelque chose ?", answer: "Rien. Des tables, un coin pour se laver les mains, et c'est tout : le reste arrive avec moi. Et si certains participants veulent apporter leur propre pot ou leurs déchets de cuisine pour se les approprier, l'atelier s'adapte très bien à ça aussi." },
-      { question: "Combien de temps à l'avance réserver ?", answer: "Quelques semaines d'avance donnent le choix des dates. Mais écrivez-moi même si votre échéance est proche, on trouve souvent une solution." }
+      { question: "Combien de temps à l'avance réserver ?", answer: "Quelques semaines d'avance donnent le choix des dates. Mais écrivez-moi même si votre échéance est proche, on trouve souvent une solution." },
+      { question: "Je suis particulier : puis-je apprendre cette méthode chez moi ?", answer: 'Oui. J\'ai créé une formation pas à pas pour <a href="https://lepotagerminimaliste.fr/terre-vivante-en-pots/">fabriquer une terre vivante dans un pot de fleurs</a>, avec des matières simples et sans dépendre des sacs de terreau.' }
     ],
     cta: {
       title: "Envie de cet atelier chez vous ?",
