@@ -20,12 +20,12 @@ import {
 } from "./components.mjs";
 
 // Retour écrit reçu le 2026-04-24 après la sortie nature du 2026-04-20. La
-// structure a donné son accord, mais l'attribution reste anonyme (décision
-// Fabrice, 2026-07-29) : ni le nom de la personne, ni celui de la crèche, ni
-// sa localisation. La coquille du message d'origine (« ne changer ») est
-// rétablie en « ne changez » ; rien d'autre n'est modifié.
+// structure a donné son accord. Attribution validée par Fabrice le 2026-07-30 :
+// prénom et fonction uniquement, sans nom de famille, structure ni localisation.
+// La coquille du message d'origine (« ne changer ») est rétablie en
+// « ne changez » ; rien d'autre n'est modifié.
 const temoignageCreche = {
-  author: "Une directrice de crèche",
+  author: "Nathalie, directrice de crèche",
   context: "après une sortie nature avec les tout-petits, avril 2026"
 };
 import { renderAudiencePage, renderOfferPage } from "./page-templates.mjs";
