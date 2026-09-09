@@ -65,6 +65,13 @@ const imageSets = {
     large: "/assets/images/photo-gestion-differenciee-1400.webp",
     largeWidth: 1400,
     largeHeight: 788
+  },
+  seminaireBeaujolais: {
+    small: "/assets/images/photo-seminaire-beaujolais-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-seminaire-beaujolais-1600.webp",
+    largeWidth: 1600,
+    largeHeight: 900
   }
 };
 

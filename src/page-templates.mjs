@@ -73,6 +73,6 @@ export function renderAudiencePage(data) {
       </div>
     </section>
     ${data.extraSections?.join("") || ""}
-    ${ficheDepartTeaser("sand")}
+    ${data.fiche === false ? "" : ficheDepartTeaser("sand")}
     ${finalCta(data.cta)}`;
 }

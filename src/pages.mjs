@@ -1,4 +1,5 @@
 import { site } from "./config.mjs";
+import { seminairePages } from "./seminaire-pages.mjs";
 import {
   audiencePills,
   cardGrid,
@@ -1168,9 +1169,9 @@ pages.push({
 pages.push({
   path: "/pour-qui/entreprises/",
   kind: "audience",
-  title: "Ateliers nature en entreprise — team building végétal et QVCT",
+  title: "Animations nature en entreprise — jardin, compost et balade",
   description:
-    "Ateliers nature et jardin pour entreprises : team building végétal, pauses vertes, projets RSE. Lyon, Mâcon, Beaujolais. Sur votre site ou en extérieur.",
+    "Atelier jardin, compost, sensibilisation ou balade nature pour une équipe d'environ 10 personnes. Dans vos locaux ou dehors, à Mâcon, Beaujolais et Lyon.",
   breadcrumbs: [
     ["Pour qui ?", "/pour-qui/"],
     ["Entreprises", "/pour-qui/entreprises/"]
@@ -1179,36 +1180,46 @@ pages.push({
   review: ["Texte à valider. Aucune prestation entreprise n'a encore été livrée ; aucun témoignage n'est affiché."],
   body: renderAudiencePage({
     hero: {
-      eyebrow: "~ une pause qui a du sens ~",
-      title: "Reconnecter vos équipes au vivant",
+      eyebrow: "~ jardiner, comprendre ou sortir ensemble ~",
+      title: "Des animations nature pour votre équipe",
       lead:
-        "Ateliers jardin, balades, projets de végétalisation : des interventions nature pour vos équipes, sur votre site ou dehors. Pas un gadget d'animation : une vraie rencontre avec le vivant.",
-      tags: ["sur votre site ou en extérieur", "équipes jusqu'à 15 personnes", "matériel fourni"]
+        "Atelier jardin, découverte du compost, sensibilisation au vivant ou balade nature : je construis une animation adaptée à votre équipe, dans vos locaux ou dehors.",
+      tags: ["autour de 10 personnes", "dans vos locaux ou dehors", "matériel fourni"]
     },
-    benefitsTitle: "Ce que le vivant fait à vos équipes",
-    benefitsEyebrow: "~ et à votre entreprise ~",
+    benefitsTitle: "Pour quel moment ?",
+    benefitsEyebrow: "~ une animation ponctuelle, adaptée au contexte ~",
     benefits: [
-      { eyebrow: "~ les mains décrochent des écrans ~", title: "Une vraie coupure", text: "Toucher la terre, fabriquer quelque chose de vivant : le contact au vivant apaise et recentre. Deux heures les mains dans la terre reposent autrement qu'une pause café." },
-      { eyebrow: "~ on se découvre autrement ~", title: "De la cohésion qui ne force personne", text: "Autour d'un pot de terre, la hiérarchie s'estompe et les langues se délient. Chacun participe à sa façon, sans épreuve sportive ni jeu de rôle." },
-      { eyebrow: "~ un souvenir sur le bureau ~", title: "Un effet qui reste visible", text: "Chacun repart avec son pot vivant sur son bureau : la plante qui pousse prolonge le moment et le raconte aux visiteurs." }
+      { eyebrow: "~ changer d'air ensemble ~", title: "Une journée d'équipe ou un séminaire", text: "Un temps concret pour sortir du rythme habituel : les mains dans la terre, autour du compost ou dehors à observer un paysage." },
+      { eyebrow: "~ faire entrer le vivant au travail ~", title: "Un rendez-vous QVCT", text: "Une pause nature accessible, sans défi sportif ni connaissances préalables. Chacun participe à sa manière." },
+      { eyebrow: "~ comprendre par le geste ~", title: "Une sensibilisation", text: "Sol vivant, compost, plantes ou liens dans un écosystème : un sujet rendu concret pour votre équipe, sans conférence hors-sol." }
     ],
-    offersTitle: "Les formats pensés pour vous",
-    offersEyebrow: "~ de la pause verte au projet de site ~",
+    offersTitle: "Quatre portes d'entrée possibles",
+    offersEyebrow: "~ le format se précise ensuite avec vous ~",
+    offerColumns: 2,
     offers: [
-      { image: "atelier-terre", alt: "Un pot rempli de terre vivante", badge: "pour commencer", eyebrow: "~ 2 h sur votre site ~", title: "L'atelier terre vivante, version équipe", text: "Chacun fabrique un sol vivant dans son pot et repart avec. Dans une salle de réunion ou dehors.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir l'atelier" },
-      { image: "cedres", alt: "Paysage boisé pour une balade d'équipe", eyebrow: "~ marcher et comprendre ~", title: "La balade lecture du vivant", text: "Une sortie où l'équipe apprend à lire un paysage. Marcher ensemble dehors change les conversations.", href: "/animations-nature-jardin/balade-nature-lecture-du-vivant/", linkLabel: "Voir la balade" },
-      { image: "conception-espaces", alt: "Panneau pédagogique de conception d'espaces comestibles en ville", position: "center 45%", eyebrow: "~ au-delà de l'événement ~", title: "Le projet de site", text: "Végétaliser vos abords, créer un potager d'entreprise, former des référents : une démarche RSE visible depuis les bureaux.", href: "/accompagnement-projets-nature/", linkLabel: "Voir l'accompagnement" }
+      { eyebrow: "~ mettre les mains dans la terre ~", title: "Un atelier jardin", text: "Planter, jardiner et comprendre ce qui fait vivre une plante. L'atelier peut se tenir dehors ou dans une salle adaptée, selon le projet.", href: "/animations-nature-jardin/atelier-terre-vivante/", linkLabel: "Voir un exemple d'atelier" },
+      { eyebrow: "~ voir les déchets autrement ~", title: "Compost et sol vivant", text: "Une animation pratique pour comprendre ce qui se transforme dans un compost et ce que cette matière apporte au sol." },
+      { eyebrow: "~ sortir lire le paysage ~", title: "Une balade nature", text: "Le groupe marche, observe et apprend à relier le sol, les plantes, les traces et l'histoire du lieu.", href: "/animations-nature-jardin/balade-nature-lecture-du-vivant/", linkLabel: "Découvrir la balade" },
+      { eyebrow: "~ faire entrer la nature dans la salle ~", title: "Un atelier de sensibilisation", text: "Quand sortir n'est pas possible, le vivant vient dans vos locaux : sol, plantes, matières naturelles et échanges avec l'équipe." }
     ],
-    teamTitle: "Pourquoi pas un simple team building ?",
-    teamEyebrow: "~ le mot anti-gadget ~",
-    teamColumns: 2,
+    teamTitle: "Le cadre pratique",
+    teamEyebrow: "~ simple à organiser ~",
     teamPoints: [
-      { icon: "leaves", title: "Ce qui est planté continue", text: "Un événement bien-être qu'on oublie en une semaine, tout le monde en a connu. Ici, ce qu'on plante continue de pousser et ce qu'on comprend dehors revient en réunion." },
-      { icon: "compass", title: "Un moment vrai qui laisse une trace", text: "Si vous cherchez une animation spectaculaire et vite consommée, je ne suis pas le bon prestataire. Si vous cherchez une rencontre qui reste, parlons-nous." }
+      { icon: "group", title: "Une petite équipe", text: "Le format est pensé autour d'une dizaine de participants. Douze personnes peuvent rester possibles selon l'animation et le lieu." },
+      { icon: "town", title: "Chez vous ou dehors", text: "Salle de réunion, espace extérieur de l'entreprise, parc ou sentier : le lieu dépend du thème et de la saison." },
+      { icon: "tools", title: "Une proposition adaptée", text: "Vous me donnez l'occasion, l'effectif et vos contraintes. Je vous propose ensuite le thème et le format qui tiennent dans votre contexte." }
     ],
+    extraSections: [spotlight({
+      eyebrow: "~ votre recherche commence par le lieu ? ~",
+      title: "Un séminaire au vert autour de Mâcon ou Villefranche-sur-Saône ?",
+      text: "Si vous cherchez d'abord un cadre naturel pour accueillir votre équipe, précisez le secteur, l'effectif, la période et vos critères essentiels.",
+      href: "/pour-qui/entreprises/seminaire-au-vert/",
+      linkLabel: "Préciser mon projet de séminaire"
+    })],
+    fiche: false,
     cta: {
-      title: "Une équipe à reconnecter au vivant ?",
-      text: "Dites-moi votre effectif, votre site et l'occasion : séminaire, QVCT, RSE ou juste une envie. Je vous réponds sous 48 h, avec un format et un devis."
+      title: "Quelle animation conviendrait à votre équipe ?",
+      text: "Dites-moi l'occasion, votre effectif, la période et le lieu envisagé. Je vous réponds sous 48 h avec une proposition adaptée et un devis."
     }
   })
 });
@@ -1314,6 +1325,7 @@ pages.push({
         <p><strong>Le Beaujolais :</strong> Beaujeu, Belleville-en-Beaujolais, Villefranche-sur-Saône et les villages des monts. C'est ici que j'habite : le cœur de la zone.</p>
         <p><strong>Lyon et alentours :</strong> Lyon, sa métropole et le Val de Saône, pour les entreprises, les structures et les événements.</p>
         <p>Vous êtes un peu plus loin ? Écrivez-moi quand même : les frontières sont souples, surtout pour les programmes multi-séances et les formations.</p>
+        <p>Vous cherchez un cadre naturel pour un séminaire autour de Mâcon ou Villefranche-sur-Saône ? Découvrez la <a href="/pour-qui/entreprises/seminaire-au-vert/">démarche de mise en relation en développement</a>.</p>
       </div>
     </div>
   </section>
@@ -1498,14 +1510,14 @@ pages.push({
   path: "/confidentialite/",
   kind: "legal",
   title: "Politique de confidentialité — La Fabrique du Vivant",
-  description: "Comment lafabriqueduvivant.fr traite les données transmises via le formulaire de contact.",
+  description: "Comment lafabriqueduvivant.fr traite les données transmises via les formulaires de contact et de projet de séminaire.",
   breadcrumbs: [["Confidentialité", "/confidentialite/"]],
   approved: true,
   review: ["Le service de formulaire et la durée précise de conservation devront être ajoutés avant publication."],
   body: `${pageHero({
     eyebrow: "~ vos informations restent les vôtres ~",
     title: "Politique de confidentialité",
-    lead: "Cette page explique simplement ce que je fais des informations que vous me confiez via le formulaire de contact. Pas de jargon, pas de surprise.",
+    lead: "Cette page explique simplement ce que je fais des informations que vous me confiez via les formulaires du site.",
     primary: false,
     compact: true
   })}
@@ -1514,11 +1526,15 @@ pages.push({
       <h2>Quelles données je collecte</h2>
       <p>Quand vous remplissez le formulaire de contact, je reçois le nom de votre structure, le type de structure, votre besoin, la période envisagée, votre message et votre email. Rien de plus : pas de traceur publicitaire, pas de revente de données.</p>
       <h2>Pourquoi je les collecte</h2>
-      <p>Uniquement pour vous répondre : comprendre votre demande et vous proposer un format et un devis adaptés.</p>
+      <p>Pour le formulaire de contact : comprendre votre demande, vous répondre et vous proposer un format et un devis adaptés.</p>
+      <h2 id="seminaires">Votre projet de séminaire au vert</h2>
+      <p>Le formulaire séminaire recueille vos attentes concernant le cadre naturel, le type de recherche, le secteur et le trajet accepté, l'effectif, la période et la durée, ainsi que votre email. Vous pouvez aussi préciser vos indispensables, votre budget et votre structure.</p>
+      <p>Ces informations me permettent de comprendre les besoins pour une démarche de mise en relation locale en développement et de vous recontacter au sujet de votre projet. Elles ne vous inscrivent à aucune newsletter. Cette démarche est distincte d'une demande de devis pour une animation.</p>
+      <p>Le formulaire est transmis par ${site.formProviderName}. Je suis le destinataire de votre demande. Avant de transmettre vos coordonnées et votre projet à un lieu, je vous indique le partenaire envisagé et vous demande votre accord. Aucune transmission à un lieu n'est automatique.</p>
       <h2>Combien de temps je les garde</h2>
       <p>Je conserve les échanges avec les structures qui deviennent clientes le temps de la relation commerciale, plus la durée légale de conservation des documents comptables. Pour une demande sans suite, les informations sont supprimées après un délai raisonnable si aucun échange ne se poursuit.</p>
       <h2>Qui a accès à ces données</h2>
-      <p>Moi seul, ainsi que le prestataire technique chargé de transmettre le formulaire : ${site.formProviderName || missing("Service de formulaire")}.</p>
+      <p>Moi, ainsi que le prestataire technique chargé de transmettre le formulaire : ${site.formProviderName || missing("Service de formulaire")}. Pour une mise en relation liée à un séminaire, un partenaire ne reçoit votre demande qu'après votre accord, comme expliqué ci-dessus.</p>
       <h2>Vos droits</h2>
       <p>Vous pouvez demander d'accéder à vos données, de les corriger ou de les supprimer. Il suffit de m'écrire depuis la <a href="/contact/">page contact</a>.</p>
       <h2>Cookies</h2>
@@ -1631,3 +1647,5 @@ pages.push({
     </div>
   </section>`
 });
+
+pages.push(...seminairePages);
