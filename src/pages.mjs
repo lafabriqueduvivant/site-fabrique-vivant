@@ -641,6 +641,21 @@ pages.push({
     ],
     variantColumns: 3,
     extraSections: [
+      splitSection({
+        heading: "Sous le catalpa",
+        eyebrow: "~ nommer un arbre ~",
+        background: "white",
+        media: picture({
+          name: "catalpa",
+          alt: "Pancarte « le catalpa du pêcheur » accrochée au tronc d'un arbre",
+          caption: "~ la pancarte du catalpa du pêcheur, accrochée pendant la balade ~"
+        }),
+        paragraphs: [
+          "Un arbre ne devient pas un décor quand on lui donne un nom. Il devient un repère, un voisin, une histoire.",
+          "Sur cette balade, un moment suffit : s'arrêter sous un arbre, regarder son écorce, écouter ce qu'il raconte, puis lui donner un nom. Ce geste minuscule change le regard. On ne traverse plus un lieu, on s'y attache.",
+          "Se reconnecter au vivant ne demande pas de savoir nommer chaque espèce. Il suffit de remarquer, de toucher, d'écouter, de se laisser surprendre. Apprendre à lire un paysage, un arbre, une berge, plutôt que réciter des noms, c'est toute l'idée de la balade."
+        ]
+      }),
       `<section class="section section--ivory">
         <div class="container">
           ${sectionHeading("Pour quels publics ?", "~ même paysage, mille lectures ~")}

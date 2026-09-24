@@ -72,6 +72,13 @@ const imageSets = {
     large: "/assets/images/photo-seminaire-beaujolais-1600.webp",
     largeWidth: 1600,
     largeHeight: 900
+  },
+  catalpa: {
+    small: "/assets/images/photo-catalpa-800.webp",
+    smallWidth: 450,
+    large: "/assets/images/photo-catalpa-1400.webp",
+    largeWidth: 788,
+    largeHeight: 1400
   }
 };
 
