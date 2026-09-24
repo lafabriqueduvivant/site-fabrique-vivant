@@ -5,6 +5,7 @@ const mainNavigation = [
   { label: "Accompagnement", href: "/accompagnement-projets-nature/", group: "accompagnement" },
   { label: "Formations pro", href: "/formations-professionnelles/", group: "formations" },
   { label: "Où j'interviens", href: "/zone-intervention/", group: "zone" },
+  { label: "Carnets de terrain", href: "/carnets-de-terrain/", group: "carnets" },
   { label: "À propos", href: "/a-propos/", group: "a-propos" }
 ];
 
@@ -31,6 +32,7 @@ function isActive(page, group) {
   if (group === "accompagnement") return page.path.startsWith("/accompagnement-projets-nature/");
   if (group === "formations") return page.path.startsWith("/formations-professionnelles/");
   if (group === "zone") return page.path === "/zone-intervention/";
+  if (group === "carnets") return page.path === "/carnets-de-terrain/" || page.kind === "carnet";
   if (group === "a-propos") return page.path === "/a-propos/";
   if (group === "audiences") return page.path.startsWith("/pour-qui/");
   return false;
@@ -81,6 +83,7 @@ function footer() {
         <a href="/animations-nature-jardin/">Animations</a>
         <a href="/accompagnement-projets-nature/">Accompagnement</a>
         <a href="/formations-professionnelles/">Formations pro</a>
+        <a href="/carnets-de-terrain/">Carnets de terrain</a>
         <a href="/a-propos/">À propos</a>
       </div>
       <div>
@@ -129,6 +132,29 @@ function breadcrumbSchema(page) {
       name,
       item: `${site.domain}${path}`
     }))
+  };
+}
+
+// Un carnet de terrain est signalé comme article, avec une date et un auteur
+// identifiables : c'est ce qui permet à un moteur génératif de citer le récit
+// sans le confondre avec une page de vente.
+function articleSchema(page) {
+  if (page.kind !== "carnet" || !page.article) return null;
+  const image = page.article.image
+    ? `${site.domain}${page.article.image}`
+    : `${site.domain}/assets/images/image-partage.jpg`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.article.headline || page.title,
+    description: page.description,
+    datePublished: page.article.datePublished,
+    dateModified: page.article.dateModified || page.article.datePublished,
+    inLanguage: "fr-FR",
+    author: { "@type": "Person", name: site.legal.fullName },
+    publisher: { "@type": "Organization", name: site.name, url: site.domain },
+    mainEntityOfPage: `${site.domain}${page.path}`,
+    image
   };
 }
 
@@ -186,7 +212,7 @@ function svgSprite() {
 //    lien sans image.
 export function renderLayout(page, body, { production = false } = {}) {
   const canonical = `${site.domain}${page.path}`;
-  const schemas = [breadcrumbSchema(page)];
+  const schemas = [breadcrumbSchema(page), articleSchema(page)];
   if (page.path === "/" || page.path === "/zone-intervention/") schemas.push(businessSchema());
   const robots = page.noindex || !production ? "noindex, nofollow" : "index, follow";
   const review = !production && page.review?.length
@@ -206,7 +232,7 @@ export function renderLayout(page, body, { production = false } = {}) {
   <meta name="author" content="${site.legal.fullName}">
   <link rel="canonical" href="${canonical}">
   <link rel="manifest" href="/site.webmanifest">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="${page.kind === "carnet" ? "article" : "website"}">
   <meta property="og:locale" content="${site.locale}">
   <meta property="og:site_name" content="${site.name}">
   <meta property="og:title" content="${page.title}">

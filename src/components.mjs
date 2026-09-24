@@ -79,6 +79,13 @@ const imageSets = {
     large: "/assets/images/photo-catalpa-1400.webp",
     largeWidth: 788,
     largeHeight: 1400
+  },
+  participantsBacs: {
+    small: "/assets/images/photo-participants-bacs-800.webp",
+    smallWidth: 450,
+    large: "/assets/images/photo-participants-bacs-1400.webp",
+    largeWidth: 788,
+    largeHeight: 1400
   }
 };
 

@@ -29,7 +29,7 @@ const temoignageCreche = {
   author: "Nathalie, directrice de crèche",
   context: "après une sortie nature avec les tout-petits, avril 2026"
 };
-import { renderAudiencePage, renderOfferPage } from "./page-templates.mjs";
+import { renderAudiencePage, renderCarnetPage, renderOfferPage } from "./page-templates.mjs";
 
 const draftReview = ["Texte intégré pour relecture dans le site. Validation éditoriale encore requise avant publication."];
 
@@ -42,6 +42,44 @@ const audiences = [
 ];
 
 const missing = (label) => `<span class="missing-value">${label} à compléter</span>`;
+
+// Les carnets de terrain sont des récits rattachés à une page d'offre. Leurs
+// métadonnées vivent ici, une seule fois : le sommaire, le bloc posé sur la
+// page d'offre et la page du récit s'en servent tous les trois, pour qu'aucune
+// copie ne puisse diverger. Le slug d'un carnet est propre à sa sortie, pour
+// qu'une même structure puisse revenir plus tard sans collision d'adresse.
+const carnets = [
+  {
+    path: "/animations-nature-jardin/balade-nature-lecture-du-vivant/mediatheque-macon-sedd-2026/",
+    offerPath: "/animations-nature-jardin/balade-nature-lecture-du-vivant/",
+    listTitle: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
+    listText: "Un vieux catalpa, un érable à messages, des berges habitées et un parc à explorer, avec une médiathèque de Mâcon.",
+    eyebrow: "~ balade nature, septembre 2026 ~"
+  }
+];
+
+function carnetsForOffer(offerPath) {
+  return carnets.filter((carnet) => carnet.offerPath === offerPath);
+}
+
+// Bloc discrètement posé sur la page d'offre : il ouvre la porte du récit
+// vécu sans transformer la page commerciale en page éditoriale.
+function carnetTeaserSection(offerPath) {
+  const items = carnetsForOffer(offerPath);
+  if (!items.length) return "";
+  return `<section class="section section--sage">
+    <div class="container">
+      ${sectionHeading(items.length > 1 ? "Carnets de terrain" : "Carnet de terrain", "~ la balade, côté vécu ~")}
+      ${cardGrid(items.map((item) => ({
+        eyebrow: item.eyebrow,
+        title: item.listTitle,
+        text: item.listText,
+        href: item.path,
+        linkLabel: "Lire le carnet"
+      })))}
+    </div>
+  </section>`;
+}
 
 export const pages = [];
 
@@ -665,7 +703,8 @@ pages.push({
             { icon: "leaves", title: "Équipes en entreprise", text: "Marcher, chercher et comprendre ensemble. Une pause qui a du sens, dehors." }
           ])}
         </div>
-      </section>`
+      </section>`,
+      carnetTeaserSection("/animations-nature-jardin/balade-nature-lecture-du-vivant/")
     ],
     practitionerSentence: "Je ne plaque pas une balade toute faite sur un paysage. Je pars de ce qui est là, de ce qui s'y est vécu et des questions que le lieu fait naître.",
     faq: [
@@ -1661,6 +1700,160 @@ pages.push({
       ${soilDivider("ivory")}
     </div>
   </section>`
+});
+
+pages.push({
+  path: "/carnets-de-terrain/",
+  kind: "standard",
+  title: "Carnets de terrain — La Fabrique du Vivant",
+  description:
+    "Des récits de balades et d'ateliers nature réellement menés : ce qui s'est passé, ce qui a été observé, ce qui en reste. Le terrain, raconté.",
+  breadcrumbs: [["Carnets de terrain", "/carnets-de-terrain/"]],
+  approved: true,
+  review: draftReview,
+  body: `${pageHero({
+    eyebrow: "~ le terrain, raconté ~",
+    title: "Carnets de terrain",
+    lead:
+      "Des récits de balades et d'ateliers réellement menés. Ce qui s'est passé, ce qui a été observé, ce qui reste après. Pas une leçon : une journée sur le terrain, racontée.",
+    primary: false,
+    compact: true
+  })}
+    ${soilDivider("ivory")}
+    <section class="section section--ivory">
+      <div class="container">
+        ${sectionHeading("Les récits", "~ une sortie, une histoire ~")}
+        ${cardGrid(
+          carnets.map((carnet) => ({
+            eyebrow: carnet.eyebrow,
+            title: carnet.listTitle,
+            text: carnet.listText,
+            href: carnet.path,
+            linkLabel: "Lire le carnet"
+          }))
+        )}
+      </div>
+    </section>
+    ${finalCta({
+      title: "Votre structure a un lieu à faire lire ?",
+      text: "Racontez-moi votre lieu et votre public. Je vous réponds sous 48 h, avec un format de balade adapté."
+    })}`
+});
+
+pages.push({
+  path: carnets[0].path,
+  kind: "carnet",
+  title: "Balade nature avec la Médiathèque de Mâcon — lire le vivant le long de la Saône",
+  description:
+    "Récit d'une balade nature de trois heures avec la Médiathèque de Mâcon : apprendre à lire un paysage vivant le long de la Saône, du vieux catalpa au parc du Vallon.",
+  article: {
+    headline: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
+    datePublished: "2026-09-23",
+    image: "/assets/images/photo-participants-bacs-1400.webp"
+  },
+  breadcrumbs: [
+    ["Animations nature & jardin", "/animations-nature-jardin/"],
+    ["Balade lecture du vivant", "/animations-nature-jardin/balade-nature-lecture-du-vivant/"],
+    ["Carnet de terrain", carnets[0].path]
+  ],
+  approved: true,
+  review: draftReview,
+  body: renderCarnetPage({
+    hero: {
+      eyebrow: "~ carnet de terrain ~",
+      title: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
+      lead:
+        "En septembre 2026, la Médiathèque de Mâcon a proposé à son public une balade nature de trois heures, animée par La Fabrique du Vivant. Le long de la Saône, un groupe intergénérationnel a appris à lire un paysage vivant : comprendre ce qui s'y passe, plutôt que réciter des noms d'espèces.",
+      tags: [
+        "Septembre 2026",
+        "3 heures, à pied",
+        "Un groupe intergénérationnel",
+        "Mâcon, au bord de la Saône"
+      ],
+      media: picture({
+        name: "participantsBacs",
+        alt: "Participants observant des jardinières pendant une balade, visages floutés",
+        caption: "~ le groupe en observation pendant la balade, à Mâcon ~",
+        eager: true
+      })
+    },
+    sections: [
+      {
+        eyebrow: "~ premier arrêt ~",
+        heading: "Une question vaut mieux qu'une leçon",
+        background: "sand",
+        media: picture({
+          name: "catalpa",
+          alt: "Pancarte « le catalpa du pêcheur » accrochée au tronc d'un vieil arbre",
+          caption: "~ un vieil arbre, et une histoire à lui donner ~"
+        }),
+        paragraphs: [
+          "La balade commence devant un vieil arbre, à quelques pas de la médiathèque. Plutôt qu'un exposé, une question : quelqu'un connaît-il cet arbre ?",
+          "Le groupe s'approche, touche l'écorce, remarque les cavités au pied et la vie qui s'installe sous le bois qui se détache. Sans le savoir, chacun vient de lire un habitat.",
+          "On parle ensuite de l'arbre lui-même. Le catalpa vient du sud des États-Unis, planté chez nous pour son ombre et ses fleurs. Son âge exact reste un mystère. J'ai mené mon enquête : tout porte à croire qu'un pêcheur l'a planté à la fin du XIXe siècle. Pourquoi, et pour qui ? Ceux qui ont fait la balade le savent. Aux autres, il reste le mystère."
+        ]
+      },
+      {
+        eyebrow: "~ en marchant ~",
+        heading: "Chercher, plutôt qu'écouter",
+        background: "ivory",
+        paragraphs: [
+          "Entre deux arrêts, pas de temps mort : je confie une photo de plante ou de fruit à chacun. « Retrouvez ce qu'elle montre. »",
+          "Le groupe fouille les massifs, les pieds de mur et les jardinières. On touche, on compare, on échange les trouvailles, on parle des plantes. La recherche remplace les commentaires de marche, et les noms arrivent une fois la plante trouvée, jamais avant."
+        ]
+      },
+      {
+        eyebrow: "~ l'érable et les quais ~",
+        heading: "Un mot laissé à l'érable",
+        background: "sand",
+        paragraphs: [
+          "À l'ombre d'un jeune érable, on marque une pause. J'accroche un premier mot à une branche, puis je propose à qui veut d'écrire le sien sur une étiquette.",
+          "Quelques messages pendent bientôt aux branches. Personne n'a écrit un poème : des phrases simples, adressées à l'arbre ou aux oiseaux.",
+          "C'est l'un des moments que je retiens : ce qu'on accepte de déposer dans un lieu, et ce qu'il garde en retour."
+        ]
+      },
+      {
+        eyebrow: "~ la rivière et ses berges ~",
+        heading: "La Saône, un couloir de vie",
+        background: "ivory",
+        paragraphs: [
+          "Le parcours descend vers la Saône. Devant l'eau, une question simple : si vous étiez un petit animal, où vous cachez-vous ? La bande végétalisée de la berge, si discrète, devient alors une évidence : des cachettes, de la nourriture, du repos, entre la rivière et la ville.",
+          "Au pied du quai, un roseau commun pousse malgré tout. Un quai aménagé n'est pas condamné au minéral.",
+          "Et la cigogne, fil rouge de la journée. En Saône-et-Loire, on comptait trois couples en 2001 ; ils sont plusieurs centaines aujourd'hui. Elles nichent dans les arbres morts au bord de l'eau, pas sur les toits comme en Alsace. La médiathèque projetait justement, le lendemain, <a href=\"https://www.macon.fr/information-transversale/agenda/projection-et-rencontre-daniel-et-la-cigogne-12652\">« Daniel et la cigogne »</a>, un film sur la migration d'une cigogne."
+        ]
+      },
+      {
+        eyebrow: "~ au parc du Vallon des Rigolettes ~",
+        heading: "Un parc, cinq espèces, et des idées",
+        background: "sand",
+        paragraphs: [
+          "Dernière étape, le parc du Vallon des Rigolettes, et place au jeu. Mission biodiversité : chaque groupe reçoit une espèce, une tarente, une pipistrelle, un hérisson, une abeille sauvage ou un lecteur, et cherche dans le parc le meilleur endroit où elle pourrait s'installer.",
+          "Les groupes explorent, se répartissent, puis proposent un aménagement qui servirait à la fois la biodiversité et les usages du parc. Ils se passent les consignes entre eux, sans que j'aie à tout répéter. Chaque équipe présente sa proposition : très vite, ce ne sont plus mes observations, ce sont les leurs.",
+          "Le soleil a tapé fort, ce jour-là : nous avons allégé le parcours pour garder un rythme doux. La balade s'est refermée sur une courte démonstration de boutures, un geste de jardinier pour terminer dehors."
+        ]
+      },
+      {
+        eyebrow: "~ ce qu'il en reste ~",
+        heading: "On n'en sort pas avec une liste, mais avec un regard",
+        background: "ivory",
+        paragraphs: [
+          "Trois heures de marche ne remplissent pas une tête de noms d'espèces. Elles changent un regard. On ne traverse plus tout à fait pareil un lieu qu'on croyait connaître.",
+          "C'est tout l'esprit de la balade lecture du vivant : apprendre à lire un paysage, ses liens et ses habitants, sans être spécialiste. Une médiathèque, une commune, une entreprise : le principe s'adapte au lieu et au public."
+        ]
+      }
+    ],
+    offerBack: {
+      eyebrow: "~ vous organisez une sortie ? ~",
+      title: "Une balade nature pour votre groupe",
+      text: "Cette sortie est l'une de nos animations. Le principe, les formats et les terrains possibles sont détaillés sur la page de l'offre.",
+      href: carnets[0].offerPath,
+      linkLabel: "Voir la balade lecture du vivant"
+    },
+    cta: {
+      title: "Vous avez un lieu et un public ?",
+      text: "Dites-moi où et pour qui. Je viens repérer le terrain, puis je vous propose une balade adaptée, avec un devis clair."
+    }
+  })
 });
 
 pages.push(...seminairePages);

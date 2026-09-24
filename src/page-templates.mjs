@@ -8,8 +8,60 @@ import {
   practitionerCard,
   sectionHeading,
   soilDivider,
-  splitSection
+  splitSection,
+  spotlight
 } from "./components.mjs";
+
+// Gabarit d'un carnet de terrain : le récit d'une prestation réelle, rangé
+// sous sa page d'offre. Contrairement à une page d'offre, il ne vend pas :
+// il raconte, puis renvoie vers l'offre et vers le contact. Sans formule
+// commerciale dans le hero, pour que la lecture reste un récit.
+export function renderCarnetPage(data) {
+  const sections = (data.sections || []).map(renderCarnetSection).join("");
+  const offerBack = data.offerBack
+    ? spotlight({
+        eyebrow: data.offerBack.eyebrow,
+        title: data.offerBack.title,
+        text: data.offerBack.text,
+        href: data.offerBack.href,
+        linkLabel: data.offerBack.linkLabel
+      })
+    : "";
+
+  return `${pageHero({
+    eyebrow: data.hero.eyebrow,
+    title: data.hero.title,
+    lead: data.hero.lead,
+    tags: data.hero.tags,
+    primary: false,
+    compact: true,
+    media: data.hero.media
+  })}
+    ${sections}
+    ${offerBack}
+    ${finalCta(data.cta)}`;
+}
+
+function renderCarnetSection(section) {
+  if (section.media) {
+    return splitSection({
+      heading: section.heading,
+      eyebrow: section.eyebrow || "",
+      paragraphs: section.paragraphs,
+      media: section.media,
+      reverse: section.reverse,
+      background: section.background || "sand"
+    });
+  }
+
+  return `<section class="section section--${section.background || "ivory"}">
+    <div class="container reading-width">
+      ${section.eyebrow ? `<p class="handwritten">${section.eyebrow}</p>` : ""}
+      <h2>${section.heading}</h2>
+      ${section.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+    </div>
+  </section>`;
+}
 
 export function renderOfferPage(data) {
   const variants = data.variants?.length
