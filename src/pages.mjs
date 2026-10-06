@@ -55,6 +55,13 @@ const carnets = [
     listTitle: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
     listText: "Un vieux catalpa, un érable à messages, des berges habitées et un parc à explorer, avec une médiathèque de Mâcon.",
     eyebrow: "~ balade nature, septembre 2026 ~"
+  },
+  {
+    path: "/animations-nature-jardin/balade-nature-lecture-du-vivant/grottes-daze-2026/",
+    offerPath: "/animations-nature-jardin/balade-nature-lecture-du-vivant/",
+    listTitle: "Lire le paysage des Grottes d'Azé, et imaginer des millions d'années",
+    listText: "Un petit groupe d'adultes, un espace naturel sensible et une archéologue : une balade pour apprendre à lire un lieu et remonter le temps.",
+    eyebrow: "~ balade nature, mai 2026 ~"
   }
 ];
 
@@ -86,7 +93,7 @@ export const pages = [];
 pages.push({
   path: "/",
   kind: "home",
-  title: "Animations nature & jardin, accompagnement de projets — La Fabrique du Vivant",
+  title: "Animations nature & jardin, accompagnement de projets | La Fabrique du Vivant",
   description:
     "Animations nature et jardin pour petits et grands, accompagnement de projets, formations. Mâcon, Beaujolais, Lyon. Par un jardinier avec 16 ans de terrain en collectivité.",
   approved: true,
@@ -197,7 +204,7 @@ pages.push({
 pages.push({
   path: "/animations-nature-jardin/",
   kind: "pillar",
-  title: "Animations nature et jardin pour structures — La Fabrique du Vivant",
+  title: "Animations nature et jardin pour structures | La Fabrique du Vivant",
   description:
     "Ateliers et balades nature pour crèches, écoles, seniors, collectivités et entreprises. Interventions à Mâcon, dans le Beaujolais et à Lyon.",
   breadcrumbs: [["Animations nature & jardin", "/animations-nature-jardin/"]],
@@ -317,7 +324,7 @@ pages.push({
 pages.push({
   path: "/animations-nature-jardin/atelier-terre-vivante/",
   kind: "offer",
-  title: "Atelier terre vivante en pots — animation sol vivant pour tous publics",
+  title: "Atelier terre vivante en pots : animation sol vivant pour tous publics",
   description:
     "Un atelier où chacun fabrique un sol vivant dans un pot de fleurs. Tout public, de la crèche à l'entreprise. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
@@ -332,7 +339,7 @@ pages.push({
       eyebrow: "~ fabriquer la fertilité, de ses mains ~",
       title: "L'atelier terre vivante : le sol vivant entre les mains",
       lead:
-        "Un atelier où chacun fabrique son propre terreau à partir de matière organique — épluchures, feuilles mortes, compost — assemblés couche après couche dans un pot de fleurs. Et repart avec, sa graine semée dedans. De la crèche à l'entreprise, on touche, on assemble, on comprend ce qui fait vivre la terre.",
+        "Un atelier où chacun fabrique son propre terreau à partir de matière organique (épluchures, feuilles mortes, compost) assemblés couche après couche dans un pot de fleurs. Et repart avec, sa graine semée dedans. De la crèche à l'entreprise, on touche, on assemble, on comprend ce qui fait vivre la terre.",
       tags: ["environ 2 h, adaptable", "en salle ou dehors", "tout le matériel est fourni"]
     },
     principle: {
@@ -408,7 +415,7 @@ pages.push({
     ],
     practitionerSentence: "L'atelier terre vivante, c'est mon métier condensé en un pot de fleurs. J'ai testé cette technique neuf ans durant sur ma propre terrasse, avant de la partager avec vos publics.",
     faq: [
-      { question: "Comment se déroule la séance ?", answer: "Selon le public, une courte présentation pour comprendre pourquoi et comment la terre vit, appuyée sur mon expérience de terrain — puis les mains dans la terre pour fabriquer son pot, et un temps de questions à la fin. En crèche, la présentation s'efface : on passe directement aux mains dans la terre." },
+      { question: "Comment se déroule la séance ?", answer: "Selon le public, une courte présentation pour comprendre pourquoi et comment la terre vit, appuyée sur mon expérience de terrain, puis les mains dans la terre pour fabriquer son pot, et un temps de questions à la fin. En crèche, la présentation s'efface : on passe directement aux mains dans la terre." },
       { question: "Et s'il pleut ?", answer: "L'atelier se vit aussi bien en salle que dehors : des tables suffisent. La météo n'annule jamais la séance." },
       { question: "À partir de quel âge ?", answer: "Dès la crèche. Les gestes, la durée et les matières s'adaptent à chaque public, des tout-petits aux aînés." },
       { question: "Pour combien de participants ?", answer: "L'idéal : une dizaine de personnes à la fois, pour que chacun ait vraiment les mains dans la terre. Groupe plus grand ? Parlons-en, il existe des formats pour ça." },
@@ -426,7 +433,7 @@ pages.push({
 pages.push({
   path: "/animations-nature-jardin/eveil-nature-petite-enfance/",
   kind: "offer",
-  title: "Éveil à la nature en crèche — sorties sensorielles 0-3 ans",
+  title: "Éveil à la nature en crèche : sorties sensorielles 0-3 ans",
   description:
     "Sorties nature sensorielles pour les 0-3 ans en crèche : toucher, sentir, observer le vivant. Intervenant nature à Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
@@ -530,7 +537,7 @@ pages.push({
 pages.push({
   path: "/animations-nature-jardin/programme-scolaire-decouverte-vivant/",
   kind: "offer",
-  title: "Programme scolaire découverte du vivant — animations nature à l'école",
+  title: "Programme scolaire découverte du vivant : animations nature à l'école",
   description:
     "Un programme multi-séances pour faire découvrir le vivant aux élèves : sol, plantes, petites bêtes, saisons. École et périscolaire, Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
@@ -617,7 +624,7 @@ pages.push({
 pages.push({
   path: "/animations-nature-jardin/balade-nature-lecture-du-vivant/",
   kind: "offer",
-  title: "Balade nature animée « lecture du vivant » — groupes et structures",
+  title: "Balade nature animée « lecture du vivant » : groupes et structures",
   description:
     "Une balade animée de 2 h où le groupe apprend à lire le vivant : traces, sols, plantes, liens invisibles. Jusqu'à 15 personnes. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
@@ -724,7 +731,7 @@ pages.push({
 pages.push({
   path: "/animations-nature-jardin/atelier-jardinage-seniors/",
   kind: "offer",
-  title: "Ateliers jardin en EHPAD et résidence seniors — mains dans la terre",
+  title: "Ateliers jardin en EHPAD et résidence seniors : mains dans la terre",
   description:
     "Ateliers jardin multi-séances pour EHPAD et résidences seniors : sensorialité, mémoire du jardin, lien au vivant. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
@@ -792,7 +799,7 @@ pages.push({
 pages.push({
   path: "/accompagnement-projets-nature/",
   kind: "pillar",
-  title: "Accompagnement de projets nature et jardin — de l'idée au lieu vivant",
+  title: "Accompagnement de projets nature et jardin : de l'idée au lieu vivant",
   description:
     "Conception et accompagnement de projets nature et jardin : jardin pédagogique, jardin partagé, espace vert vivant. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [["Accompagnement de projets", "/accompagnement-projets-nature/"]],
@@ -879,7 +886,7 @@ pages.push({
 pages.push({
   path: "/formations-professionnelles/",
   kind: "pillar",
-  title: "Formations professionnelles nature et jardin — agents et équipes",
+  title: "Formations professionnelles nature et jardin : agents et équipes",
   description:
     "Formations professionnelles pour agents de collectivités, bailleurs et associations : gestion différenciée, compostage, biodiversité. Formateur indépendant, 16 ans de terrain.",
   breadcrumbs: [["Formations professionnelles", "/formations-professionnelles/"]],
@@ -941,7 +948,7 @@ pages.push({
 pages.push({
   path: "/pour-qui/",
   kind: "pillar",
-  title: "Pour qui j'interviens — crèches, écoles, seniors, collectivités, entreprises",
+  title: "Pour qui j'interviens : crèches, écoles, seniors, collectivités, entreprises",
   description:
     "Animations nature, accompagnement et formations pour crèches, écoles, maisons seniors, collectivités et entreprises. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [["Pour qui ?", "/pour-qui/"]],
@@ -1016,7 +1023,7 @@ pages.push({
 pages.push({
   path: "/pour-qui/creches-petite-enfance/",
   kind: "audience",
-  title: "Intervenant nature en crèche — éveil au vivant pour les 0-3 ans",
+  title: "Intervenant nature en crèche : éveil au vivant pour les 0-3 ans",
   description:
     "Intervenant nature pour crèches et RPE : éveil sensoriel, sorties nature, ateliers terre. Mâcon, Beaujolais, Lyon. Devis rapide.",
   breadcrumbs: [
@@ -1070,7 +1077,7 @@ pages.push({
 pages.push({
   path: "/pour-qui/ecoles/",
   kind: "audience",
-  title: "Intervenant nature à l'école — animations et jardin pédagogique",
+  title: "Intervenant nature à l'école : animations et jardin pédagogique",
   description:
     "Animations nature à l'école, programme découverte du vivant et création de jardin pédagogique. Intervenant à Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
@@ -1116,7 +1123,7 @@ pages.push({
 pages.push({
   path: "/pour-qui/maisons-seniors-ehpad/",
   kind: "audience",
-  title: "Animations jardin en EHPAD et résidence seniors — le vivant qui relie",
+  title: "Animations jardin en EHPAD et résidence seniors : le vivant qui relie",
   description:
     "Ateliers jardin et nature pour EHPAD et résidences seniors : sensorialité, mémoire, lien social. Intervenant à Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
@@ -1162,7 +1169,7 @@ pages.push({
 pages.push({
   path: "/pour-qui/collectivites-communautes-communes/",
   kind: "audience",
-  title: "Animations nature et formations pour collectivités — par un ancien agent territorial",
+  title: "Animations nature et formations pour collectivités : par un ancien agent territorial",
   description:
     "Animations nature pour habitants, formations d'agents, accompagnement de projets : un prestataire qui a passé 16 ans en collectivité. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
@@ -1223,7 +1230,7 @@ pages.push({
 pages.push({
   path: "/pour-qui/entreprises/",
   kind: "audience",
-  title: "Animations nature en entreprise — jardin, compost et balade",
+  title: "Animations nature en entreprise : jardin, compost et balade",
   description:
     "Atelier jardin, compost, sensibilisation ou balade nature pour une équipe d'environ 10 personnes. Dans vos locaux ou dehors, à Mâcon, Beaujolais et Lyon.",
   breadcrumbs: [
@@ -1281,7 +1288,7 @@ pages.push({
 pages.push({
   path: "/a-propos/",
   kind: "about",
-  title: "Fabrice Maira — parcours et approche de La Fabrique du Vivant",
+  title: "Fabrice Maira : parcours et approche de La Fabrique du Vivant",
   description:
     "Découvrez Fabrice Maira : 16 ans agent territorial des espaces verts, jardinier-praticien du vivant et fondateur de La Fabrique du Vivant.",
   breadcrumbs: [["À propos", "/a-propos/"]],
@@ -1346,7 +1353,7 @@ pages.push({
 pages.push({
   path: "/zone-intervention/",
   kind: "zone",
-  title: "Zone d'intervention — Mâcon, Beaujolais, Lyon et alentours",
+  title: "Zone d'intervention : Mâcon, Beaujolais, Lyon et alentours",
   description:
     "Animations nature, accompagnements et formations à Mâcon, dans le Nord Beaujolais, à Villefranche-sur-Saône et Lyon. Déplacement dans votre structure.",
   breadcrumbs: [["Zone d'intervention", "/zone-intervention/"]],
@@ -1418,7 +1425,7 @@ pages.push({
 pages.push({
   path: "/contact/",
   kind: "contact",
-  title: "Contact et demande de devis — La Fabrique du Vivant",
+  title: "Contact et demande de devis | La Fabrique du Vivant",
   description:
     "Demandez un devis pour une animation, un accompagnement ou une formation nature et jardin. Réponse rapide, échange sans engagement.",
   breadcrumbs: [["Contact & devis", "/contact/"]],
@@ -1451,7 +1458,7 @@ pages.push({
           <input type="text" id="nom" name="nom" placeholder="Ex. : Camille Dupont" required autocomplete="name">
         </div>
         <div class="form-field">
-          <label for="structure">Votre structure <span class="form-help">— nom et commune</span></label>
+          <label for="structure">Votre structure <span class="form-help">: nom et commune</span></label>
           <input type="text" id="structure" name="structure" placeholder="Ex. : crèche municipale, Mâcon" required autocomplete="organization">
         </div>
         <div class="form-field">
@@ -1478,19 +1485,19 @@ pages.push({
           </select>
         </div>
         <div class="form-field">
-          <label for="periode">Période envisagée <span class="form-help">— facultatif, même approximative</span></label>
+          <label for="periode">Période envisagée <span class="form-help">: facultatif, même approximative</span></label>
           <input type="text" id="periode" name="periode" placeholder="Ex. : au printemps, pas encore fixé…">
         </div>
         <div class="form-field">
-          <label for="message">Votre message <span class="form-help">— publics, lieu, envies, questions</span></label>
+          <label for="message">Votre message <span class="form-help">: publics, lieu, envies, questions</span></label>
           <textarea id="message" name="message" placeholder="Racontez-moi votre contexte en quelques lignes." required></textarea>
         </div>
         <div class="form-field">
-          <label for="email">Votre email <span class="form-help">— pour vous répondre</span></label>
+          <label for="email">Votre email <span class="form-help">: pour vous répondre</span></label>
           <input type="email" id="email" name="email" placeholder="prenom@votre-structure.fr" required autocomplete="email">
         </div>
         <div class="form-field">
-          <label for="telephone">Votre téléphone <span class="form-help">— facultatif, si vous préférez qu'on se parle</span></label>
+          <label for="telephone">Votre téléphone <span class="form-help">: facultatif, si vous préférez qu'on se parle</span></label>
           <input type="tel" id="telephone" name="telephone" placeholder="Ex. : 06 39 98 12 34" autocomplete="tel">
         </div>
         <button class="button" type="submit">Envoyer ma demande</button>
@@ -1526,11 +1533,11 @@ pages.push({
 pages.push({
   path: "/mentions-legales/",
   kind: "legal",
-  title: "Mentions légales — La Fabrique du Vivant",
+  title: "Mentions légales | La Fabrique du Vivant",
   description: "Mentions légales du site lafabriqueduvivant.fr.",
   breadcrumbs: [["Mentions légales", "/mentions-legales/"]],
   approved: true,
-  review: ["Statut et SIRET complétés le 2026-07-17. Pas d'adresse professionnelle ni d'email public affichés (décision Fabrice) — le contact passe uniquement par la page contact."],
+  review: ["Statut et SIRET complétés le 2026-07-17. Pas d'adresse professionnelle ni d'email public affichés (décision Fabrice) : le contact passe uniquement par la page contact."],
   body: `${pageHero({
     eyebrow: "~ informations obligatoires ~",
     title: "Mentions légales",
@@ -1563,7 +1570,7 @@ pages.push({
 pages.push({
   path: "/confidentialite/",
   kind: "legal",
-  title: "Politique de confidentialité — La Fabrique du Vivant",
+  title: "Politique de confidentialité | La Fabrique du Vivant",
   description: "Comment lafabriqueduvivant.fr traite les données transmises via les formulaires de contact et de projet de séminaire.",
   breadcrumbs: [["Confidentialité", "/confidentialite/"]],
   approved: true,
@@ -1600,7 +1607,7 @@ pages.push({
 pages.push({
   path: "/merci/",
   kind: "thanks",
-  title: "Votre message est bien parti — La Fabrique du Vivant",
+  title: "Votre message est bien parti | La Fabrique du Vivant",
   description: "Confirmation d'envoi du formulaire de contact.",
   noindex: true,
   approved: true,
@@ -1621,7 +1628,7 @@ pages.push({
 pages.push({
   path: "/fiche-depart/",
   kind: "fiche",
-  title: "Clarifiez votre projet nature en 15 minutes — La Fabrique du Vivant",
+  title: "Clarifiez votre projet nature en 15 minutes | La Fabrique du Vivant",
   description: "Une fiche imprimable pour clarifier votre projet nature, choisir le format adapté et préparer un premier échange.",
   noindex: true,
   approved: true,
@@ -1639,7 +1646,7 @@ pages.push({
     <div class="container contact-layout">
       <form class="contact-form" action="/fiche-depart/" method="post" data-fiche-form data-endpoint="${site.ficheFormAction}">
         <div class="form-field">
-          <label for="email">Votre email professionnel <span class="form-help">— pour recevoir la fiche</span></label>
+          <label for="email">Votre email professionnel <span class="form-help">: pour recevoir la fiche</span></label>
           <input type="email" id="email" name="email" placeholder="prenom@votre-structure.fr" required autocomplete="email">
         </div>
         <button class="button button--secondary" type="submit">Recevoir la Fiche de départ</button>
@@ -1661,7 +1668,7 @@ pages.push({
 pages.push({
   path: "/fiche-depart/merci/",
   kind: "thanks",
-  title: "Votre Fiche de départ est en route — La Fabrique du Vivant",
+  title: "Votre Fiche de départ est en route | La Fabrique du Vivant",
   description: "Confirmation d'envoi de la Fiche de départ.",
   noindex: true,
   approved: true,
@@ -1682,7 +1689,7 @@ pages.push({
 pages.push({
   path: "/404.html",
   kind: "not-found",
-  title: "Page introuvable — La Fabrique du Vivant",
+  title: "Page introuvable | La Fabrique du Vivant",
   description: "Cette page n'existe pas ou n'existe plus.",
   noindex: true,
   approved: true,
@@ -1705,7 +1712,7 @@ pages.push({
 pages.push({
   path: "/carnets-de-terrain/",
   kind: "standard",
-  title: "Carnets de terrain — La Fabrique du Vivant",
+  title: "Carnets de terrain | La Fabrique du Vivant",
   description:
     "Des récits de balades et d'ateliers nature réellement menés : ce qui s'est passé, ce qui a été observé, ce qui en reste. Le terrain, raconté.",
   breadcrumbs: [["Carnets de terrain", "/carnets-de-terrain/"]],
@@ -1743,7 +1750,7 @@ pages.push({
 pages.push({
   path: carnets[0].path,
   kind: "carnet",
-  title: "Balade nature avec la Médiathèque de Mâcon — lire le vivant le long de la Saône",
+  title: "Balade nature avec la Médiathèque de Mâcon : lire le vivant le long de la Saône",
   description:
     "Récit d'une balade nature de trois heures avec la Médiathèque de Mâcon : apprendre à lire un paysage vivant le long de la Saône, du vieux catalpa au parc du Vallon.",
   article: {
@@ -1763,7 +1770,7 @@ pages.push({
       eyebrow: "~ carnet de terrain ~",
       title: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
       lead:
-        "En septembre 2026, la Médiathèque de Mâcon a proposé à son public une balade nature de trois heures, animée par La Fabrique du Vivant. Le long de la Saône, un groupe intergénérationnel a appris à lire un paysage vivant : comprendre ce qui s'y passe, plutôt que réciter des noms d'espèces.",
+        "En septembre 2026, la Médiathèque de Mâcon a proposé à son public une balade nature de trois heures, animée par La Fabrique du Vivant. Le long de la Saône, sur les quais de Mâcon, un groupe intergénérationnel a appris à lire un paysage vivant : comprendre ce qui s'y passe, plutôt que réciter des noms d'espèces.",
       tags: [
         "Septembre 2026",
         "3 heures, à pied",
@@ -1788,7 +1795,7 @@ pages.push({
           caption: "~ un vieil arbre, et une histoire à lui donner ~"
         }),
         paragraphs: [
-          "La balade commence devant un vieil arbre, à quelques pas de la médiathèque. Plutôt qu'un exposé, une question : quelqu'un connaît-il cet arbre ?",
+          "La balade commence devant un vieux catalpa, sur les quais de Saône, à quelques pas de la médiathèque. Plutôt qu'un exposé, une question : quelqu'un connaît-il cet arbre ?",
           "Le groupe s'approche, touche l'écorce, remarque les cavités au pied et la vie qui s'installe sous le bois qui se détache. Sans le savoir, chacun vient de lire un habitat.",
           "On parle ensuite de l'arbre lui-même. Le catalpa vient du sud des États-Unis, planté chez nous pour son ombre et ses fleurs. Son âge exact reste un mystère. J'ai mené mon enquête : tout porte à croire qu'un pêcheur l'a planté à la fin du XIXe siècle. Pourquoi, et pour qui ? Ceux qui ont fait la balade le savent. Aux autres, il reste le mystère."
         ]
@@ -1799,7 +1806,7 @@ pages.push({
         background: "ivory",
         paragraphs: [
           "Entre deux arrêts, pas de temps mort : je confie une photo de plante ou de fruit à chacun. « Retrouvez ce qu'elle montre. »",
-          "Le groupe fouille les massifs, les pieds de mur et les jardinières. On touche, on compare, on échange les trouvailles, on parle des plantes. La recherche remplace les commentaires de marche, et les noms arrivent une fois la plante trouvée, jamais avant."
+          "Le groupe fouille les massifs, les pieds de mur et les jardinières. On touche, on compare, on échange les trouvailles, on parle des plantes : hibiscus, figuiers, arbustes ornementaux. La recherche remplace les commentaires de marche, et les noms arrivent une fois la plante trouvée, jamais avant."
         ]
       },
       {
@@ -1807,7 +1814,7 @@ pages.push({
         heading: "Un mot laissé à l'érable",
         background: "sand",
         paragraphs: [
-          "À l'ombre d'un jeune érable, on marque une pause. J'accroche un premier mot à une branche, puis je propose à qui veut d'écrire le sien sur une étiquette.",
+          "À l'ombre d'un jeune érable, sur les quais de Saône, on marque une pause. J'accroche un premier mot à une branche, puis je propose à qui veut d'écrire le sien sur une étiquette.",
           "Quelques messages pendent bientôt aux branches. Personne n'a écrit un poème : des phrases simples, adressées à l'arbre ou aux oiseaux.",
           "C'est l'un des moments que je retiens : ce qu'on accepte de déposer dans un lieu, et ce qu'il garde en retour."
         ]
@@ -1817,15 +1824,25 @@ pages.push({
         heading: "La Saône, un couloir de vie",
         background: "ivory",
         paragraphs: [
-          "Le parcours descend vers la Saône. Devant l'eau, une question simple : si vous étiez un petit animal, où vous cachez-vous ? La bande végétalisée de la berge, si discrète, devient alors une évidence : des cachettes, de la nourriture, du repos, entre la rivière et la ville.",
+          "Le parcours descend vers la Saône, sur les quais de Mâcon. Devant l'eau, une question simple : si vous étiez un petit animal, où vous cachez-vous ? La bande végétalisée de la berge, si discrète, devient alors une évidence : des cachettes, de la nourriture, du repos, entre la rivière et la ville.",
           "Au pied du quai, un roseau commun pousse malgré tout. Un quai aménagé n'est pas condamné au minéral.",
-          "Et la cigogne, fil rouge de la journée. En Saône-et-Loire, on comptait trois couples en 2001 ; ils sont plusieurs centaines aujourd'hui. Elles nichent dans les arbres morts au bord de l'eau, pas sur les toits comme en Alsace. La médiathèque projetait justement, le lendemain, <a href=\"https://www.macon.fr/information-transversale/agenda/projection-et-rencontre-daniel-et-la-cigogne-12652\">« Daniel et la cigogne »</a>, un film sur la migration d'une cigogne."
+          "Et la cigogne blanche, fil rouge de la journée. En Saône-et-Loire et dans le val de Saône, on comptait trois couples en 2001 ; ils sont plusieurs centaines aujourd'hui. Elles nichent dans les arbres morts au bord de l'eau, pas sur les toits comme en Alsace. La médiathèque projetait justement, le lendemain, <a href=\"https://www.macon.fr/information-transversale/agenda/projection-et-rencontre-daniel-et-la-cigogne-12652\">« Daniel et la cigogne »</a>, un film sur la migration d'une cigogne."
+        ]
+      },
+      {
+        eyebrow: "~ le jardin Lamartine ~",
+        heading: "La mémoire d'un lieu",
+        background: "sand",
+        paragraphs: [
+          "Après les quais, la balade traverse le jardin romantique du quai Lamartine. Les allées y portent, gravés au sol, des vers du poème « Le Lac ».",
+          "Alphonse de Lamartine est né à Mâcon, et la ville garde sa mémoire. Lire un extrait à voix haute devant la Saône, c'est relier un paysage à des mots qui ont plus de deux siècles.",
+          "C'est l'un des moments qui ont le plus parlé au groupe : on ne regarde plus seulement la rivière, on la lit aussi à travers un texte."
         ]
       },
       {
         eyebrow: "~ au parc du Vallon des Rigolettes ~",
         heading: "Un parc, cinq espèces, et des idées",
-        background: "sand",
+        background: "ivory",
         paragraphs: [
           "Dernière étape, le parc du Vallon des Rigolettes, et place au jeu. Mission biodiversité : chaque groupe reçoit une espèce, une tarente, une pipistrelle, un hérisson, une abeille sauvage ou un lecteur, et cherche dans le parc le meilleur endroit où elle pourrait s'installer.",
           "Les groupes explorent, se répartissent, puis proposent un aménagement qui servirait à la fois la biodiversité et les usages du parc. Ils se passent les consignes entre eux, sans que j'aie à tout répéter. Chaque équipe présente sa proposition : très vite, ce ne sont plus mes observations, ce sont les leurs.",
@@ -1835,7 +1852,7 @@ pages.push({
       {
         eyebrow: "~ ce qu'il en reste ~",
         heading: "On n'en sort pas avec une liste, mais avec un regard",
-        background: "ivory",
+        background: "sand",
         paragraphs: [
           "Trois heures de marche ne remplissent pas une tête de noms d'espèces. Elles changent un regard. On ne traverse plus tout à fait pareil un lieu qu'on croyait connaître.",
           "C'est tout l'esprit de la balade lecture du vivant : apprendre à lire un paysage, ses liens et ses habitants, sans être spécialiste. Une médiathèque, une commune, une entreprise : le principe s'adapte au lieu et au public."
@@ -1852,6 +1869,122 @@ pages.push({
     cta: {
       title: "Vous avez un lieu et un public ?",
       text: "Dites-moi où et pour qui. Je viens repérer le terrain, puis je vous propose une balade adaptée, avec un devis clair."
+    }
+  })
+});
+
+pages.push({
+  path: carnets[1].path,
+  kind: "carnet",
+  title: "Balade nature aux Grottes d'Azé : lire le paysage et imaginer des millions d'années",
+  description:
+    "Récit d'une balade nature aux Grottes d'Azé avec un petit groupe d'adultes : apprendre à lire un paysage vivant et se projeter des millions d'années en arrière.",
+  article: {
+    headline: "Lire le paysage des Grottes d'Azé, et imaginer des millions d'années",
+    datePublished: "2026-05-09",
+    image: "/assets/images/photo-cedres-1600.webp"
+  },
+  breadcrumbs: [
+    ["Animations nature & jardin", "/animations-nature-jardin/"],
+    ["Balade lecture du vivant", "/animations-nature-jardin/balade-nature-lecture-du-vivant/"],
+    ["Carnet de terrain", carnets[1].path]
+  ],
+  approved: true,
+  review: draftReview,
+  body: renderCarnetPage({
+    hero: {
+      eyebrow: "~ carnet de terrain ~",
+      title: "Lire le paysage des Grottes d'Azé, et imaginer des millions d'années",
+      lead:
+        "En mai 2026, j'ai accompagné un petit groupe d'adultes pour une balade dans l'espace naturel sensible des Grottes d'Azé, à une quinzaine de minutes de Cluny, en Saône-et-Loire. Pendant deux heures et demie, nous avons appris à lire le lieu, avec une archéologue qui apportait son regard sur son histoire. Notre fil conducteur : observer le paysage actuel et essayer de nous projeter au même endroit, il y a des millions d'années.",
+      tags: [
+        "Mai 2026",
+        "2 h 30, à pied",
+        "Un petit groupe d'adultes",
+        "Grottes d'Azé, Saône-et-Loire"
+      ],
+      media: picture({
+        name: "cedres",
+        alt: "La plateforme des cèdres sur l'espace naturel sensible des Grottes d'Azé",
+        caption: "~ la plateforme des cèdres, aux Grottes d'Azé ~",
+        eager: true
+      })
+    },
+    sections: [
+      {
+        eyebrow: "~ premier arrêt ~",
+        heading: "Qu'est-ce que ce lieu peut nous raconter ?",
+        background: "sand",
+        media: picture({
+          name: "saule",
+          alt: "Un saule têtard chargé de gui au bord de la Mouge, sur l'espace naturel",
+          caption: "~ au bord de la Mouge, un saule têtard habité par le gui ~"
+        }),
+        paragraphs: [
+          "Les participants connaissaient déjà le secteur, autour d'Azé et de Cluny. Mais un lieu familier peut encore ouvrir beaucoup de questions.",
+          "Pour cette balade, nous sommes partis de ce que l'espace naturel nous donnait à observer : la Mouge, qui serpente encore librement, les pierres calcaires, la mare, les plantes et les arbres.",
+          "Chaque élément pouvait ouvrir une piste. Que nous raconte cette pierre ? Quels indices permettent d'imaginer un paysage ancien ? Et comment regarder ce qui pousse ici aujourd'hui ?",
+          "L'objectif était d'ouvrir la curiosité. Prendre le temps de s'arrêter sur un détail, puis élargir le regard.",
+          "Le parcours se construisait à partir des particularités du site (le platelage de bois le long de la Mouge, la mare et ses panneaux, le coteau calcaire) et des échanges du groupe. Un lieu a son histoire, ses milieux, ses surprises. C'est à partir de cette matière que la balade prend forme."
+        ]
+      },
+      {
+        eyebrow: "~ changer d'échelle ~",
+        heading: "Et si nous remontions des millions d'années ?",
+        background: "ivory",
+        paragraphs: [
+          "Les fossiles du calcaire ont offert un point d'appui pour changer d'échelle.",
+          "Sous nos pieds s'ouvrent 420 mètres de galeries et une rivière souterraine : les grottes qui donnent leur nom au site. Le lieu garde aussi un nom plus ancien, la Balme de Rizrol, où balme désignait un abri.",
+          "Nous avions sous les yeux des traces d'un temps difficile à imaginer. À partir de là, nous avons essayé de nous représenter le même endroit dans un passé très lointain.",
+          "À quoi pouvait ressembler ce paysage, du temps où la mer recouvrait la région ? Qu'est-ce qui a changé depuis ? Qu'est-ce qui nous permet encore d'en lire une partie de l'histoire ?",
+          "Se projeter il y a des millions d'années demande un petit effort d'imagination. Les indices présents dans le calcaire donnent une prise à cet effort.",
+          "Une pierre croisée sur le chemin devient alors autre chose qu'une pierre. Elle ouvre une fenêtre sur un paysage disparu."
+        ]
+      },
+      {
+        eyebrow: "~ lire le vivant ~",
+        heading: "Que voit-on quand on regarde vraiment ?",
+        background: "sand",
+        paragraphs: [
+          "La lecture du lieu se poursuivait aussi dans le vivant actuel, du frêne au cèdre de l'Atlas.",
+          "Le lierre a notamment ouvert un échange autour d'une idée bien installée : celle d'une plante qui étouffe les arbres.",
+          "Près du rocher, un grand frêne porte du lierre, tandis qu'un peu plus loin le gui s'installe dans les branches. Deux façons très différentes de vivre sur un arbre, à observer de près.",
+          "Nous avons repris l'idée reçue sur le lierre en regardant directement ce qui se passait. Où s'accroche-t-il ? Que pouvons-nous observer sur l'arbre ?",
+          "J'aime ces moments où une question nous ramène au terrain. L'explication vient soutenir ce que nous regardons ensemble.",
+          "C'est ce que j'appelle la lecture du vivant : partir de ce qui est là, observer les relations et chercher à comprendre le lieu."
+        ]
+      },
+      {
+        eyebrow: "~ deux regards ~",
+        heading: "Comment les regards se complètent-ils ?",
+        background: "ivory",
+        paragraphs: [
+          "La présence d'une archéologue enrichissait cette exploration.",
+          "Nous pouvions passer de l'histoire du paysage aux usages humains des ressources naturelles. Le buis, l'amadou, le silex ou le gui ouvraient des liens avec la préhistoire et les savoir-faire anciens.",
+          "Les échanges se construisaient au fil de la marche. Une observation amenait un complément, une question ouvrait un détour.",
+          "La balade s'est prolongée autour de l'allumage du feu : par friction, avec l'amadou, et par percussion, avec le silex. La même matière que transportait Ötzi, il y a plus de 5 000 ans. Une façon de relier les ressources observées aux gestes humains, et de rendre cette histoire plus concrète."
+        ]
+      },
+      {
+        eyebrow: "~ ce qu'il en reste ~",
+        heading: "Que reste-t-il après la balade ?",
+        background: "sand",
+        paragraphs: [
+          "Je retiens surtout cette possibilité : regarder un endroit connu et y découvrir une profondeur que l'on ne soupçonnait pas.",
+          "Sous nos pieds, dans une pierre ou le long d'un tronc, des indices ouvrent des questions. Un espace naturel sensible comme celui des Grottes d'Azé devient plus riche à mesure qu'on apprend à le lire."
+        ]
+      }
+    ],
+    offerBack: {
+      eyebrow: "~ vous organisez une sortie ? ~",
+      title: "Une balade nature pour votre groupe",
+      text: "Cette sortie est l'une de nos animations. Le principe, les formats et les terrains possibles sont détaillés sur la page de l'offre.",
+      href: carnets[1].offerPath,
+      linkLabel: "Voir la balade lecture du vivant"
+    },
+    cta: {
+      title: "Vous souhaitez faire découvrir votre lieu autrement ?",
+      text: "La balade « Lecture du vivant » s'appuie sur les particularités de votre site pour ouvrir la curiosité de votre public et construire l'exploration ensemble."
     }
   })
 });

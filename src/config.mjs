@@ -7,7 +7,7 @@ export const site = {
   areaServed: ["Mâcon", "Beaujolais", "Villefranche-sur-Saône", "Lyon"],
   formEndpoint: "https://api.web3forms.com/submit",
   formProviderName: "Web3Forms",
-  // Clé publique Web3Forms (visible dans le HTML par conception) — associée à fab@lafabriqueduvivant.fr.
+  // Clé publique Web3Forms (visible dans le HTML par conception) - associée à fab@lafabriqueduvivant.fr.
   formAccessKey: "b65cefcb-e97c-4c9e-aa43-1c93b679735f",
   // Guichet d'inscription du service d'emailing pour la Fiche de départ (étape « Formulaire inline » du tunnel).
   // L'envoi se fait en JSON via app.js ; le service valide l'email et déclenche la règle d'automatisation.
