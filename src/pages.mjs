@@ -6,6 +6,7 @@ import {
   featureGrid,
   ficheDepartTeaser,
   finalCta,
+  imageSource,
   pageHero,
   photoPlaceholder,
   picture,
@@ -53,6 +54,9 @@ const carnets = [
     path: "/animations-nature-jardin/balade-nature-lecture-du-vivant/mediatheque-macon-sedd-2026/",
     offerPath: "/animations-nature-jardin/balade-nature-lecture-du-vivant/",
     listTitle: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
+    imageName: "participantsBacs",
+    imagePosition: "center 15%",
+    imageAlt: "Participants observant des jardinières pendant une balade, visages floutés",
     listText: "Un vieux catalpa, un érable à messages, des berges habitées et un parc à explorer, avec une médiathèque de Mâcon.",
     eyebrow: "~ balade nature, septembre 2026 ~"
   },
@@ -60,8 +64,19 @@ const carnets = [
     path: "/animations-nature-jardin/balade-nature-lecture-du-vivant/grottes-daze-2026/",
     offerPath: "/animations-nature-jardin/balade-nature-lecture-du-vivant/",
     listTitle: "Lire le paysage des Grottes d'Azé, et imaginer des millions d'années",
+    imageName: "cedres",
+    imageAlt: "La plateforme des cèdres sur l'espace naturel sensible des Grottes d'Azé",
     listText: "Un petit groupe d'adultes, un espace naturel sensible et une archéologue : une balade pour apprendre à lire un lieu et remonter le temps.",
     eyebrow: "~ balade nature, mai 2026 ~"
+  },
+  {
+    path: "/animations-nature-jardin/atelier-terre-vivante/tous-au-compost-avril-2026/",
+    offerPath: "/animations-nature-jardin/atelier-terre-vivante/",
+    listTitle: "Du compost au pot de fleurs : fabriquer un sol vivant ensemble",
+    imageName: "compostGroupe",
+    imageAlt: "Fabrice anime l'atelier compost autour d'une table avec les participants, dont les visages sont floutés",
+    listText: "Un atelier Tous au compost à Belleville-en-Beaujolais, pour la Communauté de communes Saône-Beaujolais : du sol vivant en pots et des questions de jardinage.",
+    eyebrow: "~ atelier terre vivante, avril 2026 ~"
   }
 ];
 
@@ -76,8 +91,11 @@ function carnetTeaserSection(offerPath) {
   if (!items.length) return "";
   return `<section class="section section--sage">
     <div class="container">
-      ${sectionHeading(items.length > 1 ? "Carnets de terrain" : "Carnet de terrain", "~ la balade, côté vécu ~")}
+      ${sectionHeading(items.length > 1 ? "Carnets de terrain" : "Carnet de terrain", "~ l'animation, côté vécu ~")}
       ${cardGrid(items.map((item) => ({
+        imageSet: item.imageName,
+        alt: item.imageAlt,
+        position: item.imagePosition,
         eyebrow: item.eyebrow,
         title: item.listTitle,
         text: item.listText,
@@ -413,6 +431,7 @@ pages.push({
         linkLabel: "Voir la page entreprises"
       }
     ],
+    extraSections: [carnetTeaserSection("/animations-nature-jardin/atelier-terre-vivante/")],
     practitionerSentence: "L'atelier terre vivante, c'est mon métier condensé en un pot de fleurs. J'ai testé cette technique neuf ans durant sur ma propre terrasse, avant de la partager avec vos publics.",
     faq: [
       { question: "Comment se déroule la séance ?", answer: "Selon le public, une courte présentation pour comprendre pourquoi et comment la terre vit, appuyée sur mon expérience de terrain, puis les mains dans la terre pour fabriquer son pot, et un temps de questions à la fin. En crèche, la présentation s'efface : on passe directement aux mains dans la terre." },
@@ -1732,6 +1751,9 @@ pages.push({
         ${sectionHeading("Les récits", "~ une sortie, une histoire ~")}
         ${cardGrid(
           carnets.map((carnet) => ({
+            imageSet: carnet.imageName,
+            alt: carnet.imageAlt,
+            position: carnet.imagePosition,
             eyebrow: carnet.eyebrow,
             title: carnet.listTitle,
             text: carnet.listText,
@@ -1742,8 +1764,8 @@ pages.push({
       </div>
     </section>
     ${finalCta({
-      title: "Votre structure a un lieu à faire lire ?",
-      text: "Racontez-moi votre lieu et votre public. Je vous réponds sous 48 h, avec un format de balade adapté."
+      title: "Une animation nature pour votre public ?",
+      text: "Racontez-moi votre projet et votre public. Je vous propose un atelier ou une balade adaptés à votre structure."
     })}`
 });
 
@@ -1752,11 +1774,11 @@ pages.push({
   kind: "carnet",
   title: "Balade nature avec la Médiathèque de Mâcon : lire le vivant le long de la Saône",
   description:
-    "Récit d'une balade nature de trois heures avec la Médiathèque de Mâcon : apprendre à lire un paysage vivant le long de la Saône, du vieux catalpa au parc du Vallon.",
+    "Récit d'une balade nature avec la Médiathèque de Mâcon : apprendre à lire un paysage vivant le long de la Saône, du vieux catalpa au parc du Vallon.",
   article: {
     headline: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
     datePublished: "2026-09-23",
-    image: "/assets/images/photo-participants-bacs-1400.webp"
+    image: imageSource(carnets[0].imageName)
   },
   breadcrumbs: [
     ["Animations nature & jardin", "/animations-nature-jardin/"],
@@ -1770,16 +1792,15 @@ pages.push({
       eyebrow: "~ carnet de terrain ~",
       title: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
       lead:
-        "En septembre 2026, la Médiathèque de Mâcon a proposé à son public une balade nature de trois heures, animée par La Fabrique du Vivant. Le long de la Saône, sur les quais de Mâcon, un groupe intergénérationnel a appris à lire un paysage vivant : comprendre ce qui s'y passe, plutôt que réciter des noms d'espèces.",
+        "En septembre 2026, la <a href=\"https://mediatheque.macon.fr/\">Médiathèque de Mâcon</a> a proposé à son public une balade nature, animée par La Fabrique du Vivant. Le long de la Saône, sur les quais de Mâcon, un groupe intergénérationnel a appris à lire un paysage vivant : comprendre ce qui s'y passe, plutôt que réciter des noms d'espèces.",
       tags: [
         "Septembre 2026",
-        "3 heures, à pied",
         "Un groupe intergénérationnel",
         "Mâcon, au bord de la Saône"
       ],
       media: picture({
-        name: "participantsBacs",
-        alt: "Participants observant des jardinières pendant une balade, visages floutés",
+        name: carnets[0].imageName,
+        alt: carnets[0].imageAlt,
         caption: "~ le groupe en observation pendant la balade, à Mâcon ~",
         eager: true
       })
@@ -1823,10 +1844,15 @@ pages.push({
         eyebrow: "~ la rivière et ses berges ~",
         heading: "La Saône, un couloir de vie",
         background: "ivory",
+        media: picture({
+          name: "bergesSaone",
+          alt: "Une bande de végétation pousse entre la Saône et le quai aménagé à Mâcon",
+          caption: "~ entre le quai et la rivière, une bande de végétation offre des refuges ~"
+        }),
         paragraphs: [
           "Le parcours descend vers la Saône, sur les quais de Mâcon. Devant l'eau, une question simple : si vous étiez un petit animal, où vous cachez-vous ? La bande végétalisée de la berge, si discrète, devient alors une évidence : des cachettes, de la nourriture, du repos, entre la rivière et la ville.",
           "Au pied du quai, un roseau commun pousse malgré tout. Un quai aménagé n'est pas condamné au minéral.",
-          "Et la cigogne blanche, fil rouge de la journée. En Saône-et-Loire et dans le val de Saône, on comptait trois couples en 2001 ; ils sont plusieurs centaines aujourd'hui. Elles nichent dans les arbres morts au bord de l'eau, pas sur les toits comme en Alsace. La médiathèque projetait justement, le lendemain, <a href=\"https://www.macon.fr/information-transversale/agenda/projection-et-rencontre-daniel-et-la-cigogne-12652\">« Daniel et la cigogne »</a>, un film sur la migration d'une cigogne."
+          "Et la cigogne blanche, fil rouge de la journée. En Saône-et-Loire et dans le val de Saône, on comptait trois couples en 2001 ; ils sont plusieurs centaines aujourd'hui. Elles nichent dans les arbres morts au bord de l'eau, pas sur les toits comme en Alsace. La médiathèque projetait justement, le lendemain, « Daniel et la cigogne », un film sur la migration d'une cigogne."
         ]
       },
       {
@@ -1834,7 +1860,7 @@ pages.push({
         heading: "La mémoire d'un lieu",
         background: "sand",
         paragraphs: [
-          "Après les quais, la balade traverse le jardin romantique du quai Lamartine. Les allées y portent, gravés au sol, des vers du poème « Le Lac ».",
+          "Après les quais, la balade traverse le jardin romantique du quai Lamartine. Les allées y portent, gravés au sol, des vers du poème <a href=\"https://fr.wikisource.org/wiki/M%C3%A9ditations_po%C3%A9tiques_(%C3%A9d._originale_1820)/Le_Lac\">« Le Lac »</a>.",
           "Alphonse de Lamartine est né à Mâcon, et la ville garde sa mémoire. Lire un extrait à voix haute devant la Saône, c'est relier un paysage à des mots qui ont plus de deux siècles.",
           "C'est l'un des moments qui ont le plus parlé au groupe : on ne regarde plus seulement la rivière, on la lit aussi à travers un texte."
         ]
@@ -1854,8 +1880,9 @@ pages.push({
         heading: "On n'en sort pas avec une liste, mais avec un regard",
         background: "sand",
         paragraphs: [
-          "Trois heures de marche ne remplissent pas une tête de noms d'espèces. Elles changent un regard. On ne traverse plus tout à fait pareil un lieu qu'on croyait connaître.",
-          "C'est tout l'esprit de la balade lecture du vivant : apprendre à lire un paysage, ses liens et ses habitants, sans être spécialiste. Une médiathèque, une commune, une entreprise : le principe s'adapte au lieu et au public."
+          "Cette balade change un regard. On ne traverse plus tout à fait pareil un lieu qu'on croyait connaître.",
+          "C'est tout l'esprit de la balade lecture du vivant : apprendre à lire un paysage, ses liens et ses habitants, sans être spécialiste. Une médiathèque, une commune, une entreprise : le principe s'adapte au lieu et au public.",
+          `Aux <a href="${carnets[1].path}">Grottes d'Azé</a>, cette lecture du paysage prend une autre dimension : les pierres nous font remonter des millions d'années.`
         ]
       }
     ],
@@ -1882,7 +1909,7 @@ pages.push({
   article: {
     headline: "Lire le paysage des Grottes d'Azé, et imaginer des millions d'années",
     datePublished: "2026-05-09",
-    image: "/assets/images/photo-cedres-1600.webp"
+    image: imageSource(carnets[1].imageName)
   },
   breadcrumbs: [
     ["Animations nature & jardin", "/animations-nature-jardin/"],
@@ -1896,16 +1923,15 @@ pages.push({
       eyebrow: "~ carnet de terrain ~",
       title: "Lire le paysage des Grottes d'Azé, et imaginer des millions d'années",
       lead:
-        "En mai 2026, j'ai accompagné un petit groupe d'adultes pour une balade dans l'espace naturel sensible des Grottes d'Azé, à une quinzaine de minutes de Cluny, en Saône-et-Loire. Pendant deux heures et demie, nous avons appris à lire le lieu, avec une archéologue qui apportait son regard sur son histoire. Notre fil conducteur : observer le paysage actuel et essayer de nous projeter au même endroit, il y a des millions d'années.",
+        "En mai 2026, j'ai accompagné un petit groupe d'adultes pour une balade dans <a href=\"https://grottes-aze71.fr/evenements-activites/espace-naturel-sensible/\">l'espace naturel sensible des Grottes d'Azé</a>, près de Cluny, en Saône-et-Loire. Nous avons appris à lire le lieu, avec une archéologue qui apportait son regard sur son histoire. Notre fil conducteur : observer le paysage actuel et essayer de nous projeter au même endroit, il y a des millions d'années.",
       tags: [
         "Mai 2026",
-        "2 h 30, à pied",
         "Un petit groupe d'adultes",
         "Grottes d'Azé, Saône-et-Loire"
       ],
       media: picture({
-        name: "cedres",
-        alt: "La plateforme des cèdres sur l'espace naturel sensible des Grottes d'Azé",
+        name: carnets[1].imageName,
+        alt: carnets[1].imageAlt,
         caption: "~ la plateforme des cèdres, aux Grottes d'Azé ~",
         eager: true
       })
@@ -1971,7 +1997,8 @@ pages.push({
         background: "sand",
         paragraphs: [
           "Je retiens surtout cette possibilité : regarder un endroit connu et y découvrir une profondeur que l'on ne soupçonnait pas.",
-          "Sous nos pieds, dans une pierre ou le long d'un tronc, des indices ouvrent des questions. Un espace naturel sensible comme celui des Grottes d'Azé devient plus riche à mesure qu'on apprend à le lire."
+          "Sous nos pieds, dans une pierre ou le long d'un tronc, des indices ouvrent des questions. Un espace naturel sensible comme celui des Grottes d'Azé devient plus riche à mesure qu'on apprend à le lire.",
+          `Sur <a href="${carnets[0].path}">les quais de Mâcon</a>, la même démarche part d'un vieux catalpa, des berges de la Saône et d'un parc urbain.`
         ]
       }
     ],
@@ -1985,6 +2012,124 @@ pages.push({
     cta: {
       title: "Vous souhaitez faire découvrir votre lieu autrement ?",
       text: "La balade « Lecture du vivant » s'appuie sur les particularités de votre site pour ouvrir la curiosité de votre public et construire l'exploration ensemble."
+    }
+  })
+});
+
+pages.push({
+  path: carnets[2].path,
+  kind: "carnet",
+  title: "Tous au compost à Belleville-en-Beaujolais : atelier sol vivant avec la CCSB",
+  description: "Atelier Tous au compost à Belleville-en-Beaujolais pour la Communauté de communes Saône-Beaujolais : fabriquer un sol vivant en pots, les mains dans la matière.",
+  article: {
+    headline: carnets[2].listTitle,
+    datePublished: "2026-10-06",
+    image: imageSource(carnets[2].imageName)
+  },
+  breadcrumbs: [
+    ["Animations nature & jardin", "/animations-nature-jardin/"],
+    ["Atelier terre vivante", carnets[2].offerPath],
+    ["Carnet de terrain", carnets[2].path]
+  ],
+  approved: true,
+  review: ["Texte et publication validés par Fabrice le 2026-10-06."],
+  body: renderCarnetPage({
+    hero: {
+      eyebrow: "~ carnet de terrain ~",
+      title: carnets[2].listTitle,
+      lead: "En avril 2026, j'ai animé un atelier à Belleville-en-Beaujolais pour la Communauté de communes Saône-Beaujolais (CCSB), avec son service Développement durable, dans le cadre de <a href=\"https://tousaucompost.fr/\">« Tous au compost »</a>. Un petit groupe d'adultes est venu découvrir comment fabriquer un sol vivant dans un pot de fleurs. Les échanges ont vite rejoint des questions très quotidiennes : les fleurs, le jardinage en appartement et ce qu'on peut planter selon la saison.",
+      tags: ["Avril 2026", "Belleville-en-Beaujolais", "Un petit groupe d'adultes"],
+      media: picture({
+        name: carnets[2].imageName,
+        alt: carnets[2].imageAlt,
+        caption: "~ l'atelier Tous au compost, ensemble autour de la table ~",
+        eager: true
+      })
+    },
+    sections: [
+      {
+        eyebrow: "~ les envies du groupe ~",
+        heading: "Que vient-on chercher dans un atelier compost ?",
+        background: "sand",
+        paragraphs: [
+          "On arrive avec un thème commun, mais chacun a son jardin en tête.",
+          "Pour certains, ce sont des fleurs en pot. Pour d'autres, la question du <a href=\"https://ccsb-saonebeaujolais.fr/environnement-dechets/gestion-des-dechets/compostage/\">compostage en appartement</a>. Et puis il y a cette interrogation qui revient dès qu'on parle de planter : qu'est-ce que je peux faire pousser à cette période de l'année ?",
+          "Ces questions ont donné sa couleur à l'atelier. Le compost nous réunissait, mais les envies allaient bien au-delà du bac où l'on dépose ses épluchures.",
+          "C'est ce que j'aime dans un petit groupe : les échanges trouvent leur place, et le contenu se rapproche de la vie des participants."
+        ]
+      },
+      {
+        eyebrow: "~ une expérience de jardinier ~",
+        heading: "Pourquoi commencer par une terrasse ?",
+        background: "ivory",
+        media: picture({
+          name: "terrasseProduction",
+          alt: "Légumes et plantes cultivés dans des pots sur l'ancienne terrasse de Fabrice",
+          caption: "~ mon ancienne terrasse cultivée en pots, de 2017 à 2025 ~"
+        }),
+        paragraphs: [
+          "Mon point de départ, c'est ma propre terrasse. En 2017, j'ai commencé avec deux sacs cabas pour tester la culture en lasagne : assembler des matières organiques et y faire pousser des plantes. Cette expérience a ensuite pris la forme d'un potager en pots, que je partage sur <a href=\"https://lepotagerminimaliste.fr/\">Le Potager Minimaliste</a>.",
+          "C'est cet exemple qui sert de fil à l'atelier. Comment jardiner dans un contenant exposé au soleil et au vent ? Comment entretenir la fertilité sans remplacer toute la terre à chaque saison ?",
+          "Un pot permet d'aborder ces questions à une échelle familière. Même sans jardin, on peut observer ce qui sèche, ce qui se transforme et ce qui pousse."
+        ]
+      },
+      {
+        eyebrow: "~ les mains dans la matière ~",
+        heading: "Comment le sol vivant tient-il dans un pot ?",
+        background: "sand",
+        media: picture({
+          name: "compostMains",
+          alt: "Des mains gantées ajoutent des épluchures à une jardinière pendant l'atelier Tous au compost",
+          caption: "~ ajouter les épluchures dans la jardinière ~"
+        }),
+        paragraphs: [
+          "Au parc Popi, à Belleville-en-Beaujolais, la partie pratique nous réunit autour de la table : des pots et des jardinières, des épluchures, des matières sèches. Les mains gantées prennent la matière et la déposent dans les contenants. Le compost quitte les explications pour devenir un geste.",
+          "Le principe de la culture en lasagne est de cultiver pendant que les matières se décomposent. Les épluchures, les feuilles mortes et le compost ont chacun leur place dans cette transformation. Des organismes, dont les vers, participent au travail qui rend progressivement cette matière disponible pour les plantes.",
+          "On relie ainsi deux gestes du quotidien : garder des matières organiques et faire pousser quelque chose. Ce qui sort de la cuisine peut entrer dans la vie d'un pot.",
+          "L'atelier laissait aussi une suite : un pot à terminer à la maison. L'expérience pouvait continuer chez soi."
+        ]
+      },
+      {
+        eyebrow: "~ du sol aux plantations ~",
+        heading: "Et qu'est-ce qu'on plante dedans ?",
+        background: "ivory",
+        paragraphs: [
+          "La question des plantations selon le mois a particulièrement accroché le groupe.",
+          "Elle reliait le sol à une envie précise : faire pousser quelque chose. Des fleurs, par exemple. Le jardinage en pot ne se limite pas aux légumes, et les échanges l'ont bien rappelé.",
+          "Le choix dépend aussi du lieu où le pot va vivre. Un balcon ombragé et une terrasse en plein soleil n'offrent pas les mêmes conditions. Menthe, persil, fraisiers ou tomates : choisir une plante, c'est aussi regarder son exposition et tenir compte de la saison.",
+          "Personnellement, je retiens ce lien entre deux sujets qu'on traite parfois séparément : comprendre ce qui nourrit une plante et choisir ce qu'on a envie de cultiver. Le pot les réunissait."
+        ]
+      },
+      {
+        eyebrow: "~ la suite, chez soi ~",
+        heading: "Que reste-t-il après l'atelier ?",
+        background: "sand",
+        paragraphs: [
+          "Le pot continue à évoluer. La matière se transforme, le volume se tasse, les plantes prennent leur place. L'entretien consiste aussi à observer ces changements : garder le mélange humide, protéger la surface et apporter de la matière au fil de la vie du pot.",
+          "Un retour reçu en juin donne une suite concrète à l'atelier d'avril. La composition s'était tassée ; de la terre avait été ajoutée, puis des dipladénias plantés au début du mois. À ce moment-là, les fleurs étaient décrites comme résistant bien à la chaleur et retombant en cascade.",
+          "C'est une suite documentée, à l'échelle d'un pot. Elle raconte ce que la réalisation devient quand quelqu'un se l'approprie : on observe, on complète, on choisit ses plantes."
+        ]
+      },
+      {
+        eyebrow: "~ le fil qui relie ~",
+        heading: "Qu'est-ce que ce geste permet de comprendre ?",
+        background: "ivory",
+        paragraphs: [
+          "Une épluchure, une feuille morte et une plante dans un pot semblent appartenir à trois histoires différentes. L'atelier les remet dans le même cycle : une matière se transforme et contribue à nourrir ce qui pousse.",
+          "C'est ce lien que je cherche à rendre concret. Les mains font le geste, puis le pot permet d'en suivre la suite. Le compost rejoint une envie de fleurs, d'aromatiques ou de légumes, et cette envie donne une raison de continuer à prendre soin du sol."
+        ]
+      }
+    ],
+    offerBack: {
+      eyebrow: "~ l'atelier, pour votre public ~",
+      title: "L'atelier Terre vivante en pots",
+      text: "Cette intervention est une déclinaison de l'atelier Terre vivante en pots. Le principe et les possibilités pour votre public sont présentés sur la page de l'offre.",
+      href: carnets[2].offerPath,
+      linkLabel: "Découvrir l'atelier Terre vivante"
+    },
+    cta: {
+      title: "Un atelier pour votre public ?",
+      text: "Vous souhaitez proposer une animation autour du compost, du sol vivant ou du jardinage en pots ? Décrivez-moi votre public et votre projet pour préparer un format adapté."
     }
   })
 });

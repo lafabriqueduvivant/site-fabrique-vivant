@@ -3,6 +3,34 @@
 // sans elles, ou avec un format inventé, la page sursaute sous les yeux du
 // visiteur quand la photo arrive.
 const imageSets = {
+  compostGroupe: {
+    small: "/assets/images/photo-compost-groupe-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-compost-groupe-1400.webp",
+    largeWidth: 1400,
+    largeHeight: 1047
+  },
+  bergesSaone: {
+    small: "/assets/images/photo-berges-saone-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-berges-saone-1400.webp",
+    largeWidth: 1400,
+    largeHeight: 1400
+  },
+  terrasseProduction: {
+    small: "/assets/images/photo-terrasse-production-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-terrasse-production-1400.webp",
+    largeWidth: 1400,
+    largeHeight: 788
+  },
+  compostMains: {
+    small: "/assets/images/photo-compost-mains-800.webp",
+    smallWidth: 800,
+    large: "/assets/images/photo-compost-mains-1400.webp",
+    largeWidth: 1400,
+    largeHeight: 1872
+  },
   jardiniere: {
     small: "/assets/images/photo-jardiniere-800.webp",
     smallWidth: 800,
@@ -152,6 +180,10 @@ export function pageHero({
   </section>`;
 }
 
+export function imageSource(name) {
+  return imageSets[name]?.large;
+}
+
 export function picture({
   name,
   alt,
@@ -208,8 +240,11 @@ export function cardGrid(items, options = {}) {
 function renderCard(item) {
   // Sans photo, la carte ne porte plus un grand aplat vert (effet « gabarit
   // pas fini ») : l'icône devient une pastille discrète en tête du texte.
-  const hasMedia = Boolean(item.image || item.placeholder);
-  const media = item.image
+  const set = imageSets[item.imageSet];
+  const hasMedia = Boolean(set || item.image || item.placeholder);
+  const media = set
+    ? `<div class="card__media"><img src="${set.large}" srcset="${set.small} ${set.smallWidth}w, ${set.large} ${set.largeWidth}w" sizes="(max-width: 760px) 92vw, 33vw" alt="${item.alt || ""}" style="object-position:${item.position || "center"}" width="${set.largeWidth}" height="${set.largeHeight}" loading="lazy" decoding="async"></div>`
+    : item.image
     ? `<div class="card__media"><img src="/assets/images/photo-${item.image}-800.webp" alt="${item.alt || ""}" style="object-position:${item.position || "center"}" loading="lazy" decoding="async"></div>`
     : item.placeholder
       ? `<div class="card__media card__media--placeholder" data-placeholder-photo="true">${icon(item.icon || "sprout")}<span>Photo à prévoir</span></div>`

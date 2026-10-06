@@ -16,6 +16,8 @@ import {
 // sous sa page d'offre. Contrairement à une page d'offre, il ne vend pas :
 // il raconte, puis renvoie vers l'offre et vers le contact. Sans formule
 // commerciale dans le hero, pour que la lecture reste un récit.
+// Les textes, repères et métadonnées du carnet omettent les horaires et la
+// durée de l'animation : ils racontent l'expérience, pas sa logistique.
 export function renderCarnetPage(data) {
   const sections = (data.sections || []).map(renderCarnetSection).join("");
   const offerBack = data.offerBack
