@@ -705,6 +705,15 @@ pages.push({
     ],
     variantColumns: 3,
     extraSections: [
+      `<section class="section section--sand" id="au-fil-des-saisons">
+        <div class="container reading-width">
+          ${sectionHeading("Un même parcours, quatre saisons à découvrir", "~ retrouver le lieu, changer de regard ~")}
+          <p>On peut vivre une balade ponctuelle, ou retrouver un même parcours au fil des saisons. Un arbre en fleurs, en feuilles, en fruits ou dénudé ne raconte pas la même chose. D'une rencontre à l'autre, on remarque ce qui a changé, on comprend le rythme des végétaux et on redécouvre les lieux que l'on croise au quotidien.</p>
+          <p>Les arbres et les arbustes deviennent des repères que l'on peut retrouver toute l'année. Selon le contexte, certaines plantations de la commune offrent aussi des choses intéressantes à observer. Les plantes sauvages gardent leur place, au gré de leur présence : la météo, les saisons et l'entretien des espaces peuvent changer ce que l'on rencontre.</p>
+          <p>Le repérage permet de choisir des lieux accessibles au groupe et des repères végétaux durables, plutôt que de faire dépendre toute la balade de quelques herbes qui peuvent avoir été fauchées entre deux visites. Le contenu reste personnalisé : on part de ce qui est là, on observe ensemble, on cherche, on échange. Les souvenirs et les connaissances des participants font aussi vivre la balade.</p>
+          <p>Pour un groupe de seniors, des habitants ou des familles, ce fil saisonnier peut devenir un rendez-vous avec son territoire. Le parcours, le rythme et la place des plantes sauvages se construisent ensemble, selon vos envies et les possibilités du lieu.</p>
+        </div>
+      </section>`,
       splitSection({
         heading: "Sous le catalpa",
         eyebrow: "~ nommer un arbre ~",
@@ -734,6 +743,8 @@ pages.push({
     ],
     practitionerSentence: "Je ne plaque pas une balade toute faite sur un paysage. Je pars de ce qui est là, de ce qui s'y est vécu et des questions que le lieu fait naître.",
     faq: [
+      { question: "Peut-on prévoir plusieurs balades au fil des saisons ?", answer: "Oui. Retrouver un même parcours permet de découvrir les végétaux en fleurs, en feuilles, en fruits ou dénudés, et de comprendre ce qui change entre les rencontres. Nous choisissons ensemble le rythme et un parcours adapté au groupe, après repérage." },
+      { question: "Et si nous souhaitons une balade centrée sur les plantes sauvages ?", answer: "Nous pouvons en discuter et chercher les lieux et les périodes qui s'y prêtent le mieux. La place des plantes sauvages dépend de ce qui est réellement présent et de l'entretien des espaces. Le repérage permet d'adapter la proposition à votre souhait et au terrain." },
       { question: "Et s'il pleut ?", answer: "Une pluie fine ne gêne pas la balade, elle la rend même plus vivante. En cas de vraie météo défavorable, on décale ou on adapte, décision prise ensemble quelques jours avant." },
       { question: "Quel niveau de marche ?", answer: "Une marche douce, avec des arrêts fréquents : c'est une balade d'observation, pas une randonnée. Le parcours s'adapte au groupe." },
       { question: "Combien de participants ?", answer: "Jusqu'à 15 personnes. Pour un événement plus grand, on programme plusieurs départs." },
