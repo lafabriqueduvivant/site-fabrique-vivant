@@ -113,7 +113,7 @@ pages.push({
   kind: "home",
   title: "Animations nature & jardin, accompagnement de projets | La Fabrique du Vivant",
   description:
-    "Animations nature et jardin pour petits et grands, accompagnement de projets, formations. Mâcon, Beaujolais, Lyon. Par un jardinier avec 16 ans de terrain en collectivité.",
+    "Animations nature et jardin pour petits et grands, accompagnement de projets, formations. Mâcon, Beaujolais, Lyon. Par un jardinier avec 21 ans de terrain en collectivité.",
   approved: true,
   review: draftReview,
   body: `${pageHero({
@@ -163,7 +163,7 @@ pages.push({
             alt: "Chemin enherbé dans un espace vert en gestion différenciée",
             eyebrow: "~ par quelqu'un qui a fait le métier ~",
             title: "Formations professionnelles",
-            text: "Gestion différenciée, compostage, biodiversité : former vos équipes depuis 16 ans d'expérience de terrain.",
+            text: "Gestion différenciée, compostage, biodiversité : former vos équipes depuis 21 ans d'expérience de terrain.",
             href: "/formations-professionnelles/",
             linkLabel: "Voir les formations"
           }
@@ -193,16 +193,16 @@ pages.push({
       ${picture({
         name: "fabricePortrait",
         alt: "Portrait de Fabrice Maira en extérieur",
-        caption: "~ seize ans agent territorial, puis le choix de transmettre ~",
+        caption: "~ 21 ans agent territorial, puis le choix de transmettre ~",
         position: "center 25%",
         grass: "top-left"
       })}
       <div class="proof-strip__copy">
-        <p class="handwritten">~ seize ans les mains dans la terre ~</p>
+        <p class="handwritten">~ toute une vie les mains dans la terre ~</p>
         <h2>Un intervenant qui vient du terrain</h2>
-        <p>Seize ans agent territorial dans un service espaces verts, puis le choix de transmettre. Je ne récite pas des noms d'espèces : j'apprends à lire le vivant et les lieux. Le sol, l'eau, les arbres, les usages et les histoires qui relient un paysage à celles et ceux qui l'habitent.</p>
+        <p>Vingt et un ans agent territorial dans un service espaces verts, puis le choix de transmettre. Je ne récite pas des noms d'espèces : j'apprends à lire le vivant et les lieux. Le sol, l'eau, les arbres, les usages et les histoires qui relient un paysage à celles et ceux qui l'habitent.</p>
         <p>Membre du réseau GRAINE, j'interviens dans votre structure, avec vos équipes, à votre rythme.</p>
-        ${woodTags(["16 ans de terrain en collectivité", "Réseau GRAINE", "Mâcon · Beaujolais · Lyon"], "start")}
+        ${woodTags(["21 ans de terrain en collectivité", "Réseau GRAINE", "Mâcon · Beaujolais · Lyon"], "start")}
         <a class="text-link" href="/zone-intervention/">Voir la zone d'intervention <span aria-hidden="true">→</span></a>
       </div>
     </div>
@@ -253,7 +253,7 @@ pages.push({
         {
           icon: "watering",
           title: "Un animateur de terrain",
-          text: "Seize ans de métier dans les espaces verts publics : les gestes viennent d'une pratique vécue, pas d'un classeur pédagogique."
+          text: "Vingt et un ans de métier dans les espaces verts publics : les gestes viennent d'une pratique vécue, pas d'un classeur pédagogique."
         }
       ])}
     </div>
@@ -811,7 +811,7 @@ pages.push({
       { icon: "group", title: "Ceux qui regardent comptent aussi", text: "L'odeur du terreau et la présence du vivant touchent aussi ceux qui restent en retrait. On ne force jamais." }
     ],
     variantColumns: 3,
-    practitionerSentence: "Seize ans à cultiver pour les autres ; aujourd'hui je remets la terre entre les mains de ceux qui l'ont connue avant moi.",
+    practitionerSentence: "Vingt et un ans à cultiver pour les autres ; aujourd'hui je remets la terre entre les mains de ceux qui l'ont connue avant moi.",
     faq: [
       { question: "Nos résidents sont en fauteuil, c'est possible ?", answer: "Oui. Tout ce qui est participatif se passe à hauteur de table." },
       { question: "On n'a pas de jardin, seulement une terrasse ?", answer: "Une terrasse suffit largement. Des jardinières, quelques tables, et le tour est joué. En salle aussi, les jours froids." },
@@ -893,7 +893,7 @@ pages.push({
     </div>
   </section>
   ${splitSection({
-    heading: "Seize ans de l'autre côté",
+    heading: "Vingt et un ans de l'autre côté",
     eyebrow: "~ je sais ce qu'un espace coûte à entretenir ~",
     media: picture({
       name: "gestionDifferenciee",
@@ -901,10 +901,10 @@ pages.push({
     }),
     background: "sage",
     paragraphs: [
-      "Seize ans agent territorial dans un service espaces verts : je sais ce qu'un aménagement coûte en heures d'entretien, ce qui tient dans le temps et ce qui meurt au premier été. Un projet que je conçois est un projet que vos équipes peuvent suivre.",
+      "Vingt et un ans agent territorial dans un service espaces verts : je sais ce qu'un aménagement coûte en heures d'entretien, ce qui tient dans le temps et ce qui meurt au premier été. Un projet que je conçois est un projet que vos équipes peuvent suivre.",
       "Pour les jardins collectifs, j'ai vécu la chose de l'intérieur : plusieurs années à animer un jardin partagé, avec ses saisons humaines autant que végétales."
     ],
-    tags: ["16 ans de terrain public", "réseau GRAINE"]
+    tags: ["21 ans de terrain public", "réseau GRAINE"]
   })}
   ${ficheDepartTeaser("sand")}
   ${finalCta({
@@ -918,7 +918,7 @@ pages.push({
   kind: "pillar",
   title: "Formations professionnelles nature et jardin : agents et équipes",
   description:
-    "Formations professionnelles pour agents de collectivités, bailleurs et associations : gestion différenciée, compostage, biodiversité. Formateur indépendant, 16 ans de terrain.",
+    "Formations professionnelles pour agents de collectivités, bailleurs et associations : gestion différenciée, compostage, biodiversité. Formateur indépendant, 21 ans de terrain.",
   breadcrumbs: [["Formations professionnelles", "/formations-professionnelles/"]],
   approved: true,
   review: draftReview,
@@ -926,7 +926,7 @@ pages.push({
     eyebrow: "~ par quelqu'un qui a fait le métier ~",
     title: "Former vos équipes au vivant, depuis le terrain",
     lead:
-      "Des formations pour agents de collectivités, bailleurs et associations : gestion différenciée, compostage, biodiversité, adaptation au climat. Par un formateur qui a tenu la tondeuse et le plantoir pendant seize ans.",
+      "Des formations pour agents de collectivités, bailleurs et associations : gestion différenciée, compostage, biodiversité, adaptation au climat. Par un formateur qui a tenu la tondeuse et le plantoir pendant vingt et un ans.",
     tags: ["en intra, sur votre site", "groupes de 12 max", "demi-journée, journée ou cycle"]
   })}
   ${soilDivider("ivory")}
@@ -939,10 +939,10 @@ pages.push({
     }),
     background: "sand",
     paragraphs: [
-      "Seize ans agent territorial dans un service espaces verts. J'ai vécu la bascule du zéro phyto, les plannings de tonte, les remarques des riverains, les étés de sécheresse. Quand je forme vos agents, je parle leur langue : celle du terrain, des contraintes réelles et du temps qui manque.",
+      "Vingt et un ans agent territorial dans un service espaces verts. J'ai vécu la bascule du zéro phyto, les plannings de tonte, les remarques des riverains, les étés de sécheresse. Quand je forme vos agents, je parle leur langue : celle du terrain, des contraintes réelles et du temps qui manque.",
       "Une formation réussie ne change pas seulement les pratiques. Elle redonne du sens au métier : on ne « fait plus les espaces verts », on travaille avec le vivant."
     ],
-    tags: ["16 ans agent territorial", "formateur au catalogue du réseau GRAINE"]
+    tags: ["21 ans agent territorial", "formateur au catalogue du réseau GRAINE"]
   })}
   <section class="section section--ivory">
     <div class="container">
@@ -1201,7 +1201,7 @@ pages.push({
   kind: "audience",
   title: "Animations nature et formations pour collectivités : par un ancien agent territorial",
   description:
-    "Animations nature pour habitants, formations d'agents, accompagnement de projets : un prestataire qui a passé 16 ans en collectivité. Mâcon, Beaujolais, Lyon.",
+    "Animations nature pour habitants, formations d'agents, accompagnement de projets : un prestataire qui a passé 21 ans en collectivité. Mâcon, Beaujolais, Lyon.",
   breadcrumbs: [
     ["Pour qui ?", "/pour-qui/"],
     ["Collectivités", "/pour-qui/collectivites-communautes-communes/"]
@@ -1209,11 +1209,11 @@ pages.push({
   approved: true,
   review: draftReview,
   body: `${pageHero({
-    eyebrow: "~ seize ans dans vos services ~",
+    eyebrow: "~ 21 ans dans vos services ~",
     title: "Un partenaire nature qui connaît votre maison",
     lead:
-      "Animations pour vos habitants, formations pour vos agents, accompagnement de vos projets nature : par un prestataire qui a passé seize ans de l'autre côté, dans un service espaces verts.",
-    tags: ["16 ans agent territorial", "réseau GRAINE", "Mâcon · Beaujolais · Lyon"]
+      "Animations pour vos habitants, formations pour vos agents, accompagnement de vos projets nature : par un prestataire qui a passé vingt et un ans de l'autre côté, dans un service espaces verts.",
+    tags: ["21 ans agent territorial", "réseau GRAINE", "Mâcon · Beaujolais · Lyon"]
   })}
   ${soilDivider("ivory")}
   ${splitSection({
@@ -1225,7 +1225,7 @@ pages.push({
     }),
     background: "sand",
     paragraphs: [
-      "J'ai été agent territorial pendant seize ans. Je connais vos plannings, vos budgets, vos riverains qui appellent quand l'herbe dépasse, vos étés à arroser ce qui grille. Quand je travaille pour une collectivité, je ne découvre pas votre monde : j'en viens.",
+      "J'ai été agent territorial pendant vingt et un ans. Je connais vos plannings, vos budgets, vos riverains qui appellent quand l'herbe dépasse, vos étés à arroser ce qui grille. Quand je travaille pour une collectivité, je ne découvre pas votre monde : j'en viens.",
       "Concrètement, ça change tout : je parle le langage de vos services, je dimensionne mes propositions à vos contraintes réelles, et vos agents ne voient pas débarquer un donneur de leçons."
     ]
   })}
@@ -1320,7 +1320,7 @@ pages.push({
   kind: "about",
   title: "Fabrice Maira : parcours et approche de La Fabrique du Vivant",
   description:
-    "Découvrez Fabrice Maira : 16 ans agent territorial des espaces verts, jardinier-praticien du vivant et fondateur de La Fabrique du Vivant.",
+    "Découvrez Fabrice Maira : 21 ans agent territorial des espaces verts, jardinier-praticien du vivant et fondateur de La Fabrique du Vivant.",
   breadcrumbs: [["À propos", "/a-propos/"]],
   approved: true,
   review: ["Page identitaire à valider en priorité."],
@@ -1328,13 +1328,13 @@ pages.push({
     eyebrow: "~ enchanté, moi c'est Fabrice Maira ~",
     title: "Un jardinier passé de l'autre côté du guidon",
     lead:
-      "Seize ans à entretenir les espaces verts d'une collectivité. Puis un jour, l'envie de transmettre a pris le dessus sur l'envie de tondre. La Fabrique du Vivant, c'est la suite logique.",
+      "Vingt et un ans à entretenir les espaces verts d'une collectivité. Puis un jour, l'envie de transmettre a pris le dessus sur l'envie de tondre. La Fabrique du Vivant, c'est la suite logique.",
     primary: false
   })}
   ${soilDivider("ivory")}
   ${splitSection({
     heading: "Le parcours",
-    eyebrow: "~ 2004-2020 : les mains dans la terre publique ~",
+    eyebrow: "~ 2004-2025 : les mains dans la terre publique ~",
     media: picture({
       name: "fabricePortrait",
       alt: "Portrait de Fabrice en extérieur",
@@ -1342,7 +1342,7 @@ pages.push({
     }),
     background: "sand",
     paragraphs: [
-      "Pendant seize ans, j'ai été agent territorial dans un service espaces verts : production florale, plantations, entretien des espaces publics. Le métier appris par le terrain, saison après saison.",
+      "Pendant vingt et un ans, j'ai été agent territorial dans un service espaces verts : production florale, plantations, entretien des espaces publics. Le métier appris par le terrain, saison après saison.",
       "En 2010, la réglementation sur les produits phytosanitaires change, et avec elle ma façon de voir le métier. Je me forme au jardinage raisonné, aux auxiliaires, aux sols vivants et aux micro-climats. Je découvre qu'on peut travailler avec le vivant au lieu de lutter contre lui.",
       "Puis la transmission a pris le dessus : ateliers compostage, balades nature, animations. En 2026, j'en ai fait mon métier à part entière, ici, entre Mâcon, le Beaujolais et Lyon."
     ]
@@ -1372,7 +1372,7 @@ pages.push({
       "J'habite le Beaujolais et j'interviens sur le territoire que je pratique : Mâcon, le Beaujolais, Lyon et leurs alentours.",
       "Membre du réseau GRAINE, je travaille en lien avec les acteurs locaux : collectivités, structures d'accueil, sites naturels et touristiques."
     ],
-    tags: ["16 ans agent territorial", "réseau GRAINE", "Mâcon · Beaujolais · Lyon"]
+    tags: ["21 ans agent territorial", "réseau GRAINE", "Mâcon · Beaujolais · Lyon"]
   })}
   ${finalCta({
     title: "Maintenant que vous savez qui je suis…",
