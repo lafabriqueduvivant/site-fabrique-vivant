@@ -479,17 +479,18 @@ pages.push({
         caption: "L'éveil à la nature, à hauteur d'enfant"
       }),
       paragraphs: [
-        "Au printemps 2026, dans un parc, j'ai ouvert une boîte devant un petit groupe d'enfants de crèche. Dedans, des escargots de mon jardin. Ils ont regardé, fascinés. Puis chacun s'est approché à son rythme. À la fin de la matinée, tous l'avaient caressé, et nous sommes allés ensemble libérer les escargots au fond du parc.",
-        "C'est ça, une sortie d'éveil à la nature : une rencontre avec le vivant, à hauteur d'enfant. On marche dans l'herbe, on cueille des feuilles et des fleurs, on garde une trace de ce qu'on a trouvé. Des séquences courtes, du temps libre, et des matières qu'on a le droit de toucher."
+        "À cet âge, tout commence par le corps. L'herbe inégale sous les pieds, une odeur de terre, une coquille tiède dans la main : voilà comment un tout-petit découvre le monde. Une sortie nature lui offre exactement ça, du temps pour toucher, sentir et observer, sans se presser.",
+        "La curiosité fait le reste. Un escargot qui sort de sa coquille, une feuille qui craque, une fourmi qui traverse : à cet âge, c'est un événement. Les mots naissent de ces découvertes (« rugueux », « ça pique », « c'est mouillé »), la motricité s'invente dans l'herbe et sur les cailloux, la confiance grandit à chaque pas.",
+        "Et l'enfant apprend une chose précieuse : le vivant n'est pas un décor, on peut le regarder, le toucher et en prendre soin."
       ]
     },
     benefitsTitle: "Ce que la sortie apporte à votre structure",
     benefitsEyebrow: "~ bien plus qu'une sortie ~",
     benefits: [
       {
-        eyebrow: "~ tous les sens en éveil ~",
-        title: "Un vrai temps de développement",
-        text: "Marcher dans l'herbe, toucher, sentir, nommer : à cet âge, chaque découverte nourrit la motricité, le langage et la curiosité."
+        eyebrow: "~ une autre facette des enfants ~",
+        title: "Des enfants qui se révèlent",
+        text: "Un enfant discret qui se met à raconter, un autre qui ose caresser l'escargot : dehors, vos tout-petits montrent des facettes que vos professionnelles ne voient pas en salle."
       },
       {
         eyebrow: "~ l'équipe souffle ~",
