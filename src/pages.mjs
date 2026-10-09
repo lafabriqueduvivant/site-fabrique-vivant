@@ -123,11 +123,11 @@ const carnets = [
   }
 ];
 
-// L'affichage suit la chronologie des animations, du plus ancien au plus
-// récent : l'ordre raconte le terrain, il ne dépend pas des dates de
-// publication. Le sommaire des carnets et les blocs posés sur les pages
-// d'offre lisent tous deux cette liste triée.
-const carnetsParDate = [...carnets].sort((a, b) => a.date.localeCompare(b.date));
+// L'affichage suit la chronologie des animations, du plus récent au plus
+// ancien : le dernier récit paru se trouve en haut, et l'ordre ne dépend pas
+// des dates de publication. Le sommaire des carnets et les blocs posés sur
+// les pages d'offre lisent tous deux cette liste triée.
+const carnetsParDate = [...carnets].sort((a, b) => b.date.localeCompare(a.date));
 
 function carnetsForOffer(offerPath) {
   return carnetsParDate.filter((carnet) => carnet.offerPath === offerPath);
