@@ -86,6 +86,33 @@ const carnets = [
     imageAlt: "Un enfant observe une branche à la loupe pendant la sortie nature, visage flouté",
     listText: "La douceur d'une rencontre en crèche, la curiosité des enfants et ce que l'équipe en a retenu. Un récit à hauteur de tout-petit.",
     eyebrow: "~ éveil nature en crèche ~"
+  },
+  {
+    path: "/animations-nature-jardin/eveil-nature-petite-enfance/les-tout-petits-nous-surprennent/",
+    offerPath: "/animations-nature-jardin/eveil-nature-petite-enfance/",
+    listTitle: "Les tout-petits nous surprennent aussi",
+    imageName: "toutPetitsGroupe",
+    imageAlt: "Fabrice avec des enfants et leurs accompagnants sous les arbres, visages des participants floutés",
+    listText: "Une rencontre dehors où les petits ont surpris les grands par leur envie de toucher le vivant.",
+    eyebrow: "~ éveil nature en crèche ~"
+  },
+  {
+    path: "/animations-nature-jardin/eveil-nature-petite-enfance/la-curiosite-ne-fait-pas-toujours-du-bruit/",
+    offerPath: "/animations-nature-jardin/eveil-nature-petite-enfance/",
+    listTitle: "La curiosité ne fait pas toujours du bruit",
+    imageName: "curiositeRegard",
+    imageAlt: "Un enfant observe dehors à travers une loupe, visage flouté",
+    listText: "Une attention collective, des mains qui hésitent et des gestes qui prennent leur temps : une rencontre à hauteur de tout-petit.",
+    eyebrow: "~ éveil nature en crèche ~"
+  },
+  {
+    path: "/animations-nature-jardin/atelier-jardinage-seniors/participer-a-sa-facon/",
+    offerPath: "/animations-nature-jardin/atelier-jardinage-seniors/",
+    listTitle: "Participer, c'est aussi être là",
+    imageName: "presenceFleurs",
+    imageAlt: "Détail de fleurs roses et de feuillage photographiés le jour de la rencontre",
+    listText: "En maison de retraite, les gestes, les regards et les échanges donnent plusieurs façons de prendre part à une rencontre autour du vivant.",
+    eyebrow: "~ une rencontre avec les aînés ~"
   }
 ];
 
@@ -823,6 +850,7 @@ pages.push({
     ],
     variantColumns: 3,
     practitionerSentence: "Vingt et un ans à cultiver pour les autres ; aujourd'hui je remets la terre entre les mains de ceux qui l'ont connue avant moi.",
+    extraSections: [carnetTeaserSection("/animations-nature-jardin/atelier-jardinage-seniors/")],
     faq: [
       { question: "Nos résidents sont en fauteuil, c'est possible ?", answer: "Oui. Tout ce qui est participatif se passe à hauteur de table." },
       { question: "On n'a pas de jardin, seulement une terrasse ?", answer: "Une terrasse suffit largement. Des jardinières, quelques tables, et le tour est joué. En salle aussi, les jours froids." },
@@ -2230,6 +2258,227 @@ pages.push({
     cta: {
       title: "Un atelier pour votre public ?",
       text: "Vous souhaitez proposer une animation autour du compost, du sol vivant ou du jardinage en pots ? Décrivez-moi votre public et votre projet pour préparer un format adapté."
+    }
+  })
+});
+
+pages.push({
+  path: carnets[4].path,
+  kind: "carnet",
+  title: "Les tout-petits nous surprennent aussi : récit d'éveil nature en crèche",
+  description: "Une sortie nature avec des enfants de crèche et leurs accompagnants : des gestes inattendus et une occasion de regarder les tout-petits autrement.",
+  article: {
+    headline: carnets[4].listTitle,
+    datePublished: "2026-10-09",
+    image: imageSource(carnets[4].imageName)
+  },
+  breadcrumbs: [
+    ["Animations nature & jardin", "/animations-nature-jardin/"],
+    ["Éveil nature petite enfance", carnets[4].offerPath],
+    ["Carnet de terrain", carnets[4].path]
+  ],
+  approved: true,
+  review: ["Texte, photo, aperçu et publication groupée validés par Fabrice le 2026-10-09."],
+  body: renderCarnetPage({
+    hero: {
+      eyebrow: "~ carnet de terrain ~",
+      title: carnets[4].listTitle,
+      lead: "Une sortie nature avec des enfants de crèche, leurs parents et les professionnelles qui les accompagnent. Une rencontre où les petits ont surpris les grands par leur envie de toucher le vivant.",
+      tags: ["Petite enfance", "Une rencontre dehors"],
+      media: picture({
+        name: carnets[4].imageName,
+        alt: carnets[4].imageAlt,
+        caption: "~ une rencontre dehors, enfants et adultes ensemble ~",
+        eager: true
+      })
+    },
+    sections: [
+      {
+        heading: "Des gestes qu'on n'attendait pas",
+        background: "sand",
+        paragraphs: [
+          "Ce que je retiens de cette sortie, c'est la réaction des adultes.",
+          "Plusieurs enfants ont osé prendre le vivant dans leurs mains. Les adultes présents ne s'attendaient pas à les voir aussi à l'aise. Ce décalage entre ce qu'on imagine et ce qui se passe réellement, c'est ce qui m'a marqué.",
+          "On accompagne les enfants, on les connaît dans leur quotidien. Et puis, dehors, on découvre des gestes qu'on ne leur avait pas encore vus faire.",
+          "Cela ne raconte pas tout d'un enfant. Mais cela donne l'occasion de le regarder autrement."
+        ]
+      },
+      {
+        heading: "Chacun son rythme",
+        background: "ivory",
+        paragraphs: [
+          "La rencontre n'a pas eu la même énergie d'un groupe à l'autre. Il y avait davantage de mouvement chez les uns, plus de calme chez les autres.",
+          "De mon côté, j'ai senti l'intérêt de laisser de la souplesse. Tout le monde n'a pas besoin de vivre exactement la même chose au même moment.",
+          "Dans un des groupes, une chanson est venue spontanément. Un moment partagé qui trouve sa place dans la rencontre."
+        ]
+      },
+      {
+        heading: "Ce que j'en garde",
+        background: "sand",
+        paragraphs: [
+          "Le retour de l'équipe a confirmé l'intérêt suscité chez les enfants. Il a aussi rappelé un point très concret : laisser davantage de place au rythme de chacun.",
+          "Je garde surtout cette surprise des adultes devant les petits qui osent. Une sortie nature, c'est aussi cela : une occasion, pour ceux qui les accompagnent, de découvrir les enfants sous un autre jour."
+        ]
+      }
+    ],
+    offerBack: {
+      eyebrow: "~ l'éveil nature, pour votre structure ~",
+      title: "L'éveil à la nature pour les tout-petits",
+      text: "Ces rencontres s'inscrivent dans les animations d'éveil à la nature proposées aux structures de petite enfance.",
+      href: carnets[4].offerPath,
+      linkLabel: "Découvrir les animations d'éveil nature"
+    },
+    cta: {
+      title: "Une rencontre nature pour votre crèche ?",
+      text: "Parlons de votre public et de votre projet pour préparer une rencontre adaptée aux tout-petits."
+    }
+  })
+});
+
+pages.push({
+  path: carnets[5].path,
+  kind: "carnet",
+  title: "La curiosité ne fait pas toujours du bruit : éveil nature en crèche",
+  description: "Un récit de sortie nature en crèche : l'attention des tout-petits, des gestes qui prennent leur temps et un regard qui évolue au fil de la rencontre.",
+  article: {
+    headline: carnets[5].listTitle,
+    datePublished: "2026-10-09",
+    image: imageSource(carnets[5].imageName)
+  },
+  breadcrumbs: [
+    ["Animations nature & jardin", "/animations-nature-jardin/"],
+    ["Éveil nature petite enfance", carnets[5].offerPath],
+    ["Carnet de terrain", carnets[5].path]
+  ],
+  approved: true,
+  review: ["Texte, photo, aperçu et publication groupée validés par Fabrice le 2026-10-09."],
+  body: renderCarnetPage({
+    hero: {
+      eyebrow: "~ carnet de terrain ~",
+      title: carnets[5].listTitle,
+      lead: "Une sortie nature avec des enfants de crèche et les professionnelles qui les accompagnent. Je garde de cette rencontre une attention collective qui m'a surpris, et des gestes qui ont pris leur temps.",
+      tags: ["Petite enfance", "Une rencontre dehors"],
+      media: picture({
+        name: carnets[5].imageName,
+        alt: carnets[5].imageAlt,
+        caption: "~ la curiosité tient aussi dans un regard ~",
+        eager: true
+      })
+    },
+    sections: [
+      {
+        heading: "Regarder, c'est déjà rencontrer",
+        background: "sand",
+        paragraphs: [
+          "Je m'attendais à des réactions assez franches : l'envie de toucher tout de suite, ou le refus de s'approcher.",
+          "Ce qui s'est passé était moins tranché.",
+          "Les enfants regardaient, captivés. Les mains hésitaient à s'avancer. Il y avait de la curiosité, mais elle ne se traduisait pas immédiatement par un geste.",
+          "Ce moment m'a marqué. Une main qui reste en retrait ne dit pas forcément un manque d'intérêt. L'attention était bien là."
+        ]
+      },
+      {
+        heading: "Une rencontre qui prend son temps",
+        background: "ivory",
+        paragraphs: [
+          "Au fil de la rencontre, certains gestes sont devenus possibles. Des enfants ont osé un contact qu'ils n'avaient pas tenté jusque-là.",
+          "Dans mes notes, je retrouve surtout l'importance de ce temps. Ce qui ne se produisait pas immédiatement pouvait arriver ensuite.",
+          "De mon côté, j'ai aussi dû revoir mes premières impressions. Ce que j'avais lu comme de la crainte pouvait coexister avec un véritable attachement au vivant.",
+          "On peut hésiter à toucher et avoir envie de rester tout près."
+        ]
+      },
+      {
+        heading: "Ce que j'en garde",
+        background: "sand",
+        paragraphs: [
+          "J'ai été marqué par cette rencontre collective, mais aussi par les échanges plus discrets, quand l'attention se prolonge autour de ce qu'on regarde ensemble.",
+          "Le retour transmis par l'équipe était très positif. Il apportait aussi une remarque concrète sur l'adaptation aux plus petits, que j'ai gardée pour faire évoluer mes propositions.",
+          "Cette sortie m'a rappelé quelque chose : la curiosité n'a pas toujours besoin de se montrer bruyamment. Parfois, elle tient dans un regard et une main qui s'approche."
+        ]
+      }
+    ],
+    offerBack: {
+      eyebrow: "~ l'éveil nature, pour votre structure ~",
+      title: "L'éveil à la nature pour les tout-petits",
+      text: "Cette rencontre s'inscrit dans les animations d'éveil à la nature proposées aux structures de petite enfance.",
+      href: carnets[5].offerPath,
+      linkLabel: "Découvrir les animations d'éveil nature"
+    },
+    cta: {
+      title: "Une rencontre nature pour votre crèche ?",
+      text: "Parlons de votre public et de votre projet pour préparer une rencontre adaptée aux tout-petits."
+    }
+  })
+});
+
+pages.push({
+  path: carnets[6].path,
+  kind: "carnet",
+  title: "Participer, c'est aussi être là : une rencontre nature avec les aînés",
+  description: "Une rencontre autour du vivant en maison de retraite : participer par un geste, un regard ou une conversation, avec une place pour chacun.",
+  article: {
+    headline: carnets[6].listTitle,
+    datePublished: "2026-10-09",
+    image: imageSource(carnets[6].imageName)
+  },
+  breadcrumbs: [
+    ["Animations nature & jardin", "/animations-nature-jardin/"],
+    ["Jardin sensoriel avec les aînés", carnets[6].offerPath],
+    ["Carnet de terrain", carnets[6].path]
+  ],
+  approved: true,
+  review: ["Texte, photo, aperçu et publication groupée validés par Fabrice le 2026-10-09."],
+  body: renderCarnetPage({
+    hero: {
+      eyebrow: "~ carnet de terrain ~",
+      title: carnets[6].listTitle,
+      lead: "Une rencontre autour du vivant avec des résidents d'une maison de retraite, aux côtés de l'animatrice de l'établissement. J'en garde des gestes, des échanges entre résidents et plusieurs façons d'être présent.",
+      tags: ["Avec les aînés", "Une rencontre autour du vivant"],
+      media: picture({
+        name: carnets[6].imageName,
+        alt: carnets[6].imageAlt,
+        caption: "~ un détail de fleurs, photographié ce jour-là ~",
+        eager: true
+      })
+    },
+    sections: [
+      {
+        heading: "Plusieurs façons de prendre part",
+        background: "sand",
+        paragraphs: [
+          "Ce jour-là, certains résidents se sont engagés dans les gestes. D'autres sont restés davantage dans l'observation.",
+          "Dans mon débrief, j'ai noté que regarder était aussi une façon de participer. Tout le monde n'avait pas besoin de faire pour avoir une place dans la rencontre.",
+          "Cela m'a demandé d'être attentif à ce que chacun choisissait. Proposer, oui. Insister pour obtenir un geste, non."
+        ]
+      },
+      {
+        heading: "Les échanges ne passent pas tous par moi",
+        background: "ivory",
+        paragraphs: [
+          "À plusieurs reprises, des échanges se sont ouverts directement entre les résidents. La rencontre ne reposait pas seulement sur ce que je pouvais dire ou apporter.",
+          "J'ai aussi noté que les résidents ouvraient eux-mêmes la conversation vers le vivant autour d'eux. Le jardin donnait matière à échanger.",
+          "L'animatrice de l'établissement était à mes côtés. Sa présence et sa connaissance des résidents faisaient partie de cette rencontre."
+        ]
+      },
+      {
+        heading: "Quand la conversation prolonge le moment",
+        background: "sand",
+        paragraphs: [
+          "Je garde aussi le moment partagé assis, autour d'une boisson et de la conversation. Dans mes notes, il apparaît comme une fin qui trouvait naturellement sa place.",
+          "Le retour transmis par l'équipe indiquait que l'atelier avait été jugé réussi. De mon côté, j'en suis reparti avec des ajustements à faire pour mieux accompagner les différentes façons de participer.",
+          "Ce que je retiens surtout, c'est cette place à laisser aux gestes, mais aussi aux regards et aux échanges. Être là, avec les autres et le vivant, compte aussi."
+        ]
+      }
+    ],
+    offerBack: {
+      eyebrow: "~ le vivant, avec les aînés ~",
+      title: "Des rencontres nature et jardin avec les aînés",
+      text: "Cette rencontre s'inscrit dans les animations nature et jardin proposées aux maisons de retraite et résidences seniors.",
+      href: carnets[6].offerPath,
+      linkLabel: "Découvrir les animations avec les aînés"
+    },
+    cta: {
+      title: "Une rencontre pour vos résidents ?",
+      text: "Parlons de votre public et de votre projet pour préparer une rencontre adaptée, avec votre équipe d'animation."
     }
   })
 });
