@@ -3,6 +3,13 @@
 // sans elles, ou avec un format inventé, la page sursaute sous les yeux du
 // visiteur quand la photo arrive.
 const imageSets = {
+  rencontreCuriosite: {
+    small: "/assets/images/photo-rencontre-curiosite-600.webp",
+    smallWidth: 600,
+    large: "/assets/images/photo-rencontre-curiosite-1000.webp",
+    largeWidth: 1000,
+    largeHeight: 1000
+  },
   compostGroupe: {
     small: "/assets/images/photo-compost-groupe-800.webp",
     smallWidth: 800,

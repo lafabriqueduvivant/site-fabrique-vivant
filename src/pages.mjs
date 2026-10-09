@@ -77,6 +77,15 @@ const carnets = [
     imageAlt: "Fabrice anime l'atelier compost autour d'une table avec les participants, dont les visages sont floutés",
     listText: "Un atelier Tous au compost à Belleville-en-Beaujolais, pour la Communauté de communes Saône-Beaujolais : du sol vivant en pots et des questions de jardinage.",
     eyebrow: "~ atelier terre vivante, avril 2026 ~"
+  },
+  {
+    path: "/animations-nature-jardin/eveil-nature-petite-enfance/rencontre-tout-en-douceur/",
+    offerPath: "/animations-nature-jardin/eveil-nature-petite-enfance/",
+    listTitle: "Une rencontre tout en douceur avec les tout-petits",
+    imageName: "rencontreCuriosite",
+    imageAlt: "Un enfant observe une branche à la loupe pendant la sortie nature, visage flouté",
+    listText: "La douceur d'une rencontre en crèche, la curiosité des enfants et ce que l'équipe en a retenu. Un récit à hauteur de tout-petit.",
+    eyebrow: "~ éveil nature en crèche ~"
   }
 ];
 
@@ -537,7 +546,8 @@ pages.push({
         quote:
           "Cette sortie a été une bulle d'oxygène pour l'équipe et les enfants. Les professionnelles ont vraiment apprécié. Votre attitude avec les enfants a été parfaite ! […] Pour le reste, ne changez surtout rien !",
         background: "sand"
-      })
+      }),
+      carnetTeaserSection("/animations-nature-jardin/eveil-nature-petite-enfance/")
     ],
     practitionerSentence: "Une pédagogie du vivant ancrée dans la pratique : je facilite des expériences, les enfants font les leurs.",
     faq: [
@@ -1779,6 +1789,84 @@ pages.push({
       title: "Une animation nature pour votre public ?",
       text: "Racontez-moi votre projet et votre public. Je vous propose un atelier ou une balade adaptés à votre structure."
     })}`
+});
+
+pages.push({
+  path: carnets[3].path,
+  kind: "carnet",
+  title: "Une rencontre tout en douceur en crèche : récit d'éveil nature",
+  description:
+    "Un récit d'éveil nature en crèche : mon ressenti, la curiosité observée chez les tout-petits et les retours de l'équipe qui les accompagne.",
+  article: {
+    headline: carnets[3].listTitle,
+    datePublished: "2026-10-09",
+    image: imageSource(carnets[3].imageName)
+  },
+  breadcrumbs: [
+    ["Animations nature & jardin", "/animations-nature-jardin/"],
+    ["Éveil nature 0-3 ans", carnets[3].offerPath],
+    ["Carnet de terrain", carnets[3].path]
+  ],
+  approved: true,
+  review: [
+    "Récit anonymisé d'une intervention interne : structure, lieu et contenu de l'animation non révélés (cadre validé le 2026-10-09)."
+  ],
+  body: renderCarnetPage({
+    hero: {
+      eyebrow: "~ carnet de terrain, petite enfance ~",
+      title: carnets[3].listTitle,
+      lead:
+        "J'ai vécu cette rencontre nature avec un groupe de crèche sur la douceur. Ce qui me reste, c'est la curiosité des enfants, leur envie de venir vers moi et les échanges avec les professionnelles qui les accompagnent.",
+      media: picture({
+        name: carnets[3].imageName,
+        alt: carnets[3].imageAlt,
+        caption: "~ la curiosité, à hauteur de tout-petit ~",
+        eager: true
+      })
+    },
+    sections: [
+      {
+        eyebrow: "~ mon ressenti ~",
+        heading: "Une rencontre qui laisse de la place",
+        background: "sand",
+        paragraphs: [
+          "Avec les tout-petits, j'aime ces moments où l'on peut être ensemble sans se presser. Pendant cette sortie, j'ai ressenti cette douceur : les enfants pouvaient prendre leur place, sans que tout soit obligatoire.",
+          "J'ai aussi partagé avec la directrice ce sentiment qu'on n'a pas toujours besoin de remplir chaque instant. Être là, attentif au groupe, a déjà beaucoup de valeur pour moi."
+        ]
+      },
+      {
+        eyebrow: "~ ce que j'ai observé ~",
+        heading: "La curiosité, bien présente",
+        background: "ivory",
+        paragraphs: [
+          "J'ai vu de la curiosité, de l'envie d'approcher et d'entrer en relation. Les enfants venaient vers moi, s'intéressaient à ce qui les entourait. L'équipe a elle aussi été surprise par ce qu'elle observait.",
+          "Ce sont des observations de cette rencontre. Je ne sais pas ce qu'elles deviennent ensuite, mais elles comptent : elles disent quelque chose de ce que nous avons partagé ce jour-là.",
+          "Au retour, les enfants étaient fatigués, mais souriants. C'est aussi une image que je garde de cette sortie."
+        ]
+      },
+      {
+        eyebrow: "~ le regard de l'équipe ~",
+        heading: "Ce que les professionnelles m'ont transmis",
+        background: "sand",
+        paragraphs: [
+          "Dans son retour après la sortie, l'équipe a souligné la réceptivité des enfants. Elle m'a aussi indiqué ce qui avait bien fonctionné pour le groupe et ce qui méritait d'être adapté à leur âge.",
+          "J'apprécie ces retours concrets. Les professionnelles connaissent les enfants au quotidien ; leur regard complète ce que j'ai pu observer pendant notre rencontre.",
+          "C'est ce que je retiens ici : le plaisir d'avoir partagé un moment doux avec les tout-petits, et d'avoir pu en reparler avec celles qui les accompagnent."
+        ]
+      }
+    ],
+    offerBack: {
+      eyebrow: "~ pour votre structure ~",
+      title: "L'éveil à la nature pour les tout-petits",
+      text: "Les possibilités d'intervention et les informations pratiques pour votre crèche ou votre relais petite enfance sont réunies sur la page de l'offre.",
+      href: carnets[3].offerPath,
+      linkLabel: "Découvrir l'éveil nature petite enfance"
+    },
+    cta: {
+      title: "Une rencontre nature pour vos tout-petits ?",
+      text: "Parlons de votre groupe, de votre lieu et de vos envies. Je vous propose une intervention adaptée à votre structure."
+    }
+  })
 });
 
 pages.push({
