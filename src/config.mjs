@@ -17,7 +17,8 @@ export const site = {
   publicPhoneHref: "",
   social: {
     instagram: "https://www.instagram.com/la_fabrique_du_vivant/",
-    facebook: "https://www.facebook.com/people/La-Fabrique-du-Vivant/61591931744533/"
+    facebook: "https://www.facebook.com/people/La-Fabrique-du-Vivant/61591931744533/",
+    linkedin: "https://www.linkedin.com/in/fabrice-maira-839712187"
   },
   legal: {
     fullName: "Fabrice Maira",

@@ -96,6 +96,7 @@ function footer() {
         <h2>Suivre l'actualité</h2>
         <a href="${site.social.instagram}">Instagram</a>
         <a href="${site.social.facebook}">Facebook</a>
+        <a href="${site.social.linkedin}">LinkedIn</a>
       </div>
       <div>
         <h2>Informations</h2>
