@@ -53,6 +53,7 @@ const carnets = [
   {
     path: "/animations-nature-jardin/balade-nature-lecture-du-vivant/mediatheque-macon-sedd-2026/",
     offerPath: "/animations-nature-jardin/balade-nature-lecture-du-vivant/",
+    date: "2026-09-23",
     listTitle: "Lire le vivant avec la Médiathèque de Mâcon, le long de la Saône",
     imageName: "participantsBacs",
     imagePosition: "center 15%",
@@ -63,6 +64,7 @@ const carnets = [
   {
     path: "/animations-nature-jardin/balade-nature-lecture-du-vivant/grottes-daze-2026/",
     offerPath: "/animations-nature-jardin/balade-nature-lecture-du-vivant/",
+    date: "2026-05-09",
     listTitle: "Lire le paysage des Grottes d'Azé, et imaginer des millions d'années",
     imageName: "cedres",
     imageAlt: "La plateforme des cèdres sur l'espace naturel sensible des Grottes d'Azé",
@@ -72,6 +74,7 @@ const carnets = [
   {
     path: "/animations-nature-jardin/atelier-terre-vivante/tous-au-compost-avril-2026/",
     offerPath: "/animations-nature-jardin/atelier-terre-vivante/",
+    date: "2026-04-11",
     listTitle: "Du compost au pot de fleurs : fabriquer un sol vivant ensemble",
     imageName: "compostGroupe",
     imageAlt: "Fabrice anime l'atelier compost autour d'une table avec les participants, dont les visages sont floutés",
@@ -81,6 +84,7 @@ const carnets = [
   {
     path: "/animations-nature-jardin/eveil-nature-petite-enfance/rencontre-tout-en-douceur/",
     offerPath: "/animations-nature-jardin/eveil-nature-petite-enfance/",
+    date: "2026-09-16",
     listTitle: "Une rencontre tout en douceur avec les tout-petits",
     imageName: "rencontreCuriosite",
     imageAlt: "Un enfant observe une branche à la loupe pendant la sortie nature, visage flouté",
@@ -90,6 +94,7 @@ const carnets = [
   {
     path: "/animations-nature-jardin/eveil-nature-petite-enfance/les-tout-petits-nous-surprennent/",
     offerPath: "/animations-nature-jardin/eveil-nature-petite-enfance/",
+    date: "2026-06-30",
     listTitle: "Les tout-petits nous surprennent aussi",
     imageName: "toutPetitsGroupe",
     imageAlt: "Fabrice avec des enfants et leurs accompagnants sous les arbres, visages des participants floutés",
@@ -99,15 +104,17 @@ const carnets = [
   {
     path: "/animations-nature-jardin/eveil-nature-petite-enfance/la-curiosite-ne-fait-pas-toujours-du-bruit/",
     offerPath: "/animations-nature-jardin/eveil-nature-petite-enfance/",
+    date: "2026-04-20",
     listTitle: "La curiosité ne fait pas toujours du bruit",
-    imageName: "curiositeRegard",
-    imageAlt: "Un enfant observe dehors à travers une loupe, visage flouté",
+    imageName: "scolaire",
+    imageAlt: "Un enfant tient une grande feuille de marronnier devant son visage, dans un parc",
     listText: "Une attention collective, des mains qui hésitent et des gestes qui prennent leur temps : une rencontre à hauteur de tout-petit.",
     eyebrow: "~ éveil nature en crèche ~"
   },
   {
     path: "/animations-nature-jardin/atelier-jardinage-seniors/participer-a-sa-facon/",
     offerPath: "/animations-nature-jardin/atelier-jardinage-seniors/",
+    date: "2026-05-19",
     listTitle: "Participer, c'est aussi être là",
     imageName: "presenceFleurs",
     imageAlt: "Détail de fleurs roses et de feuillage photographiés le jour de la rencontre",
@@ -116,8 +123,14 @@ const carnets = [
   }
 ];
 
+// L'affichage suit la chronologie des animations, du plus ancien au plus
+// récent : l'ordre raconte le terrain, il ne dépend pas des dates de
+// publication. Le sommaire des carnets et les blocs posés sur les pages
+// d'offre lisent tous deux cette liste triée.
+const carnetsParDate = [...carnets].sort((a, b) => a.date.localeCompare(b.date));
+
 function carnetsForOffer(offerPath) {
-  return carnets.filter((carnet) => carnet.offerPath === offerPath);
+  return carnetsParDate.filter((carnet) => carnet.offerPath === offerPath);
 }
 
 // Bloc discrètement posé sur la page d'offre : il ouvre la porte du récit
@@ -1800,7 +1813,7 @@ pages.push({
       <div class="container">
         ${sectionHeading("Les récits", "~ une sortie, une histoire ~")}
         ${cardGrid(
-          carnets.map((carnet) => ({
+          carnetsParDate.map((carnet) => ({
             imageSet: carnet.imageName,
             alt: carnet.imageAlt,
             position: carnet.imagePosition,
@@ -1827,7 +1840,7 @@ pages.push({
     "Un récit d'éveil nature en crèche : mon ressenti, la curiosité observée chez les tout-petits et les retours de l'équipe qui les accompagne.",
   article: {
     headline: carnets[3].listTitle,
-    datePublished: "2026-10-09",
+    datePublished: "2026-09",
     image: imageSource(carnets[3].imageName)
   },
   breadcrumbs: [
@@ -1845,6 +1858,7 @@ pages.push({
       title: carnets[3].listTitle,
       lead:
         "J'ai vécu cette rencontre nature avec un groupe de crèche sur la douceur. Ce qui me reste, c'est la curiosité des enfants, leur envie de venir vers moi et les échanges avec les professionnelles qui les accompagnent.",
+      tags: ["Septembre 2026", "Petite enfance"],
       media: picture({
         name: carnets[3].imageName,
         alt: carnets[3].imageAlt,
@@ -2151,7 +2165,7 @@ pages.push({
   description: "Atelier Tous au compost à Belleville-en-Beaujolais pour la Communauté de communes Saône-Beaujolais : fabriquer un sol vivant en pots, les mains dans la matière.",
   article: {
     headline: carnets[2].listTitle,
-    datePublished: "2026-10-06",
+    datePublished: "2026-04-11",
     image: imageSource(carnets[2].imageName)
   },
   breadcrumbs: [
@@ -2269,7 +2283,7 @@ pages.push({
   description: "Une sortie nature avec des enfants de crèche et leurs accompagnants : des gestes inattendus et une occasion de regarder les tout-petits autrement.",
   article: {
     headline: carnets[4].listTitle,
-    datePublished: "2026-10-09",
+    datePublished: "2026-06",
     image: imageSource(carnets[4].imageName)
   },
   breadcrumbs: [
@@ -2284,7 +2298,7 @@ pages.push({
       eyebrow: "~ carnet de terrain ~",
       title: carnets[4].listTitle,
       lead: "Une sortie nature avec des enfants de crèche, leurs parents et les professionnelles qui les accompagnent. Une rencontre où les petits ont surpris les grands par leur envie de toucher le vivant.",
-      tags: ["Petite enfance", "Une rencontre dehors"],
+      tags: ["Juin 2026", "Petite enfance", "Une rencontre dehors"],
       media: picture({
         name: carnets[4].imageName,
         alt: carnets[4].imageAlt,
@@ -2342,7 +2356,7 @@ pages.push({
   description: "Un récit de sortie nature en crèche : l'attention des tout-petits, des gestes qui prennent leur temps et un regard qui évolue au fil de la rencontre.",
   article: {
     headline: carnets[5].listTitle,
-    datePublished: "2026-10-09",
+    datePublished: "2026-04",
     image: imageSource(carnets[5].imageName)
   },
   breadcrumbs: [
@@ -2357,11 +2371,11 @@ pages.push({
       eyebrow: "~ carnet de terrain ~",
       title: carnets[5].listTitle,
       lead: "Une sortie nature avec des enfants de crèche et les professionnelles qui les accompagnent. Je garde de cette rencontre une attention collective qui m'a surpris, et des gestes qui ont pris leur temps.",
-      tags: ["Petite enfance", "Une rencontre dehors"],
+      tags: ["Avril 2026", "Petite enfance", "Une rencontre dehors"],
       media: picture({
         name: carnets[5].imageName,
         alt: carnets[5].imageAlt,
-        caption: "~ la curiosité tient aussi dans un regard ~",
+        caption: "~ une grande feuille de marronnier, tenue devant soi ~",
         eager: true
       })
     },
@@ -2417,7 +2431,7 @@ pages.push({
   description: "Une rencontre autour du vivant en maison de retraite : participer par un geste, un regard ou une conversation, avec une place pour chacun.",
   article: {
     headline: carnets[6].listTitle,
-    datePublished: "2026-10-09",
+    datePublished: "2026-05",
     image: imageSource(carnets[6].imageName)
   },
   breadcrumbs: [
@@ -2432,7 +2446,7 @@ pages.push({
       eyebrow: "~ carnet de terrain ~",
       title: carnets[6].listTitle,
       lead: "Une rencontre autour du vivant avec des résidents d'une maison de retraite, aux côtés de l'animatrice de l'établissement. J'en garde des gestes, des échanges entre résidents et plusieurs façons d'être présent.",
-      tags: ["Avec les aînés", "Une rencontre autour du vivant"],
+      tags: ["Mai 2026", "Avec les aînés", "Une rencontre autour du vivant"],
       media: picture({
         name: carnets[6].imageName,
         alt: carnets[6].imageAlt,

@@ -10,13 +10,6 @@ const imageSets = {
     largeWidth: 720,
     largeHeight: 540
   },
-  curiositeRegard: {
-    small: "/assets/images/photo-curiosite-regard-280.webp",
-    smallWidth: 280,
-    large: "/assets/images/photo-curiosite-regard-383.webp",
-    largeWidth: 383,
-    largeHeight: 383
-  },
   toutPetitsGroupe: {
     small: "/assets/images/photo-tout-petits-groupe-600.webp",
     smallWidth: 600,
