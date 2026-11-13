@@ -11,8 +11,8 @@
   --color-clay: #B06A3F;
   --color-clay-dark: #96562F;
   --color-earth: #4A3F32;
-  --font-body: "Albert Sans", Arial, sans-serif;
-  --font-handwritten: "Caveat", "Segoe Print", cursive;
+  --font-body: "Albert Sans";
+  --font-handwritten: "Caveat";
   --radius-card: 16px;
   --radius-panel: 12px;
   --radius-field: 10px;
