@@ -1639,8 +1639,12 @@ pages.push({
           <label for="telephone">Votre téléphone <span class="form-help">: facultatif, si vous préférez qu'on se parle</span></label>
           <input type="tel" id="telephone" name="telephone" placeholder="Ex. : 06 39 98 12 34" autocomplete="tel">
         </div>
+        <div class="form-field">
+          <label for="connu-via">Comment avez-vous connu La Fabrique du Vivant ? <span class="form-help">: en deux mots</span></label>
+          <input type="text" id="connu-via" name="connu_via" placeholder="Ex. : une recherche internet, une collègue, Instagram…" required>
+        </div>
         <button class="button" type="submit">Envoyer ma demande</button>
-        <p class="form-legal">Vos informations me servent uniquement à vous répondre. Elles ne sont ni revendues ni utilisées pour une newsletter. <a href="/confidentialite/">Politique de confidentialité</a>.</p>
+        <p class="form-legal">Vos informations me servent uniquement à vous répondre et à savoir comment on me trouve. Elles ne sont ni revendues ni utilisées pour une newsletter. <a href="/confidentialite/">Politique de confidentialité</a>.</p>
         <p class="form-note"><span class="handwritten" style="display:block">~ pas encore prêt ? ~</span>Une simple question fait très bien l'affaire, le devis attendra que vous soyez prêt.</p>
         <p class="form-status" data-form-status tabindex="-1" role="status" aria-live="polite"></p>
       </form>
@@ -1724,9 +1728,9 @@ pages.push({
   <section class="section section--ivory">
     <div class="legal-copy">
       <h2>Quelles données je collecte</h2>
-      <p>Quand vous remplissez le formulaire de contact, je reçois le nom de votre structure, le type de structure, votre besoin, la période envisagée, votre message et votre email. Rien de plus : pas de traceur publicitaire, pas de revente de données.</p>
+      <p>Quand vous remplissez le formulaire de contact, je reçois votre nom, le nom de votre structure, le type de structure, votre besoin, la période envisagée, votre message, votre email, votre téléphone si vous le donnez, et la façon dont vous avez connu La Fabrique du Vivant. Rien de plus : pas de traceur publicitaire, pas de revente de données.</p>
       <h2>Pourquoi je les collecte</h2>
-      <p>Pour le formulaire de contact : comprendre votre demande, vous répondre et vous proposer un format et un devis adaptés.</p>
+      <p>Pour le formulaire de contact : comprendre votre demande, vous répondre et vous proposer un format et un devis adaptés. Votre réponse sur la façon dont vous m'avez connu me sert seulement à savoir par quels chemins les structures me trouvent.</p>
       <h2 id="seminaires">Votre projet de séminaire au vert</h2>
       <p>Le formulaire séminaire recueille vos attentes concernant le cadre naturel, le type de recherche, le secteur et le trajet accepté, l'effectif, la période et la durée, ainsi que votre email. Vous pouvez aussi préciser vos indispensables, votre budget et votre structure.</p>
       <p>Ces informations me permettent de comprendre les besoins pour une démarche de mise en relation locale en développement et de vous recontacter au sujet de votre projet. Elles ne vous inscrivent à aucune newsletter. Cette démarche est distincte d'une demande de devis pour une animation.</p>
