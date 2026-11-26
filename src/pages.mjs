@@ -914,6 +914,7 @@ pages.push({
         { title: "Lancer ensemble", text: "Les premières plantations, les premiers ateliers et les premières habitudes." },
         { title: "Vous rendre autonomes", text: "Une équipe formée, des gestes transmis et un lieu qui tient sans moi." }
       ])}
+      <p class="section-intro" style="margin-top:40px">Cette démarche s'appuie sur le design en <a href="/accompagnement-projets-nature/permaculture/">permaculture</a> : observer le lieu avant d'agir, puis concevoir avec celles et ceux qui le feront vivre.</p>
     </div>
   </section>
   <section class="section section--ivory">
@@ -963,6 +964,167 @@ pages.push({
   ${finalCta({
     title: "Un lieu, une envie ? Parlons-en.",
     text: "Décrivez-moi votre lieu et votre idée, même floue. Je vous réponds sous 48 h, et s'il le faut je viens voir le terrain."
+  })}`
+});
+
+// Page de positionnement permaculture (P2D du cocon), décidée par Fabrice le
+// 2026-11-26 : elle vise les recherches « permaculture » d'une structure à
+// Mâcon et à Belleville-en-Beaujolais. Elle ne crée aucune offre et renvoie
+// vers l'accompagnement et l'atelier existants. Public : structures seulement,
+// sans renvoi des particuliers vers Le Potager Minimaliste, pour ne pas les
+// mener vers les tarifs particuliers (décision Fabrice). L'année du cours de
+// design reste absente tant que les sources divergent (2018 ou 2019).
+const permacultureCarnets = [
+  "/animations-nature-jardin/atelier-terre-vivante/tous-au-compost-avril-2026/",
+  "/animations-nature-jardin/balade-nature-lecture-du-vivant/mediatheque-macon-sedd-2026/"
+].map((path) => carnets.find((carnet) => carnet.path === path));
+
+const questionsPermaculture = [
+  { question: "Qu'est-ce que la permaculture, pour une commune ou une école ?", answer: "Une façon de concevoir un lieu comme un écosystème. On observe d'abord le sol, l'eau, le soleil et les usages, puis on place chaque élément pour qu'il rende plusieurs services. Pour une structure, cela donne un jardin ou un espace vert plus vivant, plus économe en eau et plus simple à suivre dans la durée." },
+  { question: "Intervenez-vous à Mâcon et à Belleville-en-Beaujolais ?", answer: `Oui. J'interviens à Mâcon et dans le Mâconnais, à Belleville-en-Beaujolais et dans tout le Beaujolais, jusqu'à Villefranche-sur-Saône et Lyon. Je viens sur votre lieu : c'est là que le travail commence. Le détail est sur la page <a href="/zone-intervention/">zone d'intervention</a>.` },
+  { question: "Faut-il déjà avoir un projet précis ?", answer: "Non. Un lieu et une envie suffisent. La lecture du lieu sert justement à faire apparaître ce qu'il peut devenir, avec vous." },
+  { question: "Mes équipes pourront-elles suivre le lieu après votre passage ?", answer: "C'est le but. Je conçois avec les personnes qui feront vivre le lieu, je transmets les gestes pendant le lancement et je pense chaque choix en heures d'entretien réelles. Vingt et un ans dans un service espaces verts m'ont appris ce qui tient au premier été." },
+  { question: "Combien coûte un accompagnement en permaculture ?", answer: `Le prix dépend du lieu et du format, et fait l'objet d'un <a href="/contact/?besoin=accompagnement">devis</a> complet, déplacement compris. Je réponds à chaque demande sous 48 h.` }
+];
+
+pages.push({
+  path: "/accompagnement-projets-nature/permaculture/",
+  kind: "offer",
+  title: "Permaculture à Mâcon et Belleville-en-Beaujolais : projets et ateliers",
+  description:
+    "Permaculture pour communes, écoles et jardins partagés à Mâcon, Belleville-en-Beaujolais et dans le Beaujolais : lire le lieu, concevoir, lancer, transmettre.",
+  breadcrumbs: [
+    ["Accompagnement de projets", "/accompagnement-projets-nature/"],
+    ["Permaculture", "/accompagnement-projets-nature/permaculture/"]
+  ],
+  approved: true,
+  review: ["Page permaculture : textes validés par Fabrice le 2026-11-26."],
+  faq: questionsPermaculture,
+  body: `${pageHero({
+    eyebrow: "~ observer avant d'agir ~",
+    title: "La permaculture pour votre structure, à Mâcon et dans le Beaujolais",
+    lead:
+      "Une cour d'école, un jardin partagé, un coin de parc : en permaculture, on commence par regarder ce que le lieu fait déjà. J'accompagne les communes, les écoles et les associations de Mâcon, de Belleville-en-Beaujolais et des alentours, de la lecture du lieu jusqu'aux premiers gestes.",
+    tags: ["communes, écoles, associations", "jardins partagés et pédagogiques", "Mâcon · Belleville-en-Beaujolais"]
+  })}
+  ${soilDivider("ivory")}
+  ${splitSection({
+    heading: "La permaculture, concrètement",
+    eyebrow: "~ un lieu pensé comme un écosystème ~",
+    media: picture({
+      name: "gestionDifferenciee",
+      alt: "Chemin enherbé dans un espace vert géré avec le vivant"
+    }),
+    background: "sand",
+    paragraphs: [
+      "Le mot fait parfois sourire, ou un peu peur. L'idée est pourtant simple : concevoir un lieu comme un écosystème, où chaque élément rend plusieurs services.",
+      "Une haie qui abrite les auxiliaires, coupe le vent et nourrit le sol de ses feuilles. Un paillage qui garde l'eau et limite le désherbage. Un jardin placé là où le soleil et les usages l'attendent. Et pas besoin de pleine terre : la permaculture se pratique aussi hors sol, en pots et en bacs.",
+      "Pour votre structure, c'est un lieu plus vivant, plus économe en eau, que vos équipes peuvent suivre. C'est aussi le cœur de ma façon de travailler, la lecture du vivant : observer avant d'agir."
+    ]
+  })}
+  <section class="section section--ivory">
+    <div class="container">
+      ${sectionHeading("Cinq façons de vous en servir", "~ la même méthode, à votre échelle ~")}
+      ${cardGrid([
+        {
+          image: "conception-espaces",
+          alt: "Panneau pédagogique de conception d'espaces comestibles en ville",
+          eyebrow: "~ communes, entreprises ~",
+          title: "Concevoir un lieu",
+          text: "Lire votre lieu (sol, eau, usages, vivant déjà présent), puis proposer des scénarios et un plan d'action que vos équipes peuvent suivre.",
+          href: "/accompagnement-projets-nature/",
+          linkLabel: "Voir l'accompagnement"
+        },
+        {
+          imageSet: "terrasseProduction",
+          alt: "Légumes et plantes cultivés dans des pots sur l'ancienne terrasse de Fabrice",
+          eyebrow: "~ terrasse, toit, cour intérieure ~",
+          title: "Un lieu hors sol",
+          text: "Pas de pleine terre ? La permaculture vit aussi en pots et en bacs : une terrasse de bar, un toit d'immeuble, une cour intérieure. J'ai cultivé neuf ans une terrasse en pots, de la graine à l'assiette.",
+          href: "/contact/?besoin=accompagnement",
+          linkLabel: "Parler de votre lieu"
+        },
+        {
+          image: "jardin-partage",
+          alt: "Panneau d'un jardin partagé, tableau d'organisation collective",
+          eyebrow: "~ commune, quartier, résidence ~",
+          title: "Un jardin partagé",
+          text: "Un lieu conçu avec les habitants, où le collectif se construit avant les plates-bandes, puis accompagné pendant ses premiers mois.",
+          href: "/accompagnement-projets-nature/",
+          linkLabel: "Voir l'accompagnement"
+        },
+        {
+          image: "jardin-pedagogique",
+          alt: "Jardin vivant avec serre et pergola, massifs fleuris",
+          eyebrow: "~ école, crèche ~",
+          title: "Un jardin pédagogique",
+          text: "Un jardin pensé pour vivre plus d'un printemps, relié aux animations et porté par l'équipe.",
+          href: "/pour-qui/ecoles/",
+          linkLabel: "Voir la page écoles"
+        },
+        {
+          imageSet: "atelierTerre",
+          alt: "Un pot rempli couche après couche de terre vivante, prêt à recevoir sa graine",
+          eyebrow: "~ habitants, élèves, équipes ~",
+          title: "L'atelier terre vivante",
+          text: "Le sol vivant, base de tout jardin en permaculture, fabriqué de ses mains dans un pot. Une première porte pour vos publics.",
+          href: "/animations-nature-jardin/atelier-terre-vivante/",
+          linkLabel: "Voir l'atelier"
+        }
+      ], { columns: 3 })}
+    </div>
+  </section>
+  <section class="section section--sage">
+    <div class="container">
+      ${sectionHeading("La démarche", "~ quatre temps, un lieu qui vit sans moi ~")}
+      ${processSteps([
+        { title: "Observer le lieu", text: "Le soleil, l'eau, le vent, le sol, les usages et ce qui pousse déjà. En permaculture, tout part de là." },
+        { title: "Concevoir avec vous", text: "Des scénarios discutés avec celles et ceux qui feront vivre le lieu, jamais un plan imposé." },
+        { title: "Lancer ensemble", text: "Les premières plantations, le paillage, les premiers ateliers avec vos publics." },
+        { title: "Vous rendre autonomes", text: "Des gestes transmis à votre équipe et un lieu qui tient dans la durée." }
+      ])}
+    </div>
+  </section>
+  ${splitSection({
+    heading: "Formé au design en permaculture",
+    eyebrow: "~ la méthode et le terrain ~",
+    media: picture({
+      name: "formationTerrain",
+      alt: "Fabrice devant un panneau pédagogique d'un espace naturel"
+    }),
+    background: "ivory",
+    reverse: true,
+    paragraphs: [
+      "J'ai suivi le cours certifié de design en permaculture de <a href=\"https://www.lagraineindocile.fr/\">La Graine Indocile</a>, une association de permaculture et d'agroécologie. J'y ai appris à concevoir un lieu entier : l'observer, le cartographier, puis imaginer ce qu'il peut devenir.",
+      "J'y ajoute ce qu'aucun cours ne donne : vingt et un ans d'agent territorial dans un service espaces verts. Je sais ce qu'un aménagement coûte en heures d'entretien, et ce qui meurt au premier été."
+    ],
+    tags: ["cours certifié de design en permaculture", "21 ans de terrain public", "réseau GRAINE"]
+  })}
+  <section class="section section--sand">
+    <div class="container">
+      ${sectionHeading("Sur le terrain, à Belleville-en-Beaujolais et à Mâcon", "~ deux carnets de terrain ~")}
+      ${cardGrid(permacultureCarnets.map((item) => ({
+        imageSet: item.imageName,
+        alt: item.imageAlt,
+        position: item.imagePosition,
+        eyebrow: item.eyebrow,
+        title: item.listTitle,
+        text: item.listText,
+        href: item.path,
+        linkLabel: "Lire le carnet"
+      })), { columns: 2 })}
+    </div>
+  </section>
+  <section class="section section--white">
+    <div class="container">
+      ${sectionHeading("Questions pratiques", "~ pour préparer votre demande ~")}
+      ${faq(questionsPermaculture)}
+    </div>
+  </section>
+  ${finalCta({
+    title: "Un lieu à faire vivre ?",
+    text: "Décrivez-moi votre lieu et votre structure, même en deux lignes. Je vous réponds sous 48 h, et s'il le faut je viens voir le terrain.",
+    ficheLink: true
   })}`
 });
 
@@ -1406,6 +1568,7 @@ pages.push({
     paragraphs: [
       "Pendant vingt et un ans, j'ai été agent territorial dans un service espaces verts : production florale, plantations, entretien des espaces publics. Le métier appris par le terrain, saison après saison.",
       "En 2010, la réglementation sur les produits phytosanitaires change, et avec elle ma façon de voir le métier. Je me forme au jardinage raisonné, aux auxiliaires, aux sols vivants et aux micro-climats. Je découvre qu'on peut travailler avec le vivant au lieu de lutter contre lui.",
+      "Ensuite, je suis le cours certifié de design en <a href=\"/accompagnement-projets-nature/permaculture/\">permaculture</a> de <a href=\"https://www.lagraineindocile.fr/\">La Graine Indocile</a>. J'y apprends à concevoir un lieu entier : l'observer, le cartographier, puis imaginer ce qu'il peut devenir.",
       "Puis la transmission a pris le dessus : ateliers compostage, balades nature, animations. En 2026, j'en ai fait mon métier à part entière, ici, entre Mâcon, le Beaujolais et Lyon."
     ]
   })}
@@ -1478,6 +1641,7 @@ pages.push({
         <p><strong>Le Beaujolais :</strong> Beaujeu, Belleville-en-Beaujolais, Villefranche-sur-Saône et les villages des monts. C'est ici que j'habite : le cœur de la zone.</p>
         <p><strong>Lyon et alentours :</strong> Lyon, sa métropole et le Val de Saône, pour les entreprises, les structures et les événements.</p>
         <p>Vous êtes un peu plus loin ? Écrivez-moi quand même : les frontières sont souples, surtout pour les programmes multi-séances et les formations.</p>
+        <p>Vous portez un projet de jardin en permaculture à Mâcon ou à Belleville-en-Beaujolais ? Voici <a href="/accompagnement-projets-nature/permaculture/">comment je l'accompagne</a>.</p>
         <p>Vous cherchez un cadre naturel pour un séminaire autour de Mâcon ou Villefranche-sur-Saône ? Découvrez la <a href="/pour-qui/entreprises/seminaire-au-vert/">démarche de mise en relation en développement</a>.</p>
       </div>
     </div>
@@ -1525,6 +1689,8 @@ const questionsFrequentes = [
   { question: "Où intervient La Fabrique du Vivant ?", answer: `Dans le Mâconnais (Mâcon, Cluny, Tournus), dans le Beaujolais (Beaujeu, Belleville-en-Beaujolais, Villefranche-sur-Saône), à Lyon, dans sa métropole et dans le Val de Saône. Fabrice Maira <a href="/zone-intervention/">se déplace dans la structure</a> ou sur le terrain choisi. Une demande plus éloignée peut s'étudier, surtout pour une formation ou un programme en plusieurs séances.` },
   { question: "Qu'est-ce que la lecture du vivant ?", answer: `C'est l'approche de La Fabrique du Vivant : comprendre comment fonctionne un sol, une haie, une mare ou un lieu entier, plutôt qu'apprendre une liste de noms d'espèces. Les participants observent les indices, ajoutent leurs questions et leurs souvenirs, et comprennent par le geste.` },
   { question: "Qu'est-ce que l'atelier terre vivante en pots ?", answer: `C'est l'<a href="/animations-nature-jardin/atelier-terre-vivante/">atelier phare</a> de La Fabrique du Vivant. Chaque participant assemble dans un pot les étages d'un sol vivant, avec des épluchures, des feuilles mortes et du compost, puis sème une graine et repart avec son pot. L'atelier dure environ deux heures, en salle ou dehors, avec tout le matériel fourni, et s'adapte de la crèche à l'entreprise.` },
+  // Ajoutée le 2026-11-26 avec la page permaculture, texte validé par Fabrice le même jour.
+  { question: "La Fabrique du Vivant accompagne-t-elle des projets en permaculture ?", answer: `Oui. Fabrice Maira a suivi le cours certifié de design en permaculture de l'association La Graine Indocile. Il <a href="/accompagnement-projets-nature/permaculture/">accompagne</a> les communes, les écoles, les jardins partagés et les associations de Mâcon, de Belleville-en-Beaujolais et du Beaujolais : lecture du lieu, conception avec l'équipe, premières plantations, puis transmission pour que le lieu vive sans lui.` },
   { question: "Quelles formations pour les agents d'espaces verts ?", answer: `La Fabrique du Vivant propose <a href="/formations-professionnelles/">cinq formations</a>, données sur les espaces verts de la structure : gestion différenciée des espaces verts, compostage et lombricompostage, biodiversité et nature en ville, adaptation au changement climatique, création et animation d'un jardin partagé. Chacune se donne en demi-journée, en journée ou en cycle, par groupes de 12 personnes au plus.` },
   { question: "Combien coûte une intervention ?", answer: `Le prix dépend du format et fait l'objet d'un <a href="/contact/">devis</a>. Ce devis est complet, déplacement compris, et le matériel est fourni. La Fabrique du Vivant répond à chaque demande sous 48 heures.` },
   { question: "Qu'est-ce qui distingue La Fabrique du Vivant ?", answer: `Son intervenant a fait le métier qu'il transmet : 21 ans dans un service espaces verts, l'abandon des pesticides vécu de l'intérieur, les contraintes d'entretien d'une collectivité. Il conçoit des projets que les équipes peuvent suivre dans la durée, et il parle la langue des agents qu'il forme.` },
