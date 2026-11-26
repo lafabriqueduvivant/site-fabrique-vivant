@@ -972,8 +972,8 @@ pages.push({
 // Mâcon et à Belleville-en-Beaujolais. Elle ne crée aucune offre et renvoie
 // vers l'accompagnement et l'atelier existants. Public : structures seulement,
 // sans renvoi des particuliers vers Le Potager Minimaliste, pour ne pas les
-// mener vers les tarifs particuliers (décision Fabrice). L'année du cours de
-// design reste absente tant que les sources divergent (2018 ou 2019).
+// mener vers les tarifs particuliers (décision Fabrice). Cours de design suivi
+// en septembre 2018, date confirmée par Fabrice le 2026-11-26.
 const permacultureCarnets = [
   "/animations-nature-jardin/atelier-terre-vivante/tous-au-compost-avril-2026/",
   "/animations-nature-jardin/balade-nature-lecture-du-vivant/mediatheque-macon-sedd-2026/"
@@ -1095,7 +1095,7 @@ pages.push({
     background: "ivory",
     reverse: true,
     paragraphs: [
-      "J'ai suivi le cours certifié de design en permaculture de <a href=\"https://www.lagraineindocile.fr/\">La Graine Indocile</a>, une association de permaculture et d'agroécologie. J'y ai appris à concevoir un lieu entier : l'observer, le cartographier, puis imaginer ce qu'il peut devenir.",
+      "En 2018, j'ai suivi le cours certifié de design en permaculture de <a href=\"https://www.lagraineindocile.fr/\">La Graine Indocile</a>, une association de permaculture et d'agroécologie. J'y ai appris à concevoir un lieu entier : l'observer, le cartographier, puis imaginer ce qu'il peut devenir.",
       "J'y ajoute ce qu'aucun cours ne donne : vingt et un ans d'agent territorial dans un service espaces verts. Je sais ce qu'un aménagement coûte en heures d'entretien, et ce qui meurt au premier été."
     ],
     tags: ["cours certifié de design en permaculture", "21 ans de terrain public", "réseau GRAINE"]
@@ -1568,7 +1568,7 @@ pages.push({
     paragraphs: [
       "Pendant vingt et un ans, j'ai été agent territorial dans un service espaces verts : production florale, plantations, entretien des espaces publics. Le métier appris par le terrain, saison après saison.",
       "En 2010, la réglementation sur les produits phytosanitaires change, et avec elle ma façon de voir le métier. Je me forme au jardinage raisonné, aux auxiliaires, aux sols vivants et aux micro-climats. Je découvre qu'on peut travailler avec le vivant au lieu de lutter contre lui.",
-      "Ensuite, je suis le cours certifié de design en <a href=\"/accompagnement-projets-nature/permaculture/\">permaculture</a> de <a href=\"https://www.lagraineindocile.fr/\">La Graine Indocile</a>. J'y apprends à concevoir un lieu entier : l'observer, le cartographier, puis imaginer ce qu'il peut devenir.",
+      "En 2018, je suis le cours certifié de design en <a href=\"/accompagnement-projets-nature/permaculture/\">permaculture</a> de <a href=\"https://www.lagraineindocile.fr/\">La Graine Indocile</a>. J'y apprends à concevoir un lieu entier : l'observer, le cartographier, puis imaginer ce qu'il peut devenir.",
       "Puis la transmission a pris le dessus : ateliers compostage, balades nature, animations. En 2026, j'en ai fait mon métier à part entière, ici, entre Mâcon, le Beaujolais et Lyon."
     ]
   })}
@@ -1690,7 +1690,7 @@ const questionsFrequentes = [
   { question: "Qu'est-ce que la lecture du vivant ?", answer: `C'est l'approche de La Fabrique du Vivant : comprendre comment fonctionne un sol, une haie, une mare ou un lieu entier, plutôt qu'apprendre une liste de noms d'espèces. Les participants observent les indices, ajoutent leurs questions et leurs souvenirs, et comprennent par le geste.` },
   { question: "Qu'est-ce que l'atelier terre vivante en pots ?", answer: `C'est l'<a href="/animations-nature-jardin/atelier-terre-vivante/">atelier phare</a> de La Fabrique du Vivant. Chaque participant assemble dans un pot les étages d'un sol vivant, avec des épluchures, des feuilles mortes et du compost, puis sème une graine et repart avec son pot. L'atelier dure environ deux heures, en salle ou dehors, avec tout le matériel fourni, et s'adapte de la crèche à l'entreprise.` },
   // Ajoutée le 2026-11-26 avec la page permaculture, texte validé par Fabrice le même jour.
-  { question: "La Fabrique du Vivant accompagne-t-elle des projets en permaculture ?", answer: `Oui. Fabrice Maira a suivi le cours certifié de design en permaculture de l'association La Graine Indocile. Il <a href="/accompagnement-projets-nature/permaculture/">accompagne</a> les communes, les écoles, les jardins partagés et les associations de Mâcon, de Belleville-en-Beaujolais et du Beaujolais : lecture du lieu, conception avec l'équipe, premières plantations, puis transmission pour que le lieu vive sans lui.` },
+  { question: "La Fabrique du Vivant accompagne-t-elle des projets en permaculture ?", answer: `Oui. Fabrice Maira a suivi en 2018 le cours certifié de design en permaculture de l'association La Graine Indocile. Il <a href="/accompagnement-projets-nature/permaculture/">accompagne</a> les communes, les écoles, les jardins partagés et les associations de Mâcon, de Belleville-en-Beaujolais et du Beaujolais : lecture du lieu, conception avec l'équipe, premières plantations, puis transmission pour que le lieu vive sans lui.` },
   { question: "Quelles formations pour les agents d'espaces verts ?", answer: `La Fabrique du Vivant propose <a href="/formations-professionnelles/">cinq formations</a>, données sur les espaces verts de la structure : gestion différenciée des espaces verts, compostage et lombricompostage, biodiversité et nature en ville, adaptation au changement climatique, création et animation d'un jardin partagé. Chacune se donne en demi-journée, en journée ou en cycle, par groupes de 12 personnes au plus.` },
   { question: "Combien coûte une intervention ?", answer: `Le prix dépend du format et fait l'objet d'un <a href="/contact/">devis</a>. Ce devis est complet, déplacement compris, et le matériel est fourni. La Fabrique du Vivant répond à chaque demande sous 48 heures.` },
   { question: "Qu'est-ce qui distingue La Fabrique du Vivant ?", answer: `Son intervenant a fait le métier qu'il transmet : 21 ans dans un service espaces verts, l'abandon des pesticides vécu de l'intérieur, les contraintes d'entretien d'une collectivité. Il conçoit des projets que les équipes peuvent suivre dans la durée, et il parle la langue des agents qu'il forme.` },
