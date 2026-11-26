@@ -2,7 +2,7 @@ export const site = {
   name: "La Fabrique du Vivant",
   domain: "https://lafabriqueduvivant.fr",
   description:
-    "Animations nature et jardin, accompagnement de projets et formations professionnelles à Mâcon, dans le Beaujolais et à Lyon.",
+    "Animations nature et jardin, projets et formations pour structures. Mâcon, Beaujolais, Lyon. Par Fabrice Maira, 21 ans agent espaces verts.",
   locale: "fr_FR",
   areaServed: ["Mâcon", "Beaujolais", "Villefranche-sur-Saône", "Lyon"],
   formEndpoint: "https://api.web3forms.com/submit",

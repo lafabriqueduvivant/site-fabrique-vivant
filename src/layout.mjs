@@ -90,6 +90,7 @@ function footer() {
         <h2>Votre projet</h2>
         <a href="/zone-intervention/">Zone d'intervention</a>
         <a href="/contact/">Contact &amp; devis</a>
+        <a href="/questions-frequentes/">Questions fréquentes</a>
         <span>Membre du réseau GRAINE</span>
       </div>
       <div>
@@ -159,6 +160,22 @@ function articleSchema(page) {
   };
 }
 
+// La page Questions fréquentes déclare ses questions et réponses : un moteur
+// peut ainsi reprendre une réponse exacte sans deviner où elle commence. Les
+// liens des réponses sont retirés, seul le texte compte ici.
+function faqSchema(page) {
+  if (!page.faq?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faq.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer.replace(/<[^>]+>/g, "") }
+    }))
+  };
+}
+
 function businessSchema() {
   return {
     "@context": "https://schema.org",
@@ -213,7 +230,7 @@ function svgSprite() {
 //    lien sans image.
 export function renderLayout(page, body, { production = false } = {}) {
   const canonical = `${site.domain}${page.path}`;
-  const schemas = [breadcrumbSchema(page), articleSchema(page)];
+  const schemas = [breadcrumbSchema(page), articleSchema(page), faqSchema(page)];
   if (page.path === "/" || page.path === "/zone-intervention/") schemas.push(businessSchema());
   const robots = page.noindex || !production ? "noindex, nofollow" : "index, follow";
   const review = !production && page.review?.length

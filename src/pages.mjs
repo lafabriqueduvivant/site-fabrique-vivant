@@ -3,6 +3,7 @@ import { seminairePages } from "./seminaire-pages.mjs";
 import {
   audiencePills,
   cardGrid,
+  faq,
   featureGrid,
   ficheDepartTeaser,
   finalCta,
@@ -1384,6 +1385,15 @@ pages.push({
     primary: false
   })}
   ${soilDivider("ivory")}
+  <section class="section section--ivory">
+    <div class="container">
+      ${sectionHeading("En bref", "~ l'essentiel en trois phrases ~")}
+      <div class="reading-width">
+        <p>La Fabrique du Vivant est l'activité d'animation, d'accompagnement et de formation nature et jardin de Fabrice Maira, installé dans le Beaujolais. Après 21 ans comme agent territorial dans un service espaces verts, il intervient sur place auprès des crèches, des écoles, des maisons seniors, des collectivités et des entreprises, à Mâcon, dans le Beaujolais et à Lyon. Son approche, la lecture du vivant, fait comprendre par le geste un sol, une haie ou un lieu entier.</p>
+        <a class="text-link" href="/questions-frequentes/">Lire les questions fréquentes <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
   ${splitSection({
     heading: "Le parcours",
     eyebrow: "~ 2004-2025 : les mains dans la terre publique ~",
@@ -1501,6 +1511,53 @@ pages.push({
   ${finalCta({
     title: "Votre structure est dans la zone ?",
     text: "Dites-moi votre commune et votre projet. Je vous réponds sous 48 h, avec une proposition et un devis."
+  })}`
+});
+
+// Questions fréquentes : textes validés par Fabrice le 2026-11-26 (texte GEO du
+// vault). Écrites à la troisième personne et nommant l'activité, parce qu'un
+// moteur de réponse ne reprend souvent qu'une seule réponse, qui doit tenir
+// seule. La même liste nourrit la page et ses données structurées FAQPage.
+const questionsFrequentes = [
+  { question: "Qui est derrière La Fabrique du Vivant ?", answer: `<a href="/a-propos/">Fabrice Maira</a>. Il a été agent territorial dans un service espaces verts pendant 21 ans, de 2004 à 2025, puis il a fait de la transmission du vivant son métier en 2026. Il habite le Beaujolais et il est membre du réseau GRAINE.` },
+  { question: "Que propose La Fabrique du Vivant ?", answer: `Trois types d'intervention : des <a href="/animations-nature-jardin/">animations nature et jardin</a>, l'<a href="/accompagnement-projets-nature/">accompagnement de projets</a> (jardin pédagogique, jardin partagé, conception d'espaces verts) et des formations professionnelles pour les agents de collectivités, les bailleurs et les associations.` },
+  { question: "Pour quels publics intervient La Fabrique du Vivant ?", answer: `Les crèches et la petite enfance, les écoles et le périscolaire, les maisons seniors et EHPAD, les collectivités et communautés de communes, les entreprises, ainsi que les sites naturels et touristiques. Elle intervient toujours à la demande d'une structure, y compris pour des balades ouvertes à tous que celle-ci organise.` },
+  { question: "Où intervient La Fabrique du Vivant ?", answer: `Dans le Mâconnais (Mâcon, Cluny, Tournus), dans le Beaujolais (Beaujeu, Belleville-en-Beaujolais, Villefranche-sur-Saône), à Lyon, dans sa métropole et dans le Val de Saône. Fabrice Maira <a href="/zone-intervention/">se déplace dans la structure</a> ou sur le terrain choisi. Une demande plus éloignée peut s'étudier, surtout pour une formation ou un programme en plusieurs séances.` },
+  { question: "Qu'est-ce que la lecture du vivant ?", answer: `C'est l'approche de La Fabrique du Vivant : comprendre comment fonctionne un sol, une haie, une mare ou un lieu entier, plutôt qu'apprendre une liste de noms d'espèces. Les participants observent les indices, ajoutent leurs questions et leurs souvenirs, et comprennent par le geste.` },
+  { question: "Qu'est-ce que l'atelier terre vivante en pots ?", answer: `C'est l'<a href="/animations-nature-jardin/atelier-terre-vivante/">atelier phare</a> de La Fabrique du Vivant. Chaque participant assemble dans un pot les étages d'un sol vivant, avec des épluchures, des feuilles mortes et du compost, puis sème une graine et repart avec son pot. L'atelier dure environ deux heures, en salle ou dehors, avec tout le matériel fourni, et s'adapte de la crèche à l'entreprise.` },
+  { question: "Quelles formations pour les agents d'espaces verts ?", answer: `La Fabrique du Vivant propose <a href="/formations-professionnelles/">cinq formations</a>, données sur les espaces verts de la structure : gestion différenciée des espaces verts, compostage et lombricompostage, biodiversité et nature en ville, adaptation au changement climatique, création et animation d'un jardin partagé. Chacune se donne en demi-journée, en journée ou en cycle, par groupes de 12 personnes au plus.` },
+  { question: "Combien coûte une intervention ?", answer: `Le prix dépend du format et fait l'objet d'un <a href="/contact/">devis</a>. Ce devis est complet, déplacement compris, et le matériel est fourni. La Fabrique du Vivant répond à chaque demande sous 48 heures.` },
+  { question: "Qu'est-ce qui distingue La Fabrique du Vivant ?", answer: `Son intervenant a fait le métier qu'il transmet : 21 ans dans un service espaces verts, l'abandon des pesticides vécu de l'intérieur, les contraintes d'entretien d'une collectivité. Il conçoit des projets que les équipes peuvent suivre dans la durée, et il parle la langue des agents qu'il forme.` },
+  { question: "Comment contacter La Fabrique du Vivant ?", answer: `Par le <a href="/contact/">formulaire de contact</a> du site lafabriqueduvivant.fr, en précisant la structure, le public et la commune. La réponse arrive sous 48 heures, avec une proposition et un devis.` }
+];
+
+pages.push({
+  path: "/questions-frequentes/",
+  kind: "faq",
+  title: "Questions fréquentes : animations nature et jardin | La Fabrique du Vivant",
+  description:
+    "Qui est derrière La Fabrique du Vivant, pour quels publics, où et à quel prix : les réponses courtes aux questions des structures. Mâcon, Beaujolais, Lyon.",
+  breadcrumbs: [["Questions fréquentes", "/questions-frequentes/"]],
+  approved: true,
+  review: ["Page ajoutée le 2026-11-26 à partir du texte GEO validé : à relire dans l'aperçu avant l'accord de publication."],
+  faq: questionsFrequentes,
+  body: `${pageHero({
+    eyebrow: "~ les réponses courtes ~",
+    title: "Questions fréquentes sur La Fabrique du Vivant",
+    lead:
+      "Qui est derrière La Fabrique du Vivant, ce qu'elle propose, pour qui, où et comment : les réponses aux questions que posent le plus souvent les structures.",
+    primary: false,
+    compact: true
+  })}
+  ${soilDivider("ivory")}
+  <section class="section section--ivory">
+    <div class="container">
+      ${faq(questionsFrequentes)}
+    </div>
+  </section>
+  ${finalCta({
+    title: "Une autre question ?",
+    text: "Dites-moi qui vous êtes et ce que vous cherchez. Je vous réponds sous 48&nbsp;h."
   })}`
 });
 
